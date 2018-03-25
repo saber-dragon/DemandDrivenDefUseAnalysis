@@ -22,25 +22,49 @@
 #include <unordered_map> // for std::unordered_map
 #include <vector> // for std::vector
 
-#include "dataFlowHelper.hpp"
+#include "demandDrivenDataFlowHelper.h"
 
 using namespace llvm;
 
 namespace {
+
+    using StatementDefUseInfoMap=std::unordered_map<const Instruction*, std::unique_ptr<saber::StatementDefUseInfo> >;
     struct DefUseAnalysis : public FunctionPass {
         static char ID;
 
+        StatementDefUseInfoMap DefUseMap;
         DefUseAnalysis() : FunctionPass(ID){
 
         }
 
-        virtual bool runOnFunction(Function &F){
-
+        bool runOnFunction(Function &F) override {
+            for (auto BI = F.begin(), BE = F.end();BI != BE;++ BI){
+                for (Instruction &I: *BI){
+                    const Instruction *CI = &I;
+                    if (DefUseMap.find(CI) == DefUseMap.end())
+                        DefUseMap[CI] = std::unique_ptr<saber::StatementDefUseInfo>(new saber::StatementDefUseInfo(CI));
+                }
+            }
 
             return false;
         }
 
-        virtual void print(raw_ostream &O, const Module *M) const{
+        void print(raw_ostream &O, const Module *M) const override {
+            for (const auto& pair: DefUseMap) {
+                O << saber::toString(pair.first)
+                  << "\n";
+                if (!pair.second->def.empty()) {
+                    O << "\t\tdef: " << pair.second->def << "\n";
+                }
+                if (!pair.second->uses.empty()) {
+                    O << "\t\tuses: ";
+                    for (const auto& use: pair.second->uses){
+                        O << use << " ";
+                    }
+                    O << "\n";
+                }
+                O << "\n";
+            }
         }
     };
     char DefUseAnalysis::ID = 0;

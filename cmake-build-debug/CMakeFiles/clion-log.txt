@@ -1,0 +1,10 @@
+/snap/clion/12/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_C_COMPILER=/home/saber/llvm/4.0.1/bin/clang -DCMAKE_CXX_COMPILER=/home/saber/llvm/4.0.1/bin/clang++ -G "CodeBlocks - Unix Makefiles" /home/saber/GitHub/DemandDrivenDefUseAnalysis
+-- Got llvm_include : /home/saber/llvm/4.0.1/include
+
+-- Got llvm_lib : /home/saber/llvm/4.0.1/lib
+
+-- Copying /home/saber/GitHub/DemandDrivenDefUseAnalysis/demo.ll ...
+bin dir: /home/saber/GitHub/DemandDrivenDefUseAnalysis/cmake-build-debug
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/saber/GitHub/DemandDrivenDefUseAnalysis/cmake-build-debug
