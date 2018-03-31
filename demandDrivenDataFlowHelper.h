@@ -15,6 +15,7 @@
 #include <memory>
 #include <typeinfo>       // operator typeid
 #include <cassert>
+#include <utility>
 
 using namespace llvm;
 
@@ -96,4 +97,24 @@ namespace saber {
             }
         }
     };
+
+    // def use pair
+    struct DefUsePair{
+        const Instruction *def;
+        const Instruction *use;
+        std::string variable;
+        explicit DefUsePair(const Instruction *d, const Instruction *u, std::string v) :
+                def(d), use(u), variable(std::move(v)){
+
+        }
+    };
+    raw_ostream& operator<<(raw_ostream& O, const DefUsePair& obj){
+        O << "("
+          << toString(obj.def)
+          << " | "
+          << toString(obj.use)
+          << ") : "
+          << obj.variable;
+        return O;
+    }
 }
