@@ -98,6 +98,19 @@ namespace saber {
         }
     };
 
+    raw_ostream& operator<<(raw_ostream& O, const StatementDefUseInfo& obj) {
+        O << "def: " << obj.def ;
+        if (!obj.uses.empty())
+        {
+            O << ", uses: ";
+            for (const auto& u: obj.uses){
+                O << u << " ";
+            }
+            O << "\n";
+        }
+        return O;
+    }
+
     // def use pair
     struct DefUsePair{
         const Instruction *def;

@@ -3,6 +3,7 @@
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true" buildAllGenerated="true">
     <generated>
       <config projectName="DemandDrivenDefUseAnalysis" targetName="defUseAnalysis" />
+      <config projectName="DemandDrivenDefUseAnalysis" targetName="correlationDetection" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -12,10 +13,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="95933ac1-ca2f-4b7f-8779-0cc6418c6b7a" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/defUseAnalysis.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/defUseAnalysis.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demandDrivenDataFlowHelper.h" beforeDir="false" afterPath="$PROJECT_DIR$/demandDrivenDataFlowHelper.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo.ll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_script.sh" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,8 +35,8 @@
       <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-110">
-              <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
+            <state relative-caret-position="110">
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
             </state>
           </provider>
         </entry>
@@ -46,13 +50,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="defUseAnalysis.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="defUseAnalysis.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/defUseAnalysis.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1254">
-              <caret line="63" column="62" selection-start-line="63" selection-start-column="62" selection-end-line="63" selection-end-column="62" />
+            <state relative-caret-position="295">
+              <caret line="169" column="15" selection-start-line="169" selection-end-line="173" selection-end-column="49" />
               <folding>
                 <element signature="e#131#153#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="correlationDetection.cpp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/correlationDetection.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="249">
+              <caret line="352" column="50" selection-start-line="352" selection-start-column="50" selection-end-line="352" selection-end-column="50" />
+              <folding>
+                <element signature="e#131#153#0" expanded="true" />
+                <element signature="e#850#874#0" expanded="true" />
+                <element signature="e#4079#4268#0" expanded="true" />
+                <element signature="e#5868#5990#0" expanded="true" />
+                <element signature="e#6583#6747#0" expanded="true" />
+                <element signature="e#6821#6972#0" expanded="true" />
+                <element signature="e#7746#8067#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -61,21 +83,12 @@
       <file leaf-file-name="demandDrivenDataFlowHelper.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/demandDrivenDataFlowHelper.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2574">
-              <caret line="117" column="17" selection-start-line="117" selection-start-column="17" selection-end-line="117" selection-end-column="17" />
+            <state relative-caret-position="447">
+              <caret line="110" column="17" selection-start-line="110" selection-start-column="17" selection-end-line="110" selection-end-column="17" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
                 <element signature="e#1326#1368#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="demo.ll" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build/demo.ll">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1320">
-              <caret line="60" column="20" selection-start-line="60" selection-start-column="20" selection-end-line="60" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -95,9 +108,10 @@
         <option value="$PROJECT_DIR$/modular_tests/regexTests.cpp" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/test_script.sh" />
-        <option value="$PROJECT_DIR$/demandDrivenDataFlowHelper.h" />
-        <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/defUseAnalysis.cpp" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/demandDrivenDataFlowHelper.h" />
+        <option value="$PROJECT_DIR$/correlationDetection.cpp" />
       </list>
     </option>
   </component>
@@ -107,10 +121,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="y" value="-4" />
-    <option name="width" value="1920" />
-    <option name="height" value="944" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="50" />
+    <option name="y" value="47" />
+    <option name="width" value="1918" />
+    <option name="height" value="908" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -135,8 +150,8 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="CMakeSettings" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -150,12 +165,113 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.defUseAnalysis">
+  <component name="RunManager" selected="Application.correlationDetection">
     <configuration name="RegexTest.BasicSyntax" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="DemandDrivenDefUseAnalysis" TARGET_NAME="MODULAR_TEST_regexTests" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="DemandDrivenDefUseAnalysis" RUN_TARGET_NAME="MODULAR_TEST_regexTests" TEST_CLASS="RegexTest" TEST_METHOD="BasicSyntax" TEST_MODE="SUITE_TEST" />
     <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="DemandDrivenDefUseAnalysis" RUN_TARGET_NAME="MODULAR_TEST_regexTests" EXPLICIT_BUILD_TARGET_NAME="all" />
+    <configuration name="correlationDetection" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="DemandDrivenDefUseAnalysis" TARGET_NAME="correlationDetection" CONFIG_NAME="Debug" />
     <configuration name="defUseAnalysis" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="DemandDrivenDefUseAnalysis" TARGET_NAME="defUseAnalysis" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="DemandDrivenDefUseAnalysis" RUN_TARGET_NAME="MODULAR_TEST_regexTests" />
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="DemandDrivenDefUseAnalysis" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <module name="DemandDrivenDefUseAnalysis" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <module name="DemandDrivenDefUseAnalysis" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Nosetests">
+      <module name="DemandDrivenDefUseAnalysis" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_regexPattern" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Twisted Trial">
+      <module name="DemandDrivenDefUseAnalysis" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <module name="DemandDrivenDefUseAnalysis" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="py.test">
+      <module name="DemandDrivenDefUseAnalysis" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+    </configuration>
     <list>
       <item itemvalue="Application.Build All" />
+      <item itemvalue="Application.correlationDetection" />
       <item itemvalue="Application.defUseAnalysis" />
       <item itemvalue="Google Test.RegexTest.BasicSyntax" />
     </list>
@@ -182,35 +298,36 @@
       <workItem from="1522000947669" duration="4761000" />
       <workItem from="1522033974924" duration="7280000" />
       <workItem from="1522420405224" duration="377000" />
-      <workItem from="1522420799133" duration="4465000" />
+      <workItem from="1522420799133" duration="15584000" />
+      <workItem from="1522596144610" duration="7095000" />
+      <workItem from="1522609076705" duration="9750000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37098000" />
+    <option name="totallyTimeSpent" value="65062000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="-11" width="1922" height="952" extended-state="7" />
-    <editor active="true" />
+    <frame x="0" y="-4" width="1920" height="944" extended-state="6" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17817606" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info active="true" anchor="bottom" id="CMake" order="7" sideWeight="0.49815497" visible="true" weight="0.32595325" />
+      <window_info anchor="bottom" id="CMake" order="7" sideWeight="0.49815497" weight="0.32515338" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.501845" side_tool="true" weight="0.32883435" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32883435" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32883435" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32883435" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49815497" weight="0.32841328" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.49815497" visible="true" weight="0.32841328" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3296433" />
       <window_info anchor="bottom" id="Messages" order="7" weight="0.32883435" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3296433" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -227,17 +344,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+    <entry file="file://$PROJECT_DIR$/correlationDetection.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="990">
-          <caret line="45" column="83" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="89" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_script.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="1" column="25" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
+        <state relative-caret-position="2816">
+          <caret line="128" column="40" selection-start-line="128" selection-start-column="40" selection-end-line="128" selection-end-column="40" />
+          <folding>
+            <element signature="e#131#153#0" expanded="true" />
+            <element signature="e#850#874#0" expanded="true" />
+            <element signature="e#4079#4268#0" expanded="true" />
+            <element signature="e#5868#5990#0" expanded="true" />
+            <element signature="e#6583#6747#0" expanded="true" />
+            <element signature="e#6821#6972#0" expanded="true" />
+            <element signature="e#7746#8067#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -447,10 +566,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test_script.sh" />
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/defUseAnalysis.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="169" column="15" selection-start-line="169" selection-end-line="173" selection-end-column="49" />
+          <folding>
+            <element signature="e#131#153#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/demandDrivenDataFlowHelper.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2574">
-          <caret line="117" column="17" selection-start-line="117" selection-start-column="17" selection-end-line="117" selection-end-column="17" />
+        <state relative-caret-position="447">
+          <caret line="110" column="17" selection-start-line="110" selection-start-column="17" selection-end-line="110" selection-end-column="17" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
             <element signature="e#1326#1368#0" expanded="true" />
@@ -458,26 +595,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test_script.sh">
+    <entry file="file://$PROJECT_DIR$/correlationDetection.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="1" column="25" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-110">
-          <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/defUseAnalysis.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1254">
-          <caret line="63" column="62" selection-start-line="63" selection-start-column="62" selection-end-line="63" selection-end-column="62" />
+        <state relative-caret-position="249">
+          <caret line="352" column="50" selection-start-line="352" selection-start-column="50" selection-end-line="352" selection-end-column="50" />
           <folding>
             <element signature="e#131#153#0" expanded="true" />
+            <element signature="e#850#874#0" expanded="true" />
+            <element signature="e#4079#4268#0" expanded="true" />
+            <element signature="e#5868#5990#0" expanded="true" />
+            <element signature="e#6583#6747#0" expanded="true" />
+            <element signature="e#6821#6972#0" expanded="true" />
+            <element signature="e#7746#8067#0" expanded="true" />
           </folding>
         </state>
       </provider>

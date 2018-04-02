@@ -41,7 +41,7 @@ namespace {
         QueryInfo(const Instruction* I, const std::string& V) : QueryS(I), Use(I), Variable(V){}
     };
 
-    struct DefUseAnalysis : public FunctionPass {
+    struct CorrelatedBranchDetection : public FunctionPass {
         static char ID;
 
         StatementDefUseInfoMap DefUseMap;
@@ -52,7 +52,7 @@ namespace {
         // StringRef V;
         // const Instruction *QueryS = nullptr;
 
-        DefUseAnalysis() : FunctionPass(ID){
+        CorrelatedBranchDetection() : FunctionPass(ID){
 
         }
 
@@ -167,8 +167,8 @@ namespace {
         }
     };
 
-    char DefUseAnalysis::ID = 0;
-    static RegisterPass<DefUseAnalysis> X("defUse",
+    char CorrelatedBranchDetection::ID = 0;
+    static RegisterPass<CorrelatedBranchDetection> X("defUse",
                                           "Def-Use Analysis",
                                           false,
                                           false);
