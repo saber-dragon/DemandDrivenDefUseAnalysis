@@ -15,8 +15,128 @@
     <list default="true" id="95933ac1-ca2f-4b7f-8779-0cc6418c6b7a" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/correlationDetection.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/correlationDetection.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/_build/CMakeCache.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/_build/CMakeFiles/3.5.1/CMakeCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/_build/CMakeFiles/3.5.1/CMakeCXXCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/_build/CMakeFiles/3.5.1/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/_build/CMakeFiles/3.5.1/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/_build/CMakeFiles/3.5.1/CMakeSystem.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/_build/CMakeFiles/3.5.1/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/_build/CMakeFiles/3.5.1/CompilerIdC/a.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/_build/CMakeFiles/3.5.1/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/_build/CMakeFiles/3.5.1/CompilerIdCXX/a.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/_build/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/_build/CMakeFiles/CMakeOutput.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/_build/CMakeFiles/CMakeRuleHashes.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/_build/CMakeFiles/TargetDirectories.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/_build/CMakeFiles/cmake.check_cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/_build/CMakeFiles/feature_tests.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/_build/CMakeFiles/feature_tests.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/_build/CMakeFiles/feature_tests.cxx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/_build/CMakeFiles/progress.marks" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/_build/cmake_install.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/_build/src/CMakeFiles/CFGFile.dir/DependInfo.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/_build/src/CMakeFiles/CFGFile.dir/build.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/_build/src/CMakeFiles/CFGFile.dir/cmake_clean.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/_build/src/CMakeFiles/CFGFile.dir/depend.internal" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/_build/src/CMakeFiles/CFGFile.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/_build/src/CMakeFiles/CFGFile.dir/progress.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/_build/src/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/_build/src/CMakeFiles/LLFile.dir/DependInfo.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/_build/src/CMakeFiles/LLFile.dir/build.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/_build/src/CMakeFiles/LLFile.dir/cmake_clean.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/_build/src/CMakeFiles/LLFile.dir/depend.internal" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/_build/src/CMakeFiles/LLFile.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/_build/src/CMakeFiles/LLFile.dir/progress.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/_build/src/CMakeFiles/PNGFile.dir/DependInfo.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/_build/src/CMakeFiles/PNGFile.dir/build.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/_build/src/CMakeFiles/PNGFile.dir/cmake_clean.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/_build/src/CMakeFiles/PNGFile.dir/depend.internal" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/_build/src/CMakeFiles/PNGFile.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/_build/src/CMakeFiles/PNGFile.dir/progress.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/_build/src/CMakeFiles/progress.marks" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/_build/src/cfg._Z3fooi.dot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/_build/src/cmake_install.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/_build/src/foo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/_build/src/infeasePathToyExample.ll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/build2/CMakeCache.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/build2/CMakeFiles/3.5.1/CMakeCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/build2/CMakeFiles/3.5.1/CMakeCXXCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/build2/CMakeFiles/3.5.1/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/build2/CMakeFiles/3.5.1/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/build2/CMakeFiles/3.5.1/CMakeSystem.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/build2/CMakeFiles/3.5.1/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/build2/CMakeFiles/3.5.1/CompilerIdC/a.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/build2/CMakeFiles/3.5.1/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/build2/CMakeFiles/3.5.1/CompilerIdCXX/a.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/build2/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/build2/CMakeFiles/CMakeOutput.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/build2/CMakeFiles/CMakeRuleHashes.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/build2/CMakeFiles/TargetDirectories.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/build2/CMakeFiles/cmake.check_cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/build2/CMakeFiles/feature_tests.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/build2/CMakeFiles/feature_tests.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/build2/CMakeFiles/feature_tests.cxx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/build2/CMakeFiles/progress.marks" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/build2/cfg._Z3foov.dot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/build2/cmake_install.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/build2/foo_simplest.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/build2/src/CMakeFiles/CFGFile_simplest.dir/DependInfo.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/build2/src/CMakeFiles/CFGFile_simplest.dir/build.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/build2/src/CMakeFiles/CFGFile_simplest.dir/cmake_clean.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/build2/src/CMakeFiles/CFGFile_simplest.dir/depend.internal" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/build2/src/CMakeFiles/CFGFile_simplest.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/build2/src/CMakeFiles/CFGFile_simplest.dir/progress.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/build2/src/CMakeFiles/CFGFile_welcome.dir/DependInfo.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/build2/src/CMakeFiles/CFGFile_welcome.dir/build.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/build2/src/CMakeFiles/CFGFile_welcome.dir/cmake_clean.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/build2/src/CMakeFiles/CFGFile_welcome.dir/depend.internal" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/build2/src/CMakeFiles/CFGFile_welcome.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/build2/src/CMakeFiles/CFGFile_welcome.dir/progress.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/build2/src/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/build2/src/CMakeFiles/LLFile_simplest.dir/DependInfo.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/build2/src/CMakeFiles/LLFile_simplest.dir/build.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/build2/src/CMakeFiles/LLFile_simplest.dir/cmake_clean.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/build2/src/CMakeFiles/LLFile_simplest.dir/depend.internal" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/build2/src/CMakeFiles/LLFile_simplest.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/build2/src/CMakeFiles/LLFile_simplest.dir/progress.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/build2/src/CMakeFiles/LLFile_welcome.dir/DependInfo.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/build2/src/CMakeFiles/LLFile_welcome.dir/build.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/build2/src/CMakeFiles/LLFile_welcome.dir/cmake_clean.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/build2/src/CMakeFiles/LLFile_welcome.dir/depend.internal" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/build2/src/CMakeFiles/LLFile_welcome.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/build2/src/CMakeFiles/LLFile_welcome.dir/progress.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/build2/src/CMakeFiles/PNGFile_simplest.dir/DependInfo.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/build2/src/CMakeFiles/PNGFile_simplest.dir/build.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/build2/src/CMakeFiles/PNGFile_simplest.dir/cmake_clean.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/build2/src/CMakeFiles/PNGFile_simplest.dir/depend.internal" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/build2/src/CMakeFiles/PNGFile_simplest.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/build2/src/CMakeFiles/PNGFile_simplest.dir/progress.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/build2/src/CMakeFiles/PNGFile_welcome.dir/DependInfo.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/build2/src/CMakeFiles/PNGFile_welcome.dir/build.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/build2/src/CMakeFiles/PNGFile_welcome.dir/cmake_clean.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/build2/src/CMakeFiles/PNGFile_welcome.dir/depend.internal" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/build2/src/CMakeFiles/PNGFile_welcome.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/build2/src/CMakeFiles/PNGFile_welcome.dir/progress.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/build2/src/CMakeFiles/progress.marks" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/build2/src/cfg._Z3fooi.dot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/build2/src/cfg._Z3foov.dot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/build2/src/cmake_install.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/build2/src/foo_simplest.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/build2/src/foo_welcome.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/build2/src/infeasePath_simplest.ll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/build2/src/infeasePath_welcome.ll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/build2/tmp.dot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/nbproject/configurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/nbproject/private/CodeAssistancePathMapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/nbproject/private/Debug.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/nbproject/private/c_standard_headers_indexer.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/nbproject/private/configurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/nbproject/private/cpp_standard_headers_indexer.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/nbproject/private/launcher.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/nbproject/private/private.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/nbproject/project.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/genToyExample/src/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests/genToyExample/src/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/genToyExample/src/welcome.h" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -62,8 +182,8 @@
       <file leaf-file-name="correlationDetection.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/correlationDetection.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="191" column="45" lean-forward="true" selection-start-line="191" selection-start-column="20" selection-end-line="191" selection-end-column="45" />
+            <state relative-caret-position="395">
+              <caret line="284" column="17" selection-start-line="284" selection-start-column="17" selection-end-line="284" selection-end-column="17" />
               <folding>
                 <element signature="e#131#153#0" expanded="true" />
                 <element signature="e#850#874#0" expanded="true" />
@@ -298,12 +418,12 @@
       <workItem from="1522420405224" duration="377000" />
       <workItem from="1522420799133" duration="15584000" />
       <workItem from="1522596144610" duration="7095000" />
-      <workItem from="1522609076705" duration="18982000" />
+      <workItem from="1522609076705" duration="20444000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74294000" />
+    <option name="totallyTimeSpent" value="75756000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-4" width="1912" height="944" extended-state="6" />
@@ -596,8 +716,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/correlationDetection.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="191" column="45" lean-forward="true" selection-start-line="191" selection-start-column="20" selection-end-line="191" selection-end-column="45" />
+        <state relative-caret-position="395">
+          <caret line="284" column="17" selection-start-line="284" selection-start-column="17" selection-end-line="284" selection-end-column="17" />
           <folding>
             <element signature="e#131#153#0" expanded="true" />
             <element signature="e#850#874#0" expanded="true" />

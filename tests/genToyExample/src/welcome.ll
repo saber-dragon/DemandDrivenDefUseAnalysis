@@ -1,5 +1,5 @@
-; ModuleID = '/home/saber/GitHub/genToyExample/src/welcome.cc'
-source_filename = "/home/saber/GitHub/genToyExample/src/welcome.cc"
+; ModuleID = 'welcome.cc'
+source_filename = "welcome.cc"
 target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-unknown-linux-gnu"
 

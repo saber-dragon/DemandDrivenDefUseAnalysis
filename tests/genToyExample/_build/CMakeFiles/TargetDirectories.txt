@@ -1,7 +1,0 @@
-/home/saber/GitHub/genToyExample/_build/CMakeFiles/edit_cache.dir
-/home/saber/GitHub/genToyExample/_build/CMakeFiles/rebuild_cache.dir
-/home/saber/GitHub/genToyExample/_build/src/CMakeFiles/edit_cache.dir
-/home/saber/GitHub/genToyExample/_build/src/CMakeFiles/LLFile.dir
-/home/saber/GitHub/genToyExample/_build/src/CMakeFiles/CFGFile.dir
-/home/saber/GitHub/genToyExample/_build/src/CMakeFiles/rebuild_cache.dir
-/home/saber/GitHub/genToyExample/_build/src/CMakeFiles/PNGFile.dir

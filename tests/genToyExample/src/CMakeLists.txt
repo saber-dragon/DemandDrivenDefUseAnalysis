@@ -15,9 +15,9 @@ foreach(src ${SRCs})
     add_custom_target(CFGFile_${name_woe} ALL
                       COMMAND bash -c "opt -dot-cfg-only ${llFileName} -o tmp.dot >/dev/null"
                       DEPENDS LLFile_${name_woe})
-    add_custom_target(PNGFile_${name_woe} ALL
-                      COMMAND bash -c "dot -Tpng -o ${pngName} *.dot"
-                      DEPENDS CFGFile_${name_woe})
+    # add_custom_target(PNGFile_${name_woe} ALL
+    #                   COMMAND bash -c "dot -Tpng -o ${pngName} *.dot"
+    #                   DEPENDS CFGFile_${name_woe})
 endforeach()
 
 

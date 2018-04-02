@@ -192,9 +192,14 @@ namespace {
                     if (predsLocal.empty()) {
                         _A[queryPair] = std::set<query_anwser>({query_anwser::UNDEF});
                     } else {
+                        errs() << "I am " << saber::toString(worklistEntry._n) << " with query :\n";
+                        errs() << _allQueries[worklistEntry._qId] << "\n";
+                        errs() << "My papa: \n";
                         for (auto& p: predsLocal) {
+                            errs() << saber::toString(p) << " ";
                             raise_query(p, worklistEntry._n, subsititue(worklistEntry._n, worklistEntry._qId));
                         }
+                        errs() << "\n";
                     }
                 }
 
@@ -262,6 +267,7 @@ namespace {
         size_t subsititue(Instruction *n, size_t qId){
             std::pair<Instruction*, size_t> p=std::make_pair(n, qId);
             if (_substitutionCache.find(p) == _substitutionCache.end()){
+                _substitutionCache[p] = qId;
                 if (auto *SI=dyn_cast<StoreInst>(n)) {
                     if (_defUsesAtEachInst[n]->def.compare(_allQueries[qId]._variable) == 0) {
                         query_t newQ(_allQueries[qId]);
@@ -276,8 +282,6 @@ namespace {
                         _allQueries.push_back(newQ);
                         _substitutionCache[p] = _allQueries.size() - 1;
                     }
-                }  else {
-                    _substitutionCache[p] = qId;
                 }
             }
 
