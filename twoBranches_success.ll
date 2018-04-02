@@ -14,7 +14,7 @@ entry:
 
 L1:                                               ; preds = %if.end4, %entry
   %0 = load i32, i32* %x.addr, align 4
-  %cmp = icmp slt i32 %0, 0
+  %cmp = icmp sgt i32 %0, 9
   br i1 %cmp, label %if.then, label %if.else
 
 if.then:                                          ; preds = %L1

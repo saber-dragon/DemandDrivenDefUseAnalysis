@@ -323,9 +323,8 @@ namespace {
                 if (BI->isConditional()) {
                     StringRef branchVariable(_defUsesAtEachInst[n]->uses[0]);
                     Instruction* parent = n->getPrevNode();
-                    if (parent != nullptr) {
+                    if (parent) {
                         qa = try2Resolve(parent, dyn_cast<TerminatorInst>(n), m, qId);
-//                        if (qa != query_anwser::OTHER) start = parent;
                     }
 //                    size_t counter = 0;
 //                    while (parent != nullptr && _defUsesAtEachInst[parent]->def.compare(branchVariable) != 0 && counter < maximumExploreDistance) {
@@ -364,16 +363,38 @@ namespace {
             query_anwser qa = query_anwser::OTHER;
             auto *CI = dyn_cast<CmpInst>(PredI);
             if (CI == nullptr) return qa;
-            if (CI->getPredicate() == _allQueries[qId]._predicate && _defUsesAtEachInst[PredI]->uses[0].compare(_allQueries[qId]._variable) == 0) {
-                Value *operand = CI->getOperand(CI->getNumOperands() - 1);
-                if (Constant *C = dyn_cast<Constant>(operand)) {
-                    if (CurrentI->getSuccessor(0) == SuccI->getParent())
-                        qa = ConstantExpr::getCompare(_allQueries[qId]._predicate, C, _allQueries[qId]._constant, true)->isOneValue() ?
-                             query_anwser::TRUE : query_anwser::OTHER;
-                    else
-                        qa = ConstantExpr::getCompare(_allQueries[qId]._predicate, _allQueries[qId]._constant, C, true)->isOneValue() ?
-                             query_anwser::FALSE : query_anwser::OTHER;
+
+            if (CI->getPredicate() == _allQueries[qId]._predicate) {
+                errs() << "trying to resolve:\n " << _allQueries[qId] << " at " << saber::toString(CurrentI) << "\n";
+                if (_defUsesAtEachInst[PredI]->uses[0].compare(_allQueries[qId]._variable) == 0) {
+                    qa = resloveIt(CurrentI, CI, SuccI, qId);
+                } else {
+                    auto *grandma = dyn_cast<LoadInst>(PredI->getPrevNode());
+                    errs() << "My grandma is : " << saber::toString(grandma) << "\n";
+                    errs() << *_defUsesAtEachInst[grandma] << "\n";
+                    if (grandma &&
+                            _defUsesAtEachInst[grandma]->uses[0].compare(_allQueries[qId]._variable) == 0 &&
+                            _defUsesAtEachInst[grandma]->def.compare(_defUsesAtEachInst[PredI]->uses[0]) == 0) {
+                        qa = resloveIt(CurrentI, CI, SuccI, qId);
+                    }
                 }
+            }
+            return qa;
+        }
+        query_anwser resloveIt(TerminatorInst* CurrentI, CmpInst* CI, Instruction* SuccI, size_t qId){
+            Value *operand = CI->getOperand(CI->getNumOperands() - 1);
+            query_anwser qa = query_anwser::OTHER;
+            errs() << "resolvIt : " << saber::toString(operand) << "\n";
+            if (Constant *C = dyn_cast<Constant>(operand)) {
+                errs() << CurrentI->getSuccessor(0)->getName() << " ? " << SuccI->getParent()->getName() << "\n";
+                if (CurrentI->getSuccessor(0) == SuccI->getParent())
+                    qa = ConstantExpr::getCompare(_allQueries[qId]._predicate, C, _allQueries[qId]._constant,
+                                                  true)->isOneValue() ?
+                         query_anwser::TRUE : query_anwser::OTHER;
+                else
+                    qa = ConstantExpr::getCompare(_allQueries[qId]._predicate, _allQueries[qId]._constant, C,
+                                                  true)->isOneValue() ?
+                         query_anwser::FALSE : query_anwser::OTHER;
             }
             return qa;
         }

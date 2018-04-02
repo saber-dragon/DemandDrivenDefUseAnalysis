@@ -1,7 +1,7 @@
 void foo(int x, int y){
 
     L1: { 
-        if (x > 9) {
+        if (x < 0) {
             y = 10;
         } else {
             y = 0;
