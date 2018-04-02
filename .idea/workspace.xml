@@ -13,13 +13,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="95933ac1-ca2f-4b7f-8779-0cc6418c6b7a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/defUseAnalysis.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/defUseAnalysis.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demandDrivenDataFlowHelper.h" beforeDir="false" afterPath="$PROJECT_DIR$/demandDrivenDataFlowHelper.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo.ll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_script.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/correlationDetection.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/correlationDetection.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/src/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests/genToyExample/src/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/genToyExample/src/welcome.h" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -65,16 +62,17 @@
       <file leaf-file-name="correlationDetection.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/correlationDetection.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="352" column="50" selection-start-line="352" selection-start-column="50" selection-end-line="352" selection-end-column="50" />
+            <state relative-caret-position="285">
+              <caret line="191" column="45" lean-forward="true" selection-start-line="191" selection-start-column="20" selection-end-line="191" selection-end-column="45" />
               <folding>
                 <element signature="e#131#153#0" expanded="true" />
                 <element signature="e#850#874#0" expanded="true" />
-                <element signature="e#4079#4268#0" expanded="true" />
-                <element signature="e#5868#5990#0" expanded="true" />
-                <element signature="e#6583#6747#0" expanded="true" />
-                <element signature="e#6821#6972#0" expanded="true" />
-                <element signature="e#7746#8067#0" expanded="true" />
+                <element signature="e#3690#3860#0" expanded="true" />
+                <element signature="e#4694#4883#0" expanded="true" />
+                <element signature="e#6483#6605#0" expanded="true" />
+                <element signature="e#7198#7362#0" expanded="true" />
+                <element signature="e#7436#7587#0" expanded="true" />
+                <element signature="e#8361#8682#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -83,7 +81,7 @@
       <file leaf-file-name="demandDrivenDataFlowHelper.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/demandDrivenDataFlowHelper.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="447">
+            <state relative-caret-position="1305">
               <caret line="110" column="17" selection-start-line="110" selection-start-column="17" selection-end-line="110" selection-end-column="17" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
@@ -300,24 +298,24 @@
       <workItem from="1522420405224" duration="377000" />
       <workItem from="1522420799133" duration="15584000" />
       <workItem from="1522596144610" duration="7095000" />
-      <workItem from="1522609076705" duration="9750000" />
+      <workItem from="1522609076705" duration="18982000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65062000" />
+    <option name="totallyTimeSpent" value="74294000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="-4" width="1920" height="944" extended-state="6" />
+    <frame x="0" y="-4" width="1912" height="944" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17817606" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1503441" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="CMake" order="7" sideWeight="0.49815497" weight="0.32515338" />
+      <window_info anchor="bottom" id="CMake" order="7" sideWeight="0.49815497" weight="0.32472324" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.501845" side_tool="true" weight="0.32883435" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32883435" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32883435" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.49815497" visible="true" weight="0.32841328" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.49815497" visible="true" weight="0.28413284" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -351,11 +349,12 @@
           <folding>
             <element signature="e#131#153#0" expanded="true" />
             <element signature="e#850#874#0" expanded="true" />
-            <element signature="e#4079#4268#0" expanded="true" />
-            <element signature="e#5868#5990#0" expanded="true" />
-            <element signature="e#6583#6747#0" expanded="true" />
-            <element signature="e#6821#6972#0" expanded="true" />
-            <element signature="e#7746#8067#0" expanded="true" />
+            <element signature="e#3690#3860#0" expanded="true" />
+            <element signature="e#4694#4883#0" expanded="true" />
+            <element signature="e#6483#6605#0" expanded="true" />
+            <element signature="e#7198#7362#0" expanded="true" />
+            <element signature="e#7436#7587#0" expanded="true" />
+            <element signature="e#8361#8682#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -586,7 +585,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/demandDrivenDataFlowHelper.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
+        <state relative-caret-position="1305">
           <caret line="110" column="17" selection-start-line="110" selection-start-column="17" selection-end-line="110" selection-end-column="17" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
@@ -597,16 +596,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/correlationDetection.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="352" column="50" selection-start-line="352" selection-start-column="50" selection-end-line="352" selection-end-column="50" />
+        <state relative-caret-position="285">
+          <caret line="191" column="45" lean-forward="true" selection-start-line="191" selection-start-column="20" selection-end-line="191" selection-end-column="45" />
           <folding>
             <element signature="e#131#153#0" expanded="true" />
             <element signature="e#850#874#0" expanded="true" />
-            <element signature="e#4079#4268#0" expanded="true" />
-            <element signature="e#5868#5990#0" expanded="true" />
-            <element signature="e#6583#6747#0" expanded="true" />
-            <element signature="e#6821#6972#0" expanded="true" />
-            <element signature="e#7746#8067#0" expanded="true" />
+            <element signature="e#3690#3860#0" expanded="true" />
+            <element signature="e#4694#4883#0" expanded="true" />
+            <element signature="e#6483#6605#0" expanded="true" />
+            <element signature="e#7198#7362#0" expanded="true" />
+            <element signature="e#7436#7587#0" expanded="true" />
+            <element signature="e#8361#8682#0" expanded="true" />
           </folding>
         </state>
       </provider>

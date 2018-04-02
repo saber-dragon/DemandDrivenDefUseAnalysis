@@ -112,6 +112,7 @@ namespace {
     struct CorrelatedBranchDetection : public FunctionPass {
         static char ID;
 
+        const size_t maximumExploreDistance = 4;
         std::vector<query_t> _allQueries;
         std::unordered_map<Instruction*, std::unique_ptr<saber::StatementDefUseInfo> > _defUsesAtEachInst;
         std::unordered_map<std::pair<Instruction *, size_t /* query index */>, size_t /* query index */, pairhash_t> _substitutionCache;
@@ -132,6 +133,11 @@ namespace {
 
             for (auto B=F.begin(), BE=F.end();B!=BE;++B){
                 Instruction *cmpS = extractBranchWithSimplePredicate(B->getTerminator());
+#ifdef DEBUG
+                errs() << "Extract cmp instruction: "
+                       << saber::toString(cmpS)
+                       << " from " << saber::toString(B->getTerminator()) << "\n\n";
+#endif
                 if (cmpS ){
                     auto tmp=isSimpleCmpInst(cmpS);
                     if (std::get<0>(tmp)) {
@@ -175,16 +181,20 @@ namespace {
             while (!_worklist.empty()) {
                 auto worklistEntry = _worklist.front();
                 _worklist.pop_front();
-                SmallVector<Instruction*, 4> predsLocal;
-                auto ans = resolve(worklistEntry._n, worklistEntry._m, worklistEntry._qId, predsLocal);
+
+                auto ans = resolve(worklistEntry._n, worklistEntry._m, worklistEntry._qId);
                 std::pair<Instruction*, size_t> queryPair=std::make_pair(worklistEntry._n, worklistEntry._qId);
                 if (ans != query_anwser::OTHER) {
                     _A[queryPair] = std::set<query_anwser >({ans});
-                } else if (predsLocal.empty()){
-                    _A[queryPair] = std::set<query_anwser >({query_anwser::UNDEF});
                 } else {
-                    for (auto& p: predsLocal){
-                        raise_query(p, n, subsititue(worklistEntry._n, worklistEntry._qId));
+                    SmallVector<Instruction*, 4> predsLocal;
+                    getPreds(worklistEntry._n, predsLocal);
+                    if (predsLocal.empty()) {
+                        _A[queryPair] = std::set<query_anwser>({query_anwser::UNDEF});
+                    } else {
+                        for (auto& p: predsLocal) {
+                            raise_query(p, worklistEntry._n, subsititue(worklistEntry._n, worklistEntry._qId));
+                        }
                     }
                 }
 
@@ -200,7 +210,6 @@ namespace {
 #endif
                     StringRef branchVariable(_defUsesAtEachInst[TI]->uses[0]);
                     Instruction* parent = TI->getPrevNode();
-                    const size_t maximumExploreDistance = 4;
                     size_t counter = 0;
                     while (parent != nullptr && _defUsesAtEachInst[parent]->def.compare(branchVariable) != 0 && counter < maximumExploreDistance) {
                         parent = parent->getPrevNode();
@@ -260,6 +269,13 @@ namespace {
                         _allQueries.push_back(newQ);
                         _substitutionCache[p] = _allQueries.size() - 1;
                     }
+                }  else if (auto *LI = dyn_cast<LoadInst>(n)){
+                    if (_defUsesAtEachInst[n]->def.compare(_allQueries[qId]._variable) == 0) {
+                        query_t newQ(_allQueries[qId]);
+                        newQ._variable = _defUsesAtEachInst[n]->uses[0];
+                        _allQueries.push_back(newQ);
+                        _substitutionCache[p] = _allQueries.size() - 1;
+                    }
                 }  else {
                     _substitutionCache[p] = qId;
                 }
@@ -278,54 +294,85 @@ namespace {
         /**
          *
          */
-        query_anwser resolve(Instruction *n, Instruction *m, size_t qId, SmallVector<Instruction*, 4>& next){
+        query_anwser resolve(Instruction *n, Instruction *m, size_t qId){
 
             query_anwser qa = query_anwser::OTHER;
-            Instruction *start = n;
+//            Instruction *start = n;
             if (auto *SI = dyn_cast<StoreInst>(n)) {
                 // assignment
+                errs() << "resolve at " << saber::toString(SI) << "\n";
+                errs() << " for " << _allQueries[qId] << "\n";
                 if (_defUsesAtEachInst[n]->def.compare(_allQueries[qId]._variable) == 0){
                     Constant *v = dyn_cast<Constant>(SI->getValueOperand());
+
                     if (v != nullptr ) {
+                        errs() << "Get a constant : "
+                                  << saber::toString(v) << "\n";
+                        errs() << _allQueries[qId] << "\n";
                         qa = ConstantExpr::getCompare(_allQueries[qId]._predicate, v, _allQueries[qId]._constant, true)->isOneValue() ?
                                 query_anwser::TRUE : query_anwser::FALSE;
                     }
                 }
+            } else if (auto *LI = dyn_cast<LoadInst>(n)){
+                // it seems that load instruction cannot assign constant
             } else if (BranchInst *BI = dyn_cast<BranchInst>(n)) {
                 if (BI->isConditional()) {
                     StringRef branchVariable(_defUsesAtEachInst[n]->uses[0]);
                     Instruction* parent = n->getPrevNode();
-                    while (parent != nullptr && _defUsesAtEachInst[n]->def.compare(branchVariable) != 0) {
-                        parent = parent->getPrevNode();
+                    if (parent != nullptr) {
+                        qa = try2Resolve(parent, dyn_cast<TerminatorInst>(n), m, qId);
+//                        if (qa != query_anwser::OTHER) start = parent;
                     }
-                    if (parent == nullptr) {
-                        // do nothing, just ignore this opportunity
-                        errs() << "Failed to find store instruction associated with the branch."
-                               << saber::toString(BI)
-                               << "\n\n";
-                    } else {
-                        if (CmpInst *CI = dyn_cast<CmpInst>(parent)) {
-                            if (CI->getPredicate() == _allQueries[qId]._predicate && _defUsesAtEachInst[n]->uses[0].compare(_allQueries[qId]._variable) == 0) {
-                                Value *operand = CI->getOperand(CI->getNumOperands() - 1);
-                                if (Constant *C = dyn_cast<Constant>(operand)) {
-                                    if (BI->getSuccessor(0) == m->getParent())
-                                       qa = ConstantExpr::getCompare(_allQueries[qId]._predicate, C, _allQueries[qId]._constant, true)->isOneValue() ?
-                                                query_anwser::TRUE : query_anwser::OTHER;
-                                    else
-                                       qa = ConstantExpr::getCompare(_allQueries[qId]._predicate, _allQueries[qId]._constant, C, true)->isOneValue() ?
-                                                query_anwser::FALSE : query_anwser::OTHER;
-                                }
-                                start = parent;
-                            }
-                        }
-                    }
+//                    size_t counter = 0;
+//                    while (parent != nullptr && _defUsesAtEachInst[parent]->def.compare(branchVariable) != 0 && counter < maximumExploreDistance) {
+//                        parent = parent->getPrevNode();
+//                        ++ counter;
+//                    }
+//                    if (parent == nullptr) {
+//                        // do nothing, just ignore this opportunity
+//                        errs() << "Failed to find store instruction associated with the branch."
+//                               << saber::toString(BI)
+//                               << "\n\n";
+//                    } else {
+//                        if (CmpInst *CI = dyn_cast<CmpInst>(parent)) {
+//                            if (CI->getPredicate() == _allQueries[qId]._predicate && _defUsesAtEachInst[n]->uses[0].compare(_allQueries[qId]._variable) == 0) {
+//                                Value *operand = CI->getOperand(CI->getNumOperands() - 1);
+//                                if (Constant *C = dyn_cast<Constant>(operand)) {
+//                                    if (BI->getSuccessor(0) == m->getParent())
+//                                       qa = ConstantExpr::getCompare(_allQueries[qId]._predicate, C, _allQueries[qId]._constant, true)->isOneValue() ?
+//                                                query_anwser::TRUE : query_anwser::OTHER;
+//                                    else
+//                                       qa = ConstantExpr::getCompare(_allQueries[qId]._predicate, _allQueries[qId]._constant, C, true)->isOneValue() ?
+//                                                query_anwser::FALSE : query_anwser::OTHER;
+//                                }
+//                                start = parent;
+//                            }
+//                        }
+//                    }
                 }
             }
 
-            getPreds(start, next);
+//            next.push_back(start);
+//            getPreds(start, next);
             return qa;
         }
-
+        query_anwser try2Resolve(Instruction *PredI, TerminatorInst* CurrentI, Instruction* SuccI, size_t qId) {
+            query_anwser qa = query_anwser::OTHER;
+            auto *CI = dyn_cast<CmpInst>(PredI);
+            if (CI == nullptr) return qa;
+            if (CI->getPredicate() == _allQueries[qId]._predicate && _defUsesAtEachInst[PredI]->uses[0].compare(_allQueries[qId]._variable) == 0) {
+                Value *operand = CI->getOperand(CI->getNumOperands() - 1);
+                if (Constant *C = dyn_cast<Constant>(operand)) {
+                    if (CurrentI->getSuccessor(0) == SuccI->getParent())
+                        qa = ConstantExpr::getCompare(_allQueries[qId]._predicate, C, _allQueries[qId]._constant, true)->isOneValue() ?
+                             query_anwser::TRUE : query_anwser::OTHER;
+                    else
+                        qa = ConstantExpr::getCompare(_allQueries[qId]._predicate, _allQueries[qId]._constant, C, true)->isOneValue() ?
+                             query_anwser::FALSE : query_anwser::OTHER;
+                }
+            }
+            return qa;
+        }
         void getPreds(Instruction *I, SmallVector<Instruction*, 4>& preds){
             if (auto p = I->getPrevNode()){
                 preds.push_back(p);
@@ -333,7 +380,10 @@ namespace {
                 auto b = I->getParent();
                 for (auto it=pred_begin(b),et=pred_end(b);it!=et;++it) {
                     BasicBlock *pb = *it;
+
                     preds.push_back(&(pb->back()));
+//                    errs() << saber::toString(&(pb->back()))
+//                           << "\n";
                 }
             }
         }

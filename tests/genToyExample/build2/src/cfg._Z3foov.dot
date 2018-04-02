@@ -1,0 +1,14 @@
+digraph "CFG for '_Z3foov' function" {
+	label="CFG for '_Z3foov' function";
+
+	Node0x771c8e0 [shape=record,label="{entry:\l  %x = alloca i32, align 4\l  %y = alloca i32, align 4\l  store i32 10, i32* %x, align 4\l  store i32 9, i32* %y, align 4\l  br label %L1\l}"];
+	Node0x771c8e0 -> Node0x771d2a0;
+	Node0x771d2a0 [shape=record,label="{L1:                                               \l  %0 = load i32, i32* %x, align 4\l  %cmp = icmp sgt i32 %0, 9\l  br i1 %cmp, label %if.then, label %if.else\l|{<s0>T|<s1>F}}"];
+	Node0x771d2a0:s0 -> Node0x771d490;
+	Node0x771d2a0:s1 -> Node0x771d560;
+	Node0x771d490 [shape=record,label="{if.then:                                          \l  store i32 10, i32* %y, align 4\l  br label %if.end\l}"];
+	Node0x771d490 -> Node0x771d740;
+	Node0x771d560 [shape=record,label="{if.else:                                          \l  store i32 0, i32* %y, align 4\l  br label %if.end\l}"];
+	Node0x771d560 -> Node0x771d740;
+	Node0x771d740 [shape=record,label="{if.end:                                           \l  ret void\l}"];
+}
