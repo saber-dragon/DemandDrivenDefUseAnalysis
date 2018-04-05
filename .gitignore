@@ -75,5 +75,7 @@ Thumbs.db
 build
 cmake-build-debug
 build-*
+.vscode
+.idea
 
 
