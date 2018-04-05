@@ -74,5 +74,6 @@ Thumbs.db
 # Temporary 
 build
 cmake-build-debug
+build-*
 
 
