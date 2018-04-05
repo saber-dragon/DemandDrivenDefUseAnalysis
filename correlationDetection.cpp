@@ -1,5 +1,5 @@
 /*
- * Filename : 
+ * Filename : correlationDetection.cpp
  *
  * Description :
  *
@@ -111,19 +111,24 @@ namespace {
     struct CorrelatedBranchDetection : public FunctionPass {
 
         //
-        using CFGEdge = std::pair<Instruction*, Instruction*>;
+        using Edge = std::pair<Instruction*, Instruction*>;
         using DefUsePropertyMap = std::unordered_map<Instruction*, std::unique_ptr<saber::StatementDefUseInfo> >;
         using SubstituteMap = std::unordered_map<std::pair<Instruction *, size_t /* query index */>, size_t /* query index */, pairhash_t>;
-        using QueryMap = std::unordered_map<Instruction *, std::set<size_t /* query index */> >;
+        // using QueryMap = std::unordered_map<Instruction *, std::set<size_t /* query index */> >;
+        // change key from "Instruction *" to std::pair<Instruction *, Instruction *>
+        // to solve the possible ambiguous issues caused by diamond-style sub-graph
+        // in the CFG. For example,
+        using QueryMap = std::unordered_map<Edge, std::set<size_t /* query index */> >;
         using QueryAnswerMap = std::unordered_map<std::pair<Instruction *, size_t /* query index */>, std::set<query_anwser>, pairhash_t >;
 
+#define Use(inst) _defUsesAtEachInst[inst]->uses
+#define Def(inst) _defUsesAtEachInst[inst]->def
         static char ID;
 
 //        const size_t maximumExploreDistance = 4;
         std::vector<query_t> _allQueries;
         DefUsePropertyMap _defUsesAtEachInst;
         SubstituteMap _substitutionCache;
-
 
         QueryMap _Q;
         std::list<worklist_entry_t> _worklist;
@@ -267,9 +272,9 @@ namespace {
 #endif
                 return std::make_tuple(C != nullptr,_defUsesAtEachInst[cmp]->uses[0], C, CI->getPredicate());
             }
-            return std::make_tuple(false, "", (Constant *)nullptr, CI->getPredicate());
+            return std::make_tuple(false, "", static_cast<Constant *>(nullptr), CI->getPredicate());
         }
-
+        // substitute the variable in the query if necessary
         size_t substitute(Instruction *n, size_t qId){
             std::pair<Instruction*, size_t> p=std::make_pair(n, qId);
             if (_substitutionCache.find(p) == _substitutionCache.end()){
@@ -295,9 +300,10 @@ namespace {
         }
 
         void raise_query(Instruction *n, Instruction *m, size_t qId){
-            if (_Q.find(n) == _Q.end()){_Q[n] = std::set<size_t>();}
-            if (_Q[n].find(qId) == _Q[n].end()) {
-                _Q[n].insert(qId);
+            auto e = std::make_pair(n, m);
+            if (_Q.find(e) == _Q.end()){_Q[e] = std::set<size_t>();}
+            if (_Q[e].find(qId) == _Q[n].end()) {
+                _Q[e].insert(qId);
                 _worklist.emplace_back(n, m, qId);
             }
         }
@@ -305,67 +311,50 @@ namespace {
          *
          */
         query_anwser resolve(Instruction *n, Instruction *m, size_t qId){
-
             query_anwser qa = query_anwser::OTHER;
-//            Instruction *start = n;
             if (auto *SI = dyn_cast<StoreInst>(n)) {
-                // assignment
-                errs() << "resolve at " << saber::toString(SI) << "\n";
-                errs() << " for " << _allQueries[qId] << "\n";
-                if (_defUsesAtEachInst[n]->def.compare(_allQueries[qId]._variable) == 0){
-                    Constant *v = dyn_cast<Constant>(SI->getValueOperand());
-
-                    if (v != nullptr ) {
-                        errs() << "Get a constant : "
-                                  << saber::toString(v) << "\n";
-                        errs() << _allQueries[qId] << "\n";
-                        qa = ConstantExpr::getCompare(_allQueries[qId]._predicate, v, _allQueries[qId]._constant, true)->isOneValue() ?
-                                query_anwser::TRUE : query_anwser::FALSE;
-                    }
-                }
+                // constant assignment
+                qa = resolveByCostantAssignment(SI, qId);
             } else if (auto *LI = dyn_cast<LoadInst>(n)){
                 // it seems that load instruction cannot assign constant
             } else if (BranchInst *BI = dyn_cast<BranchInst>(n)) {
+                // subsume conditionals
                 if (BI->isConditional()) {
                     StringRef branchVariable(_defUsesAtEachInst[n]->uses[0]);
                     Instruction* parent = n->getPrevNode();
                     if (parent) {
-                        qa = try2Resolve(parent, dyn_cast<TerminatorInst>(n), m, qId);
+                        qa = resolveBySubsumeConditionals(parent, dyn_cast<TerminatorInst>(n), m, qId);
                     }
-//                    size_t counter = 0;
-//                    while (parent != nullptr && _defUsesAtEachInst[parent]->def.compare(branchVariable) != 0 && counter < maximumExploreDistance) {
-//                        parent = parent->getPrevNode();
-//                        ++ counter;
-//                    }
-//                    if (parent == nullptr) {
-//                        // do nothing, just ignore this opportunity
-//                        errs() << "Failed to find store instruction associated with the branch."
-//                               << saber::toString(BI)
-//                               << "\n\n";
-//                    } else {
-//                        if (CmpInst *CI = dyn_cast<CmpInst>(parent)) {
-//                            if (CI->getPredicate() == _allQueries[qId]._predicate && _defUsesAtEachInst[n]->uses[0].compare(_allQueries[qId]._variable) == 0) {
-//                                Value *operand = CI->getOperand(CI->getNumOperands() - 1);
-//                                if (Constant *C = dyn_cast<Constant>(operand)) {
-//                                    if (BI->getSuccessor(0) == m->getParent())
-//                                       qa = ConstantExpr::getCompare(_allQueries[qId]._predicate, C, _allQueries[qId]._constant, true)->isOneValue() ?
-//                                                query_anwser::TRUE : query_anwser::OTHER;
-//                                    else
-//                                       qa = ConstantExpr::getCompare(_allQueries[qId]._predicate, _allQueries[qId]._constant, C, true)->isOneValue() ?
-//                                                query_anwser::FALSE : query_anwser::OTHER;
-//                                }
-//                                start = parent;
-//                            }
-//                        }
-//                    }
                 }
             }
-
-//            next.push_back(start);
-//            getPreds(start, next);
             return qa;
         }
-        query_anwser try2Resolve(Instruction *PredI, TerminatorInst* CurrentI, Instruction* SuccI, size_t qId) {
+
+        query_anwser resolveByCostantAssignment(StoreInst *SI, size_t qId){
+            query_anwser qa = query_anwser::OTHER;
+            if (Def(SI).compare(_allQueries[qId]._variable) == 0){
+                Constant *v = dyn_cast<Constant>(SI->getValueOperand());
+                if (v != nullptr ) {
+                    qa = ConstantExpr::getCompare(_allQueries[qId]._predicate, v, _allQueries[qId]._constant, true)->isOneValue() ?
+                            query_anwser::TRUE : query_anwser::FALSE;
+                }
+            }
+            return qa;
+        }
+        /**
+         * @brief Resolve the query with subsume conditional
+         *
+         * Note that the current version of this function only supports for the case
+         * in which the previous conditional has the same predicate as that of the query.
+         *
+         *
+         * @param PredI                - previous instruction (parent)
+         * @param CurrentI             - current instruction (me)
+         * @param SuccI                - next instruction (child)
+         * @param qId                  - query
+         * @return
+         */
+        query_anwser resolveBySubsumeConditionals(Instruction *PredI, TerminatorInst* CurrentI, Instruction* SuccI, size_t qId) {
             query_anwser qa = query_anwser::OTHER;
             auto *CI = dyn_cast<CmpInst>(PredI);
             if (CI == nullptr) return qa;
@@ -387,6 +376,7 @@ namespace {
             }
             return qa;
         }
+
         query_anwser resloveIt(TerminatorInst* CurrentI, CmpInst* CI, Instruction* SuccI, size_t qId){
             Value *operand = CI->getOperand(CI->getNumOperands() - 1);
             query_anwser qa = query_anwser::OTHER;
@@ -404,6 +394,7 @@ namespace {
             }
             return qa;
         }
+
         void getPreds(Instruction *I, SmallVector<Instruction*, 4>& preds){
             if (auto p = I->getPrevNode()){
                 preds.push_back(p);
@@ -413,12 +404,10 @@ namespace {
                     BasicBlock *pb = *it;
 
                     preds.push_back(&(pb->back()));
-//                    errs() << saber::toString(&(pb->back()))
-//                           << "\n";
                 }
             }
         }
-        void print(raw_ostream &O, const Module *M) const override {
+        void print(raw_ostream &O, const Module *) const override {
             for (const auto& q: _allQueries){
                 O << q << "\n";
             }
