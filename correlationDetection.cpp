@@ -55,13 +55,12 @@ namespace {
         Constant *_constant{};
         CmpInst::Predicate _predicate;
         query_t() = default;
-        query_t(Instruction *branch, Instruction *cmp, const std::string& var, Constant *c,CmpInst::Predicate p) :
+        query_t(Instruction *branch, Instruction *cmp, const std::string& var, Constant *c, CmpInst::Predicate p) :
                 _branchS(branch), _cmpS(cmp), _variable(var), _constant(c), _predicate(p) {
 
         }
         query_t(const query_t& other) = default;
     };
-
 
 
     //
@@ -110,18 +109,25 @@ namespace {
     }
 
     struct CorrelatedBranchDetection : public FunctionPass {
+
+        //
+        using CFGEdge = std::pair<Instruction*, Instruction*>;
+        using DefUsePropertyMap = std::unordered_map<Instruction*, std::unique_ptr<saber::StatementDefUseInfo> >;
+        using SubstituteMap = std::unordered_map<std::pair<Instruction *, size_t /* query index */>, size_t /* query index */, pairhash_t>;
+        using QueryMap = std::unordered_map<Instruction *, std::set<size_t /* query index */> >;
+        using QueryAnswerMap = std::unordered_map<std::pair<Instruction *, size_t /* query index */>, std::set<query_anwser>, pairhash_t >;
+
         static char ID;
 
-        const size_t maximumExploreDistance = 4;
+//        const size_t maximumExploreDistance = 4;
         std::vector<query_t> _allQueries;
-        std::unordered_map<Instruction*, std::unique_ptr<saber::StatementDefUseInfo> > _defUsesAtEachInst;
-        std::unordered_map<std::pair<Instruction *, size_t /* query index */>, size_t /* query index */, pairhash_t> _substitutionCache;
+        DefUsePropertyMap _defUsesAtEachInst;
+        SubstituteMap _substitutionCache;
 
 
-        std::unordered_map<Instruction *, std::set<size_t /* query index */> > _Q;
+        QueryMap _Q;
         std::list<worklist_entry_t> _worklist;
-        std::unordered_map<std::pair<Instruction *, size_t /* query index */>, std::set<query_anwser>, pairhash_t > _A;
-
+        QueryAnswerMap _A;
 
         CorrelatedBranchDetection() : FunctionPass(ID){
 
@@ -197,7 +203,7 @@ namespace {
                         errs() << "My papa: \n";
                         for (auto& p: predsLocal) {
                             errs() << saber::toString(p) << " ";
-                            raise_query(p, worklistEntry._n, subsititue(worklistEntry._n, worklistEntry._qId));
+                            raise_query(p, worklistEntry._n, substitute(worklistEntry._n, worklistEntry._qId));
                         }
                         errs() << "\n";
                     }
@@ -240,7 +246,7 @@ namespace {
             return nullptr;
         }
         // This function checks whether the Instruction @cmp is a simple
-        // comparison istruction, i.e., x op c where x is a variable, op
+        // comparison instruction, i.e., x op c where x is a variable, op
         // is the comparison operator, and c is a constant.
         // Note that this function returns a 3-tuple.
         std::tuple<bool, std::string, Constant*, CmpInst::Predicate > isSimpleCmpInst(Instruction* cmp) {
@@ -264,7 +270,7 @@ namespace {
             return std::make_tuple(false, "", (Constant *)nullptr, CI->getPredicate());
         }
 
-        size_t subsititue(Instruction *n, size_t qId){
+        size_t substitute(Instruction *n, size_t qId){
             std::pair<Instruction*, size_t> p=std::make_pair(n, qId);
             if (_substitutionCache.find(p) == _substitutionCache.end()){
                 _substitutionCache[p] = qId;
