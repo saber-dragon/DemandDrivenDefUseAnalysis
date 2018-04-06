@@ -26,10 +26,11 @@
 #include <list>
 #include <set>
 #include <tuple>
+#include <queue>
 #include <hashtable.h>
 
 #include "demandDrivenDataFlowHelper.h"
-
+#include "pairutility.hpp"
 
 #ifndef DEBUG
 //#define DEBUG 1
@@ -37,16 +38,9 @@
 
 using namespace llvm;
 
-namespace {
 
-    struct pairhash_t {
-    public:
-        template <typename T, typename U>
-        std::size_t operator()(const std::pair<T, U> &x) const
-        {
-            return std::hash<T>()(x.first) ^ std::hash<U>()(x.second);
-        }
-    };
+
+namespace {
 
     struct query_t {
         Instruction *_branchS{};
@@ -54,7 +48,7 @@ namespace {
         std::string _variable;
         Constant *_constant{};
         CmpInst::Predicate _predicate;
-        query_t() = default;
+        //query_t() = default;
         query_t(Instruction *branch, Instruction *cmp, const std::string& var, Constant *c, CmpInst::Predicate p) :
                 _branchS(branch), _cmpS(cmp), _variable(var), _constant(c), _predicate(p) {
 
@@ -82,7 +76,7 @@ namespace {
         Instruction *_n{};
         Instruction *_m{};
         size_t _qId{};
-        worklist_entry_t() = default;
+        //worklist_entry_t() = default;
         worklist_entry_t(Instruction *n, Instruction *m, size_t qId) : _n(n), _m(m), _qId(qId) {}
     };
 
@@ -109,30 +103,32 @@ namespace {
     }
 
     struct CorrelatedBranchDetection : public FunctionPass {
-
-        //
         using Edge = std::pair<Instruction*, Instruction*>;
         using DefUsePropertyMap = std::unordered_map<Instruction*, std::unique_ptr<saber::StatementDefUseInfo> >;
-        using SubstituteMap = std::unordered_map<std::pair<Instruction *, size_t /* query index */>, size_t /* query index */, pairhash_t>;
-        // using QueryMap = std::unordered_map<Instruction *, std::set<size_t /* query index */> >;
+        using SubstituteMap = std::unordered_map<std::pair<Instruction *, size_t /* query index */>, size_t /* query index */, PairHash>;
+
         // change key from "Instruction *" to std::pair<Instruction *, Instruction *>
         // to solve the possible ambiguous issues caused by diamond-style sub-graph
         // in the CFG. For example,
-        using QueryMap = std::unordered_map<Edge, std::set<size_t /* query index */> >;
-        using QueryAnswerMap = std::unordered_map<std::pair<Instruction *, size_t /* query index */>, std::set<query_anwser>, pairhash_t >;
+        using QueryKey = std::pair<Edge, size_t /* query index */>;
+        using QueryMap = std::unordered_map<Edge, std::set<size_t /* query index */>, PairHash>;
+        using QueryAnswerMap = std::unordered_map<QueryKey, std::set<query_anwser>, PairHash >;
+        using ParentMap = std::unordered_map<QueryKey, QueryKey>;
+        using QueryAnsQueue = std::queue<std::pair<Edge, size_t> >;
 
 #define Use(inst) _defUsesAtEachInst[inst]->uses
 #define Def(inst) _defUsesAtEachInst[inst]->def
-        static char ID;
 
-//        const size_t maximumExploreDistance = 4;
+        static char ID;
         std::vector<query_t> _allQueries;
         DefUsePropertyMap _defUsesAtEachInst;
-        SubstituteMap _substitutionCache;
+        SubstituteMap _subBackwardCache;
+        SubstituteMap _subForwardCache;
 
         QueryMap _Q;
         std::list<worklist_entry_t> _worklist;
         QueryAnswerMap _A;
+        // ParentMap _parent;
 
         CorrelatedBranchDetection() : FunctionPass(ID){
 
@@ -167,54 +163,49 @@ namespace {
                     Instruction *CI = &I;
                     if (_defUsesAtEachInst.find(CI) == _defUsesAtEachInst.end())
                         _defUsesAtEachInst[CI] = std::unique_ptr<saber::StatementDefUseInfo>(new saber::StatementDefUseInfo(CI));
-#ifdef DEBUG
-//                    errs() << saber::toString(CI)
-//                           << "\n\t\t"
-//                           << *_defUsesAtEachInst.at(CI)
-//                           << "\n";
-#endif
                 }
             }
 
         }
+//        QueryKey make_query_key(Instruction* n, Instruction* m, size_t qId){
+//            return std::make_pair(std::make_pair(n, m), qId);
+//        }
+//        QueryKey make_query_key(const worklist_entry_t& wle){
+//            return make_query_key(wle._n, wle._m, wle._qId);
+//        }
         // Analysis the initial query whose id is @qId at
         // statement @n
         void analysis(Instruction *n, size_t qId){
             _Q.clear();
             _worklist.clear();
-            _substitutionCache.clear();
+            _subBackwardCache.clear();
+            _subForwardCache.clear();
 
-            SmallVector<Instruction *, 4> preds;
-            getPreds(n, preds);
-            for (Instruction *p: preds) {
-                raise_query(p, n, qId);
-            }
+            for (Instruction *p: getPred(n)) raise_query(p, n, qId);
+
+            QueryAnsQueue newAnswers;
             while (!_worklist.empty()) {
                 auto worklistEntry = _worklist.front();
                 _worklist.pop_front();
 
                 auto ans = resolve(worklistEntry._n, worklistEntry._m, worklistEntry._qId);
-                std::pair<Instruction*, size_t> queryPair=std::make_pair(worklistEntry._n, worklistEntry._qId);
+                std::pair<Edge, size_t> queryPair = std::make_pair(std::make_pair(worklistEntry._n, worklistEntry._m), worklistEntry._qId);
                 if (ans != query_anwser::OTHER) {
                     _A[queryPair] = std::set<query_anwser >({ans});
+                    if (ans != query_anwser::UNDEF) newAnswers.push(queryPair);
                 } else {
-                    SmallVector<Instruction*, 4> predsLocal;
-                    getPreds(worklistEntry._n, predsLocal);
+                    auto predsLocal = getPred(worklistEntry._n);
+//                    getPreds(worklistEntry._n, predsLocal);
                     if (predsLocal.empty()) {
                         _A[queryPair] = std::set<query_anwser>({query_anwser::UNDEF});
                     } else {
-                        errs() << "I am " << saber::toString(worklistEntry._n) << " with query :\n";
-                        errs() << _allQueries[worklistEntry._qId] << "\n";
-                        errs() << "My papa: \n";
-                        for (auto& p: predsLocal) {
-                            errs() << saber::toString(p) << " ";
-                            raise_query(p, worklistEntry._n, substitute(worklistEntry._n, worklistEntry._qId));
-                        }
-                        errs() << "\n";
+                        for (auto& p: predsLocal) raise_query(p, worklistEntry._n, substitute(worklistEntry._n, worklistEntry._qId));
                     }
                 }
 
             }
+
+            propagateQueryAnswer(newAnswers, n);
         }
         Instruction* extractBranchWithSimplePredicate(Instruction *TI) {
             if (auto *BI=dyn_cast<BranchInst>(TI)) {// is a branch
@@ -224,13 +215,8 @@ namespace {
                            << saber::toString(BI)
                            << "\n";
 #endif
-                    StringRef branchVariable(_defUsesAtEachInst[TI]->uses[0]);
+                    StringRef branchVariable(Use(TI)[0]);
                     Instruction* parent = TI->getPrevNode();
-                    size_t counter = 0;
-                    while (parent != nullptr && _defUsesAtEachInst[parent]->def.compare(branchVariable) != 0 && counter < maximumExploreDistance) {
-                        parent = parent->getPrevNode();
-                        ++ counter;
-                    }
                     if (parent == nullptr) {
 #ifdef DEBUG
                         errs() << "Failed to find the comparison statement for "
@@ -256,60 +242,49 @@ namespace {
         // Note that this function returns a 3-tuple.
         std::tuple<bool, std::string, Constant*, CmpInst::Predicate > isSimpleCmpInst(Instruction* cmp) {
             auto *CI = dyn_cast<CmpInst>(cmp);
-            if (_defUsesAtEachInst[cmp]->uses.size() == 1) {
-
+            if (Use(cmp).size() == 1) {
                 Value *operand = CI->getOperand(CI->getNumOperands() - 1);
                 auto *C = dyn_cast<Constant>(operand);
-#ifdef DEBUG
-                errs() << "Got comparison statement: "
-                       << saber::toString(cmp)
-                       << "\n"
-                       << "its "
-                       << CI->getNumOperands()
-                       << " operand is: "
-                       << saber::toString(operand)
-                       << "\n";
-#endif
-                return std::make_tuple(C != nullptr,_defUsesAtEachInst[cmp]->uses[0], C, CI->getPredicate());
+                return std::make_tuple(C != nullptr,Use(cmp)[0], C, CI->getPredicate());
             }
             return std::make_tuple(false, "", static_cast<Constant *>(nullptr), CI->getPredicate());
         }
         // substitute the variable in the query if necessary
         size_t substitute(Instruction *n, size_t qId){
-            std::pair<Instruction*, size_t> p=std::make_pair(n, qId);
-            if (_substitutionCache.find(p) == _substitutionCache.end()){
-                _substitutionCache[p] = qId;
+            std::pair<Instruction*, size_t> p = std::make_pair(n, qId);
+            if (_subBackwardCache.find(p) == _subBackwardCache.end()){
+                _subBackwardCache[p] = qId;
                 if (auto *SI=dyn_cast<StoreInst>(n)) {
-                    if (_defUsesAtEachInst[n]->def.compare(_allQueries[qId]._variable) == 0) {
+                    if (Def(n).compare(_allQueries[qId]._variable) == 0) {
                         query_t newQ(_allQueries[qId]);
-                        newQ._variable = _defUsesAtEachInst[n]->uses[0];
+                        newQ._variable = Use(n)[0];
                         _allQueries.push_back(newQ);
-                        _substitutionCache[p] = _allQueries.size() - 1;
+                        _subBackwardCache[p] = _allQueries.size() - 1;
                     }
                 }  else if (auto *LI = dyn_cast<LoadInst>(n)){
-                    if (_defUsesAtEachInst[n]->def.compare(_allQueries[qId]._variable) == 0) {
+                    if (Def(n).compare(_allQueries[qId]._variable) == 0) {
                         query_t newQ(_allQueries[qId]);
-                        newQ._variable = _defUsesAtEachInst[n]->uses[0];
+                        newQ._variable = Use(n)[0];
                         _allQueries.push_back(newQ);
-                        _substitutionCache[p] = _allQueries.size() - 1;
+                        _subBackwardCache[p] = _allQueries.size() - 1;
                     }
                 }
             }
+            _subForwardCache[std::make_pair(n, _subBackwardCache[p])] = qId;
 
-            return _substitutionCache[p];
+            return _subBackwardCache[p];
         }
-
-        void raise_query(Instruction *n, Instruction *m, size_t qId){
+        // raise query along the reverse direction of the edge n --> m
+        bool raise_query(Instruction *n, Instruction *m, size_t qId){
             auto e = std::make_pair(n, m);
             if (_Q.find(e) == _Q.end()){_Q[e] = std::set<size_t>();}
-            if (_Q[e].find(qId) == _Q[n].end()) {
+            if (_Q[e].find(qId) == _Q[e].end()) {
                 _Q[e].insert(qId);
                 _worklist.emplace_back(n, m, qId);
+                return true;
             }
+            return false;
         }
-        /**
-         *
-         */
         query_anwser resolve(Instruction *n, Instruction *m, size_t qId){
             query_anwser qa = query_anwser::OTHER;
             if (auto *SI = dyn_cast<StoreInst>(n)) {
@@ -360,16 +335,16 @@ namespace {
             if (CI == nullptr) return qa;
 
             if (CI->getPredicate() == _allQueries[qId]._predicate) {
-                errs() << "trying to resolve:\n " << _allQueries[qId] << " at " << saber::toString(CurrentI) << "\n";
-                if (_defUsesAtEachInst[PredI]->uses[0].compare(_allQueries[qId]._variable) == 0) {
+//                errs() << "trying to resolve:\n " << _allQueries[qId] << " at " << saber::toString(CurrentI) << "\n";
+                if (Use(PredI)[0].compare(_allQueries[qId]._variable) == 0) {
                     qa = resloveIt(CurrentI, CI, SuccI, qId);
                 } else {
                     auto *grandma = dyn_cast<LoadInst>(PredI->getPrevNode());
-                    errs() << "My grandma is : " << saber::toString(grandma) << "\n";
-                    errs() << *_defUsesAtEachInst[grandma] << "\n";
+//                    errs() << "My grandma is : " << saber::toString(grandma) << "\n";
+//                    errs() << *_defUsesAtEachInst[grandma] << "\n";
                     if (grandma &&
-                            _defUsesAtEachInst[grandma]->uses[0].compare(_allQueries[qId]._variable) == 0 &&
-                            _defUsesAtEachInst[grandma]->def.compare(_defUsesAtEachInst[PredI]->uses[0]) == 0) {
+                            Use(grandma)[0].compare(_allQueries[qId]._variable) == 0 &&
+                            Def(grandma).compare(Use(PredI)[0]) == 0) {
                         qa = resloveIt(CurrentI, CI, SuccI, qId);
                     }
                 }
@@ -380,9 +355,8 @@ namespace {
         query_anwser resloveIt(TerminatorInst* CurrentI, CmpInst* CI, Instruction* SuccI, size_t qId){
             Value *operand = CI->getOperand(CI->getNumOperands() - 1);
             query_anwser qa = query_anwser::OTHER;
-            errs() << "resolvIt : " << saber::toString(operand) << "\n";
             if (Constant *C = dyn_cast<Constant>(operand)) {
-                errs() << CurrentI->getSuccessor(0)->getName() << " ? " << SuccI->getParent()->getName() << "\n";
+
                 if (CurrentI->getSuccessor(0) == SuccI->getParent())
                     qa = ConstantExpr::getCompare(_allQueries[qId]._predicate, C, _allQueries[qId]._constant,
                                                   true)->isOneValue() ?
@@ -395,15 +369,67 @@ namespace {
             return qa;
         }
 
-        void getPreds(Instruction *I, SmallVector<Instruction*, 4>& preds){
+//        void getPreds(Instruction *I, SmallVector<Instruction*, 4>& preds){
+//            if (auto p = I->getPrevNode()){
+//                preds.push_back(p);
+//            } else {
+//                auto b = I->getParent();
+//                for (auto it=pred_begin(b),et=pred_end(b);it!=et;++it) {
+//                    BasicBlock *pb = *it;
+//                    preds.push_back(&(pb->back()));
+//                }
+//            }
+//        }
+        SmallVector<Instruction*, 4> getPred(Instruction *I){
+            SmallVector<Instruction*, 4> preds;
             if (auto p = I->getPrevNode()){
                 preds.push_back(p);
             } else {
                 auto b = I->getParent();
                 for (auto it=pred_begin(b),et=pred_end(b);it!=et;++it) {
                     BasicBlock *pb = *it;
-
                     preds.push_back(&(pb->back()));
+                }
+            }
+            return preds;
+        }
+
+        SmallVector<Instruction*, 4> getSucc(Instruction *I){
+            SmallVector<Instruction*, 4> succ;
+            if (auto p = I->getNextNode()){
+                succ.push_back(p);
+            } else {
+                auto b = I->getParent();
+                for (auto it=succ_begin(b),et=succ_end(b);it!=et;++it) {
+                    BasicBlock *pb = *it;
+                    succ.push_back(&(pb->front()));
+                }
+            }
+            return succ;
+        }
+
+        void propagateQueryAnswer(QueryAnsQueue& queryAns, Instruction *b){
+            bool changed = false;
+            while (!queryAns.empty()){
+                auto key = queryAns.front();
+                queryAns.pop();
+                auto m = key.first.second;
+                if (m != b) {
+                    auto q = key.second;
+                    auto qPrime = _subForwardCache.at(std::make_pair(m, q));
+                    for (auto& c: getSucc(m)) {
+                        changed = false;
+                        auto e = std::make_pair(m, c);
+                        auto newKey = std::make_pair(e, qPrime);
+                        if (_Q[e].find(qPrime) != _Q[e].end()) {
+                            if (_A.find(newKey) == _A.end()) _A[newKey] = std::set<query_anwser>();
+                            for (const auto& a: _A[key]){
+                                _A[newKey].insert(a);
+                                changed = true;
+                            }
+                        }
+                        if (changed) queryAns.push(newKey);
+                    }
                 }
             }
         }
@@ -415,8 +441,10 @@ namespace {
 
             for (const auto& ans: _A){
                 if (!ans.second.empty()) {
-                    O << saber::toString(ans.first.first)
-                      << " : "
+                    O << saber::toString(ans.first.first.first)
+                      << " ---> "
+                      << saber::toString(ans.first.first.second)
+                      << "\n"
                       << _allQueries[ans.first.second]
                       << "\n\t\t\t= { ";
                     for (const auto& a: ans.second) {
@@ -424,9 +452,11 @@ namespace {
                           << " ";
                     }
                     O << "}\n";
-
                 }
             }
+        }
+        ~CorrelatedBranchDetection(){
+
         }
     };
 

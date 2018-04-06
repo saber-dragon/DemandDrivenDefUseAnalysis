@@ -29,6 +29,7 @@ namespace saber {
 
         return vStr;
     }
+
     // extract variables (excluding constant) from a string converted from an instruction
     void extractLLVMIRVars(const std::string& cs, SmallVector<std::string, 4>& variables, bool checkLabel=false){
         std::string s(cs);

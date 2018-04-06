@@ -1,0 +1,139 @@
+Start testing: Apr 05 22:43 EDT
+----------------------------------------------------------
+1/8 Testing: correlationDetectionTestOninfeasePathToyExample.ll
+1/8 Test: correlationDetectionTestOninfeasePathToyExample.ll
+Command: "/bin/bash" "-c" "/home/saber/llvm/4.0.1/bin/opt -load /home/saber/GitHub/DemandDrivenDefUseAnalysis/build-DemandDrivenDefUseAnalysis-compiler_project-Default/libcorrelationDetection.so -defUse -analyze infeasePathToyExample.ll"
+Directory: /home/saber/GitHub/DemandDrivenDefUseAnalysis/build-DemandDrivenDefUseAnalysis-compiler_project-Default
+"correlationDetectionTestOninfeasePathToyExample.ll" start time: Apr 05 22:43 EDT
+Output:
+----------------------------------------------------------
+opt: Unknown command line argument '-defUse'.  Try: '/home/saber/llvm/4.0.1/bin/opt -help'
+opt: Did you mean '-dse'?
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Failed.
+"correlationDetectionTestOninfeasePathToyExample.ll" end time: Apr 05 22:43 EDT
+"correlationDetectionTestOninfeasePathToyExample.ll" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/8 Testing: correlationDetectionTestOninfeasePath_simplest.ll
+2/8 Test: correlationDetectionTestOninfeasePath_simplest.ll
+Command: "/bin/bash" "-c" "/home/saber/llvm/4.0.1/bin/opt -load /home/saber/GitHub/DemandDrivenDefUseAnalysis/build-DemandDrivenDefUseAnalysis-compiler_project-Default/libcorrelationDetection.so -defUse -analyze infeasePath_simplest.ll"
+Directory: /home/saber/GitHub/DemandDrivenDefUseAnalysis/build-DemandDrivenDefUseAnalysis-compiler_project-Default
+"correlationDetectionTestOninfeasePath_simplest.ll" start time: Apr 05 22:43 EDT
+Output:
+----------------------------------------------------------
+opt: Unknown command line argument '-defUse'.  Try: '/home/saber/llvm/4.0.1/bin/opt -help'
+opt: Did you mean '-dse'?
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Failed.
+"correlationDetectionTestOninfeasePath_simplest.ll" end time: Apr 05 22:43 EDT
+"correlationDetectionTestOninfeasePath_simplest.ll" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/8 Testing: correlationDetectionTestOntwoBranches.ll
+3/8 Test: correlationDetectionTestOntwoBranches.ll
+Command: "/bin/bash" "-c" "/home/saber/llvm/4.0.1/bin/opt -load /home/saber/GitHub/DemandDrivenDefUseAnalysis/build-DemandDrivenDefUseAnalysis-compiler_project-Default/libcorrelationDetection.so -defUse -analyze twoBranches.ll"
+Directory: /home/saber/GitHub/DemandDrivenDefUseAnalysis/build-DemandDrivenDefUseAnalysis-compiler_project-Default
+"correlationDetectionTestOntwoBranches.ll" start time: Apr 05 22:43 EDT
+Output:
+----------------------------------------------------------
+opt: Unknown command line argument '-defUse'.  Try: '/home/saber/llvm/4.0.1/bin/opt -help'
+opt: Did you mean '-dse'?
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Failed.
+"correlationDetectionTestOntwoBranches.ll" end time: Apr 05 22:43 EDT
+"correlationDetectionTestOntwoBranches.ll" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/8 Testing: correlationDetectionTestOntwoBranches_success.ll
+4/8 Test: correlationDetectionTestOntwoBranches_success.ll
+Command: "/bin/bash" "-c" "/home/saber/llvm/4.0.1/bin/opt -load /home/saber/GitHub/DemandDrivenDefUseAnalysis/build-DemandDrivenDefUseAnalysis-compiler_project-Default/libcorrelationDetection.so -defUse -analyze twoBranches_success.ll"
+Directory: /home/saber/GitHub/DemandDrivenDefUseAnalysis/build-DemandDrivenDefUseAnalysis-compiler_project-Default
+"correlationDetectionTestOntwoBranches_success.ll" start time: Apr 05 22:43 EDT
+Output:
+----------------------------------------------------------
+opt: Unknown command line argument '-defUse'.  Try: '/home/saber/llvm/4.0.1/bin/opt -help'
+opt: Did you mean '-dse'?
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Failed.
+"correlationDetectionTestOntwoBranches_success.ll" end time: Apr 05 22:43 EDT
+"correlationDetectionTestOntwoBranches_success.ll" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/8 Testing: defUseAnalysisTestOninfeasePathToyExample.ll
+5/8 Test: defUseAnalysisTestOninfeasePathToyExample.ll
+Command: "/bin/bash" "-c" "/home/saber/llvm/4.0.1/bin/opt -load /home/saber/GitHub/DemandDrivenDefUseAnalysis/build-DemandDrivenDefUseAnalysis-compiler_project-Default/libdefUseAnalysis.so -brcDetection -analyze infeasePathToyExample.ll"
+Directory: /home/saber/GitHub/DemandDrivenDefUseAnalysis/build-DemandDrivenDefUseAnalysis-compiler_project-Default
+"defUseAnalysisTestOninfeasePathToyExample.ll" start time: Apr 05 22:43 EDT
+Output:
+----------------------------------------------------------
+opt: Unknown command line argument '-brcDetection'.  Try: '/home/saber/llvm/4.0.1/bin/opt -help'
+opt: Did you mean '-argpromotion'?
+<end of output>
+Test time =   0.14 sec
+----------------------------------------------------------
+Test Failed.
+"defUseAnalysisTestOninfeasePathToyExample.ll" end time: Apr 05 22:43 EDT
+"defUseAnalysisTestOninfeasePathToyExample.ll" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/8 Testing: defUseAnalysisTestOninfeasePath_simplest.ll
+6/8 Test: defUseAnalysisTestOninfeasePath_simplest.ll
+Command: "/bin/bash" "-c" "/home/saber/llvm/4.0.1/bin/opt -load /home/saber/GitHub/DemandDrivenDefUseAnalysis/build-DemandDrivenDefUseAnalysis-compiler_project-Default/libdefUseAnalysis.so -brcDetection -analyze infeasePath_simplest.ll"
+Directory: /home/saber/GitHub/DemandDrivenDefUseAnalysis/build-DemandDrivenDefUseAnalysis-compiler_project-Default
+"defUseAnalysisTestOninfeasePath_simplest.ll" start time: Apr 05 22:43 EDT
+Output:
+----------------------------------------------------------
+opt: Unknown command line argument '-brcDetection'.  Try: '/home/saber/llvm/4.0.1/bin/opt -help'
+opt: Did you mean '-argpromotion'?
+<end of output>
+Test time =   0.14 sec
+----------------------------------------------------------
+Test Failed.
+"defUseAnalysisTestOninfeasePath_simplest.ll" end time: Apr 05 22:43 EDT
+"defUseAnalysisTestOninfeasePath_simplest.ll" time elapsed: 00:00:00
+----------------------------------------------------------
+
+7/8 Testing: defUseAnalysisTestOntwoBranches.ll
+7/8 Test: defUseAnalysisTestOntwoBranches.ll
+Command: "/bin/bash" "-c" "/home/saber/llvm/4.0.1/bin/opt -load /home/saber/GitHub/DemandDrivenDefUseAnalysis/build-DemandDrivenDefUseAnalysis-compiler_project-Default/libdefUseAnalysis.so -brcDetection -analyze twoBranches.ll"
+Directory: /home/saber/GitHub/DemandDrivenDefUseAnalysis/build-DemandDrivenDefUseAnalysis-compiler_project-Default
+"defUseAnalysisTestOntwoBranches.ll" start time: Apr 05 22:43 EDT
+Output:
+----------------------------------------------------------
+opt: Unknown command line argument '-brcDetection'.  Try: '/home/saber/llvm/4.0.1/bin/opt -help'
+opt: Did you mean '-argpromotion'?
+<end of output>
+Test time =   0.14 sec
+----------------------------------------------------------
+Test Failed.
+"defUseAnalysisTestOntwoBranches.ll" end time: Apr 05 22:43 EDT
+"defUseAnalysisTestOntwoBranches.ll" time elapsed: 00:00:00
+----------------------------------------------------------
+
+8/8 Testing: defUseAnalysisTestOntwoBranches_success.ll
+8/8 Test: defUseAnalysisTestOntwoBranches_success.ll
+Command: "/bin/bash" "-c" "/home/saber/llvm/4.0.1/bin/opt -load /home/saber/GitHub/DemandDrivenDefUseAnalysis/build-DemandDrivenDefUseAnalysis-compiler_project-Default/libdefUseAnalysis.so -brcDetection -analyze twoBranches_success.ll"
+Directory: /home/saber/GitHub/DemandDrivenDefUseAnalysis/build-DemandDrivenDefUseAnalysis-compiler_project-Default
+"defUseAnalysisTestOntwoBranches_success.ll" start time: Apr 05 22:43 EDT
+Output:
+----------------------------------------------------------
+opt: Unknown command line argument '-brcDetection'.  Try: '/home/saber/llvm/4.0.1/bin/opt -help'
+opt: Did you mean '-argpromotion'?
+<end of output>
+Test time =   0.14 sec
+----------------------------------------------------------
+Test Failed.
+"defUseAnalysisTestOntwoBranches_success.ll" end time: Apr 05 22:43 EDT
+"defUseAnalysisTestOntwoBranches_success.ll" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Apr 05 22:43 EDT
