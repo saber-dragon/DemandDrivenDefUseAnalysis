@@ -72,6 +72,17 @@ namespace {
         return os;
     }
 
+
+    raw_ostream& operator<<(raw_ostream& os, const std::pair<Instruction *,Instruction*>& e){
+        os << saber::toString(e.first)
+           << " --> "
+           << saber::toString(e.second)
+           << " :";
+        return os;
+    }
+
+
+
     struct worklist_entry_t {
         Instruction *_n{};
         Instruction *_m{};
@@ -102,6 +113,18 @@ namespace {
         return "";
     }
 
+    template <typename T>
+    raw_ostream& operator<<(raw_ostream& os, const std::set<T>& s){
+        os << "{";
+        size_t count = 0;
+        for(const auto& t: s) {
+            os << s << ((count == s.size() - 1)?"}":", ");
+            ++ count;
+        }
+        return os;
+    }
+
+
     struct CorrelatedBranchDetection : public FunctionPass {
         using Edge = std::pair<Instruction*, Instruction*>;
         using DefUsePropertyMap = std::unordered_map<Instruction*, std::unique_ptr<saber::StatementDefUseInfo> >;
@@ -116,8 +139,8 @@ namespace {
         using ParentMap = std::unordered_map<QueryKey, QueryKey>;
         using QueryAnsQueue = std::queue<std::pair<Edge, size_t> >;
         using Marker = std::pair<size_t/* query idex */, query_anwser>;
-        using EdgeMarkerMap = std::unordered_map<Edge, Marker>;
-        using EdgeMarkerSetMap = std::unordered_map<Edge, std::set<Marker> >;
+        using EdgeMarkerMap = std::unordered_map<Edge, Marker, PairHash>;
+        using EdgeMarkerSetMap = std::unordered_map<Edge, std::set<Marker>, PairHash>;
 
 #define Use(inst) _defUsesAtEachInst[inst]->uses
 #define Def(inst) _defUsesAtEachInst[inst]->def
@@ -173,12 +196,6 @@ namespace {
             }
 
         }
-//        QueryKey make_query_key(Instruction* n, Instruction* m, size_t qId){
-//            return std::make_pair(std::make_pair(n, m), qId);
-//        }
-//        QueryKey make_query_key(const worklist_entry_t& wle){
-//            return make_query_key(wle._n, wle._m, wle._qId);
-//        }
         // Analysis the initial query whose id is @qId at
         // statement @n
         void analysis(Instruction *n, size_t qId){
@@ -201,7 +218,6 @@ namespace {
                     if (ans != query_anwser::UNDEF) newAnswers.push(queryPair);
                 } else {
                     auto predsLocal = getPred(worklistEntry._n);
-//                    getPreds(worklistEntry._n, predsLocal);
                     if (predsLocal.empty()) {
                         _A[queryPair] = std::set<query_anwser>({query_anwser::UNDEF});
                     } else {
@@ -212,6 +228,29 @@ namespace {
             }
 
             propagateQueryAnswer(newAnswers, n);
+            // patch
+            // The following patch is required because LLVM IR
+            // usually split a comparison branch into 2 instructions
+            // e.g.,
+            //  %cmp = icmp slt i32 %0, 0
+            //  br i1 %cmp, label %if.then, label %if.else
+            // Our analysis starts from the cmp instruction instead of the br instruction
+            // so we should manually fill all query infomation on the edge between them.
+            auto b = n->getNextNode();
+            assert(dyn_cast<BranchInst>(b) != nullptr);
+            _subBackwardCache[std::make_pair(b, qId)] = qId;
+            _subForwardCache[std::make_pair(n, qId)] = qId;
+            auto e = std::make_pair(n, b);
+            _A[std::make_pair(e, qId)] = std::set<query_anwser>();
+            for (auto& p: getPred(n)){
+                for (const auto &a: _A[std::make_pair(std::make_pair(p, n), qId)]){
+                    _A[std::make_pair(e, qId)].insert(a);
+                }
+            }
+            if (_Q.find(e) == _Q.end()) _Q[e] = std::set<size_t>();
+            _Q[e].insert(qId);
+
+            placeCFGLabel(b, n, qId);
         }
         Instruction* extractBranchWithSimplePredicate(Instruction *TI) {
             if (auto *BI=dyn_cast<BranchInst>(TI)) {// is a branch
@@ -440,11 +479,11 @@ namespace {
             }
         }
 
-        void placeCFGLabel(Instruction *b, size_t qId){
-            auto branch = dyn_cast<BranchInst>(b);
+        void placeCFGLabel(Instruction *b, Instruction *pre, size_t qId){
+            auto *branch = dyn_cast<BranchInst>(b);
+
             Instruction *trueBranch = &(branch->getSuccessor(0)->front());
-            Instruction *falseBranch = &(branch->getSuccessor(0)->front());
-            Instruction *pre = b->getPrevNode();
+            Instruction *falseBranch = &(branch->getSuccessor(1)->front());
             auto key = std::make_pair(std::make_pair(pre, b), qId);
             if (_A[key].find(query_anwser::TRUE) != _A[key].end()) _end[std::make_pair(b, trueBranch)] = std::make_pair(qId, query_anwser::TRUE);
             if (_A[key].find(query_anwser::FALSE) != _A[key].end()) _end[std::make_pair(b, falseBranch)] = std::make_pair(qId, query_anwser::FALSE);
@@ -453,43 +492,46 @@ namespace {
                 auto e = qPair.first;
                 auto n = e.first;
                 for (const auto& q: qPair.second) {
-                    auto qPrime = _subBackwardCache.at(std::make_pair(n, q));
+                    auto ePrime = std::make_pair(n, q);
+                    if (_subBackwardCache.find(ePrime) == _subBackwardCache.end()) continue;// q is resolved here
+                    auto qPrime = _subBackwardCache.at(ePrime);
                     for (const auto& m: getPred(n)){
                         auto preKey = std::make_pair(std::make_pair(m, n), qPrime);
                         auto ePrime = std::make_pair(m ,n);
-                        std::set<query_anwser> ans;
+                        //std::set<query_anwser> ans;
                         size_t count = 0;
                         query_anwser a;
                         if (_A.find(preKey) != _A.end()){// have answer(s)
                             if (_A[preKey].find(query_anwser::TRUE) != _A[preKey].end()) {
                                 a = query_anwser::TRUE;
                                 if (_present.find(ePrime) == _present.end()) {_present[ePrime] = std::set<Marker>();}
-                                _present[ePrime].insert(a);
+                                _present[ePrime].insert(std::make_pair(qPrime, a));
                                 ++ count;
                             }
                             if (_A[preKey].find(query_anwser::FALSE) != _A[preKey].end()) {
                                 a = query_anwser::FALSE;
                                 if (_present.find(ePrime) == _present.end()) {_present[ePrime] = std::set<Marker>();}
-                                _present[ePrime].insert(a);
+                                _present[ePrime].insert(std::make_pair(qPrime, a));
                                 ++ count;
                             }
 
                        }
                         if (count == 1 && _A[std::make_pair(e, q)].size() > 1) {
                             if (_start.find(e) == _start.end()) {_start[e] = std::set<Marker>();}
-                            _start[e].insert(a);
+                            _start[ePrime].insert(std::make_pair(qPrime, a));
                         }
                     }
 
                 }
             }
         }
-        void print(raw_ostream &O, const Module *) const override {
+        void printAllQueries(raw_ostream &O) const {
             for (const auto& q: _allQueries){
                 O << q << "\n";
             }
             O << "\n";
-
+        }
+        void printAllQueryAnswers(raw_ostream &O) const {
             for (const auto& ans: _A){
                 if (!ans.second.empty()) {
                     O << saber::toString(ans.first.first.first)
@@ -497,7 +539,7 @@ namespace {
                       << saber::toString(ans.first.first.second)
                       << "\n"
                       << _allQueries[ans.first.second]
-                      << "\n\t\t\t= { ";
+                      << "\n\t= { ";
                     for (const auto& a: ans.second) {
                         O << getQueryAnswerName(a)
                           << " ";
@@ -505,6 +547,59 @@ namespace {
                     O << "}\n";
                 }
             }
+        }
+        void printAllMarkers(raw_ostream &O) const {
+            O << "\n\n";
+            O << "End markers:\n";
+            for (const auto& em: _end){
+                O << em.first
+                  << " :\n"
+                  << _allQueries[em.second.first]
+                  << " = "
+                  << getQueryAnswerName(em.second.second)
+                  << "\n\n";
+            }
+            O << "Present markers:\n";
+            for (const auto& pm: _present) {
+                O << saber::toString(pm.first.first)
+                  << " --> "
+                  << saber::toString(pm.first.second)
+                  << " :\n";
+                O << "{\n";
+                for (const auto& mp: pm.second) {
+                    O << "\t"
+                      << _allQueries[mp.first]
+                      << " = "
+                      << getQueryAnswerName(mp.second)
+                      << "\n";
+                }
+                O << "}\n";
+            }
+            O << "Start markers:\n";
+            for (const auto& sm: _start) {
+                O << saber::toString(sm.first.first)
+                  << " --> "
+                  << saber::toString(sm.first.second)
+                  << " :\n";
+                O << "{\n";
+                for (const auto& mp: sm.second) {
+                    O << "\t"
+                      << _allQueries[mp.first]
+                      << " = "
+                      << getQueryAnswerName(mp.second)
+                      << "\n";
+                }
+                O << "}\n";
+            }
+        }
+        void print(raw_ostream &O, const Module *) const override {
+            //
+            // printAllQueries(O);
+            //
+            // printAllQueryAnswers(O);
+            //
+            printAllMarkers(O);
+
         }
         ~CorrelatedBranchDetection() override {
 
