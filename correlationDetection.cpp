@@ -115,6 +115,9 @@ namespace {
         using QueryAnswerMap = std::unordered_map<QueryKey, std::set<query_anwser>, PairHash >;
         using ParentMap = std::unordered_map<QueryKey, QueryKey>;
         using QueryAnsQueue = std::queue<std::pair<Edge, size_t> >;
+        using Marker = std::pair<size_t/* query idex */, query_anwser>;
+        using EdgeMarkerMap = std::unordered_map<Edge, Marker>;
+        using EdgeMarkerSetMap = std::unordered_map<Edge, std::set<Marker> >;
 
 #define Use(inst) _defUsesAtEachInst[inst]->uses
 #define Def(inst) _defUsesAtEachInst[inst]->def
@@ -129,6 +132,9 @@ namespace {
         std::list<worklist_entry_t> _worklist;
         QueryAnswerMap _A;
         // ParentMap _parent;
+        EdgeMarkerSetMap _start;
+        EdgeMarkerSetMap _present;
+        EdgeMarkerMap _end;
 
         CorrelatedBranchDetection() : FunctionPass(ID){
 
@@ -433,6 +439,51 @@ namespace {
                 }
             }
         }
+
+        void placeCFGLabel(Instruction *b, size_t qId){
+            auto branch = dyn_cast<BranchInst>(b);
+            Instruction *trueBranch = &(branch->getSuccessor(0)->front());
+            Instruction *falseBranch = &(branch->getSuccessor(0)->front());
+            Instruction *pre = b->getPrevNode();
+            auto key = std::make_pair(std::make_pair(pre, b), qId);
+            if (_A[key].find(query_anwser::TRUE) != _A[key].end()) _end[std::make_pair(b, trueBranch)] = std::make_pair(qId, query_anwser::TRUE);
+            if (_A[key].find(query_anwser::FALSE) != _A[key].end()) _end[std::make_pair(b, falseBranch)] = std::make_pair(qId, query_anwser::FALSE);
+
+            for (const auto& qPair: _Q) {
+                auto e = qPair.first;
+                auto n = e.first;
+                for (const auto& q: qPair.second) {
+                    auto qPrime = _subBackwardCache.at(std::make_pair(n, q));
+                    for (const auto& m: getPred(n)){
+                        auto preKey = std::make_pair(std::make_pair(m, n), qPrime);
+                        auto ePrime = std::make_pair(m ,n);
+                        std::set<query_anwser> ans;
+                        size_t count = 0;
+                        query_anwser a;
+                        if (_A.find(preKey) != _A.end()){// have answer(s)
+                            if (_A[preKey].find(query_anwser::TRUE) != _A[preKey].end()) {
+                                a = query_anwser::TRUE;
+                                if (_present.find(ePrime) == _present.end()) {_present[ePrime] = std::set<Marker>();}
+                                _present[ePrime].insert(a);
+                                ++ count;
+                            }
+                            if (_A[preKey].find(query_anwser::FALSE) != _A[preKey].end()) {
+                                a = query_anwser::FALSE;
+                                if (_present.find(ePrime) == _present.end()) {_present[ePrime] = std::set<Marker>();}
+                                _present[ePrime].insert(a);
+                                ++ count;
+                            }
+
+                       }
+                        if (count == 1 && _A[std::make_pair(e, q)].size() > 1) {
+                            if (_start.find(e) == _start.end()) {_start[e] = std::set<Marker>();}
+                            _start[e].insert(a);
+                        }
+                    }
+
+                }
+            }
+        }
         void print(raw_ostream &O, const Module *) const override {
             for (const auto& q: _allQueries){
                 O << q << "\n";
@@ -455,7 +506,7 @@ namespace {
                 }
             }
         }
-        ~CorrelatedBranchDetection(){
+        ~CorrelatedBranchDetection() override {
 
         }
     };
