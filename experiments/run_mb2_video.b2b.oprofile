@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# Do 30 runs of all the MediaBench 2 video benchmarks, in back-to-back (b2b) order
+
+  for BENCHMARK in cjpeg djpeg h263dec h263enc mpeg4dec.with_mmx mpeg4enc.with_mmx h264dec h264enc jpg2000dec jpg2000enc mpeg2dec mpeg2enc mpeg4dec.without_mmx mpeg4enc.without_mmx
+  do
+
+    if [ "$BENCHMARK" = "mpeg4dec.with_mmx" -o "$BENCHMARK" = "mpeg4dec.without_mmx" ]; then
+      cd mpeg4dec/oprofile_results/
+    elif [ "$BENCHMARK" = "mpeg4enc.with_mmx" -o "$BENCHMARK" = "mpeg4enc.without_mmx" ]; then
+      cd mpeg4enc/oprofile_results/
+    else
+      cd ${BENCHMARK}/oprofile_results/
+    fi
+
+    ./run_${BENCHMARK}.b2b.oprofile
+
+    cd ../..
+
+  done
+

@@ -71,6 +71,10 @@ namespace saber {
             while (defUses.front()[k] == '=' || defUses.front()[k] == ' ') --k;
             defUses.front() = defUses.front().substr(0, k + 1);
         }
+        // pay attention
+        if (isStore && defUses.size() > 1) {
+            std::swap(defUses[0], defUses[1]);
+        }
 
         // handle call: since function also start with @
         if (isCall) {

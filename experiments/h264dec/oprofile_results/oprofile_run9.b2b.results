@@ -1,0 +1,36 @@
+CPU: CPU with timer interrupt, speed 0 MHz (estimated)
+Profiling through timer interrupt
+samples  %        image name               symbol name
+67       14.4086  ldecod.exe               decode_one_macroblock
+55       11.8280  ldecod.exe               get_mb_block_pos
+51       10.9677  libc-2.3.5.so            memcpy
+46        9.8925  ldecod.exe               getNonAffNeighbour
+35        7.5269  ldecod.exe               get_block
+31        6.6667  ldecod.exe               EdgeLoop
+31        6.6667  ldecod.exe               GetStrength
+30        6.4516  ldecod.exe               itrans
+15        3.2258  ldecod.exe               buf2img
+10        2.1505  ldecod.exe               getNeighbour
+10        2.1505  ldecod.exe               init_macroblock
+9         1.9355  ldecod.exe               find_snr
+9         1.9355  ldecod.exe               get_mb_pos
+9         1.9355  ldecod.exe               img2buf
+9         1.9355  no-vmlinux               (no symbols)
+7         1.5054  ldecod.exe               biari_decode_symbol
+6         1.2903  ldecod.exe               compute_colocated
+5         1.0753  ldecod.exe               readCBPandCoeffsFromNAL
+4         0.8602  ldecod.exe               reset_coeffs
+4         0.8602  ldecod.exe               start_macroblock
+3         0.6452  ldecod.exe               dpb_split_field
+3         0.6452  ldecod.exe               readSyntaxElement_CABAC
+2         0.4301  ldecod.exe               .plt
+2         0.4301  ldecod.exe               DeblockMb
+2         0.4301  ldecod.exe               init_picture
+2         0.4301  ldecod.exe               readMotionInfoFromNAL
+2         0.4301  ldecod.exe               read_significant_coefficients
+1         0.2151  ldecod.exe               ercWriteMBMODEandMV
+1         0.2151  ldecod.exe               mb_is_available
+1         0.2151  ldecod.exe               readMVD_CABAC
+1         0.2151  ldecod.exe               readRunLevel_CABAC
+1         0.2151  ldecod.exe               read_significance_map
+1         0.2151  ldecod.exe               unary_exp_golomb_level_decode

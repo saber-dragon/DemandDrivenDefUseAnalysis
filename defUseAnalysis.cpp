@@ -131,14 +131,14 @@ namespace {
         }
 
         bool reslove(const Instruction *m, const Instruction* n, QueryInfo& queryInfo) {
-            if (queryInfo.Variable.compare(StringRef(DefUseMap[m]->def)) == 0){// m defines V
+            if (queryInfo.Variable.compare(DefUseMap[m]->def) == 0){// m defines V
                 AllDefUses.emplace_back(m, queryInfo.Use, queryInfo.Variable.str());
                 return true;// stop going further
             }
             return false;
         }
 
-        void print(raw_ostream &O, const Module *M) const override {
+        void print(raw_ostream &O, const Module *) const override {
         //     for (const auto& pair: DefUseMap) {
         //         O << saber::toString(pair.first)
         //           << "\n";
@@ -155,11 +155,16 @@ namespace {
         //         O << "\n";
         //     }
         // }
+            O << "# of def-use pairs: "
+              << AllDefUses.size()
+              << "\n";
             for (const auto& du: AllDefUses){
                 O << "[" 
                 << saber::toString(du.def)
+                << " (BasicBlock: " << du.def->getParent()->getName() << ")"
                 << " | "
                 << saber::toString(du.use)
+                << " (BasicBlock: " << du.use->getParent()->getName() << ")"
                 << "]: "
                 << du.variable
                 << "\n";

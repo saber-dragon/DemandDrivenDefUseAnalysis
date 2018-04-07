@@ -1,0 +1,35 @@
+CPU: CPU with timer interrupt, speed 0 MHz (estimated)
+Profiling through timer interrupt
+samples  %        image name               symbol name
+69       14.8387  ldecod.exe               get_mb_block_pos
+57       12.2581  ldecod.exe               decode_one_macroblock
+53       11.3978  ldecod.exe               getNonAffNeighbour
+46        9.8925  libc-2.3.5.so            memcpy
+38        8.1720  ldecod.exe               get_block
+33        7.0968  ldecod.exe               itrans
+28        6.0215  ldecod.exe               EdgeLoop
+18        3.8710  ldecod.exe               GetStrength
+16        3.4409  ldecod.exe               buf2img
+16        3.4409  ldecod.exe               img2buf
+14        3.0108  ldecod.exe               getNeighbour
+12        2.5806  ldecod.exe               biari_decode_symbol
+12        2.5806  no-vmlinux               (no symbols)
+9         1.9355  ldecod.exe               get_mb_pos
+8         1.7204  ldecod.exe               find_snr
+6         1.2903  ldecod.exe               compute_colocated
+5         1.0753  ldecod.exe               read_and_store_CBP_block_bit
+3         0.6452  ldecod.exe               .plt
+3         0.6452  ldecod.exe               DeblockMb
+2         0.4301  ldecod.exe               arideco_bits_read
+2         0.4301  ldecod.exe               get_mem2Dshort
+2         0.4301  ldecod.exe               intrapred
+2         0.4301  ldecod.exe               readMotionInfoFromNAL
+2         0.4301  ldecod.exe               read_significance_map
+2         0.4301  ldecod.exe               start_macroblock
+1         0.2151  ldecod.exe               CheckAvailabilityOfNeighbors
+1         0.2151  ldecod.exe               biari_decode_symbol_eq_prob
+1         0.2151  ldecod.exe               init_macroblock
+1         0.2151  ldecod.exe               intrapred_luma_16x16
+1         0.2151  ldecod.exe               reset_coeffs
+1         0.2151  libc-2.3.5.so            _int_free
+1         0.2151  libc-2.3.5.so            calloc

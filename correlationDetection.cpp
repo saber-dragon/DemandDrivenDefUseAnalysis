@@ -28,6 +28,7 @@
 #include <tuple>
 #include <queue>
 #include <hashtable.h>
+#include <limits>
 
 #include "demandDrivenDataFlowHelper.h"
 #include "pairutility.hpp"
@@ -192,6 +193,7 @@ namespace {
         using Marker = std::pair<size_t/* query idex */, query_anwser>;
         using EdgeMarkerMap = std::unordered_map<Edge, Marker, PairHash>;
         using EdgeMarkerSetMap = std::unordered_map<Edge, std::set<Marker>, PairHash>;
+        using EasyInfeasibleEdgeMap = std::unordered_map<Edge, bool, PairHash>;
 
         // --------------------------------------------------------------------
         //         Def Use
@@ -218,6 +220,7 @@ namespace {
         EdgeMarkerSetMap _start;
         EdgeMarkerSetMap _present;
         EdgeMarkerMap _end;
+        EasyInfeasibleEdgeMap _noNeedPropagationBackward;
 
 
         // --------------------------------------------------------------
@@ -304,20 +307,24 @@ namespace {
             bool resolved = false;
             auto ippPrime = resolveDefUse(e, ipp, resolved);
             if (!resolved) {
-                size_t originalPathNumber = 0;
+                size_t originalPathNumber = std::numeric_limits<size_t>::max();
                 if (!has_key(_QDefUse, e.first)) _QDefUse.insert({e.first, ippPrime});
                 else {
                     originalPathNumber = _QDefUse[e.first].size();
                     _QDefUse[e.first] = set_intersection(
                             _QDefUse[e.first], ippPrime);
                 }
-                if (_QDefUse[e.first].size() < originalPathNumber){
+                if (_QDefUse[e.first].size() != originalPathNumber){// changed
                     _worklistDefUse.push_back(std::make_pair(e.first, _QDefUse[e.first]));
                 }
             }
         }
 
         DefUseQuery resolveDefUse(const Edge& e, const DefUseQuery& ipp, bool& resolved){
+            if (has_key(_noNeedPropagationBackward, e)) {
+                resolved = true;
+                return std::set<Marker>();
+            }
             for (const auto& q: ipp){
                 auto nm = std::make_pair(q.first, q.second);
                 nm.second = reverseQueryAnswer(nm.second);
@@ -325,7 +332,6 @@ namespace {
                     resolved = true;
                     return std::set<Marker>();
                 }
-
             }
             DefUseQuery ippNew = (has_key(_present, e)?set_intersection(ipp, _present[e]):DefUseQuery());
             if (has_key(_end, e)) ippNew.insert(_end[e]);
@@ -334,6 +340,7 @@ namespace {
 
             if (Def(e.first).compare(_pendingVariable) == 0){
                 _defUsePairs.emplace_back(e.first, _pendingUse, _pendingVariable);
+                resolved = true;
             }
 
             return ippNew;
@@ -355,8 +362,8 @@ namespace {
         void analysis(Instruction *n, size_t qId){
             _Q.clear();
             _worklist.clear();
-            _subBackwardCache.clear();
-            _subForwardCache.clear();
+            //_subBackwardCache.clear();
+            //_subForwardCache.clear();
 
             for (Instruction *p: getPred(n)) raise_query(p, n, qId);
 
@@ -639,8 +646,15 @@ namespace {
             Instruction *trueBranch = &(branch->getSuccessor(0)->front());
             Instruction *falseBranch = &(branch->getSuccessor(1)->front());
             auto key = std::make_pair(std::make_pair(pre, b), qId);
-            if (_A[key].find(query_anwser::TRUE) != _A[key].end()) _end[std::make_pair(b, trueBranch)] = std::make_pair(qId, query_anwser::TRUE);
-            if (_A[key].find(query_anwser::FALSE) != _A[key].end()) _end[std::make_pair(b, falseBranch)] = std::make_pair(qId, query_anwser::FALSE);
+            bool easyInfeasibleCase = (_A[key].size() == 1);
+            if (_A[key].find(query_anwser::TRUE) != _A[key].end()) {
+                _end[std::make_pair(b, trueBranch)] = std::make_pair(qId, query_anwser::TRUE);
+                if (easyInfeasibleCase)_noNeedPropagationBackward[std::make_pair(b, falseBranch)] = true;
+            }
+            if (_A[key].find(query_anwser::FALSE) != _A[key].end()) {
+                _end[std::make_pair(b, falseBranch)] = std::make_pair(qId, query_anwser::FALSE);
+                if (easyInfeasibleCase) _noNeedPropagationBackward[std::make_pair(b, trueBranch)] = true;
+            }
 
             for (const auto& qPair: _Q) {
                 auto e = qPair.first;
@@ -744,6 +758,9 @@ namespace {
         }
 
         void printDefUses(raw_ostream &O) const {
+            O << "# of def-use pairs: "
+              << _defUsePairs.size()
+              << "\n";
             for (const auto& du: _defUsePairs){
                 O << du << "\n";
             }
@@ -755,8 +772,8 @@ namespace {
             //
             // printAllQueryAnswers(O);
             //
-            printAllMarkers(O);
-            O << "=========================================\n\n";
+            // printAllMarkers(O);
+            // O << "=========================================\n\n";
             printDefUses(O);
 
         }

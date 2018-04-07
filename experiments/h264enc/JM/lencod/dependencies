@@ -1,0 +1,158 @@
+obj/decoder.o: src/decoder.c inc/global.h inc/defines.h inc/parsetcommon.h \
+  inc/q_matrix.h inc/q_offsets.h inc/minmax.h inc/context_ini.h \
+  inc/refbuf.h inc/image.h inc/mbuffer.h
+obj/slice.o: src/slice.c inc/contributors.h inc/global.h inc/defines.h \
+  inc/parsetcommon.h inc/q_matrix.h inc/q_offsets.h inc/minmax.h \
+  inc/context_ini.h inc/header.h inc/rtp.h inc/nalu.h inc/nalucommon.h \
+  inc/fmo.h inc/vlc.h inc/image.h inc/mbuffer.h inc/cabac.h \
+  inc/elements.h inc/epzs.h
+obj/image.o: src/image.c inc/contributors.h inc/global.h inc/defines.h \
+  inc/parsetcommon.h inc/q_matrix.h inc/q_offsets.h inc/minmax.h \
+  inc/context_ini.h inc/refbuf.h inc/mbuffer.h inc/intrarefresh.h \
+  inc/fmo.h inc/sei.h inc/memalloc.h inc/nalu.h inc/nalucommon.h \
+  inc/ratectl.h inc/mb_access.h inc/output.h inc/cabac.h
+obj/fast_me.o: src/fast_me.c inc/global.h inc/defines.h inc/parsetcommon.h \
+  inc/q_matrix.h inc/q_offsets.h inc/minmax.h inc/context_ini.h \
+  inc/memalloc.h inc/fast_me.h inc/mbuffer.h inc/refbuf.h
+obj/macroblock.o: src/macroblock.c inc/contributors.h inc/global.h \
+  inc/defines.h inc/parsetcommon.h inc/q_matrix.h inc/q_offsets.h \
+  inc/minmax.h inc/context_ini.h inc/elements.h inc/macroblock.h \
+  inc/refbuf.h inc/fmo.h inc/vlc.h inc/image.h inc/mbuffer.h \
+  inc/mb_access.h inc/ratectl.h inc/cabac.h inc/transform8x8.h
+obj/annexb.o: src/annexb.c inc/global.h inc/defines.h inc/parsetcommon.h \
+  inc/q_matrix.h inc/q_offsets.h inc/minmax.h inc/context_ini.h \
+  inc/nalucommon.h
+obj/sei.o: src/sei.c inc/global.h inc/defines.h inc/parsetcommon.h \
+  inc/q_matrix.h inc/q_offsets.h inc/minmax.h inc/context_ini.h \
+  inc/memalloc.h inc/rtp.h inc/nalu.h inc/nalucommon.h inc/mbuffer.h \
+  inc/sei.h inc/vlc.h
+obj/parset.o: src/parset.c inc/global.h inc/defines.h inc/parsetcommon.h \
+  inc/q_matrix.h inc/q_offsets.h inc/minmax.h inc/context_ini.h \
+  inc/contributors.h inc/mbuffer.h inc/parset.h inc/nalu.h \
+  inc/nalucommon.h inc/vlc.h
+obj/refbuf.o: src/refbuf.c inc/global.h inc/defines.h inc/parsetcommon.h \
+  inc/q_matrix.h inc/q_offsets.h inc/minmax.h inc/context_ini.h \
+  inc/refbuf.h
+obj/rdopt_coding_state.o: src/rdopt_coding_state.c inc/global.h inc/defines.h \
+  inc/parsetcommon.h inc/q_matrix.h inc/q_offsets.h inc/minmax.h \
+  inc/context_ini.h inc/rdopt_coding_state.h inc/cabac.h
+obj/cabac.o: src/cabac.c inc/global.h inc/defines.h inc/parsetcommon.h \
+  inc/q_matrix.h inc/q_offsets.h inc/minmax.h inc/context_ini.h \
+  inc/cabac.h inc/image.h inc/mbuffer.h inc/mb_access.h
+obj/rtp.o: src/rtp.c inc/global.h inc/defines.h inc/parsetcommon.h \
+  inc/q_matrix.h inc/q_offsets.h inc/minmax.h inc/context_ini.h \
+  inc/rtp.h inc/nalu.h inc/nalucommon.h
+obj/q_offsets.o: src/q_offsets.c inc/global.h inc/defines.h \
+  inc/parsetcommon.h inc/q_matrix.h inc/q_offsets.h inc/minmax.h \
+  inc/context_ini.h inc/memalloc.h
+obj/rdopt.o: src/rdopt.c inc/global.h inc/defines.h inc/parsetcommon.h \
+  inc/q_matrix.h inc/q_offsets.h inc/minmax.h inc/context_ini.h \
+  inc/rdopt_coding_state.h inc/memalloc.h inc/mb_access.h inc/elements.h \
+  inc/intrarefresh.h inc/image.h inc/mbuffer.h inc/transform8x8.h \
+  inc/cabac.h inc/vlc.h inc/fast_me.h inc/ratectl.h inc/mode_decision.h \
+  inc/fmo.h
+obj/mbuffer.o: src/mbuffer.c inc/global.h inc/defines.h inc/parsetcommon.h \
+  inc/q_matrix.h inc/q_offsets.h inc/minmax.h inc/context_ini.h \
+  inc/mbuffer.h inc/memalloc.h inc/output.h inc/image.h
+obj/nalucommon.o: src/nalucommon.c inc/global.h inc/defines.h \
+  inc/parsetcommon.h inc/q_matrix.h inc/q_offsets.h inc/minmax.h \
+  inc/context_ini.h inc/nalu.h inc/nalucommon.h
+obj/simplified_fast_me.o: src/simplified_fast_me.c inc/global.h inc/defines.h \
+  inc/parsetcommon.h inc/q_matrix.h inc/q_offsets.h inc/minmax.h \
+  inc/context_ini.h inc/memalloc.h inc/simplified_fast_me.h \
+  inc/mbuffer.h inc/refbuf.h
+obj/fmo.o: src/fmo.c inc/global.h inc/defines.h inc/parsetcommon.h \
+  inc/q_matrix.h inc/q_offsets.h inc/minmax.h inc/context_ini.h \
+  inc/fmo.h
+obj/block.o: src/block.c inc/contributors.h inc/global.h inc/defines.h \
+  inc/parsetcommon.h inc/q_matrix.h inc/q_offsets.h inc/minmax.h \
+  inc/context_ini.h inc/image.h inc/mbuffer.h inc/mb_access.h \
+  inc/block.h inc/vlc.h
+obj/output.o: src/output.c inc/contributors.h inc/global.h inc/defines.h \
+  inc/parsetcommon.h inc/q_matrix.h inc/q_offsets.h inc/minmax.h \
+  inc/context_ini.h inc/image.h inc/mbuffer.h
+obj/memalloc.o: src/memalloc.c inc/global.h inc/defines.h inc/parsetcommon.h \
+  inc/q_matrix.h inc/q_offsets.h inc/minmax.h inc/context_ini.h
+obj/header.o: src/header.c inc/global.h inc/defines.h inc/parsetcommon.h \
+  inc/q_matrix.h inc/q_offsets.h inc/minmax.h inc/context_ini.h \
+  inc/elements.h inc/header.h inc/rtp.h inc/nalu.h inc/nalucommon.h \
+  inc/mbuffer.h inc/vlc.h inc/parset.h
+obj/rdpicdecision.o: src/rdpicdecision.c inc/global.h inc/defines.h \
+  inc/parsetcommon.h inc/q_matrix.h inc/q_offsets.h inc/minmax.h \
+  inc/context_ini.h
+obj/mv-search.o: src/mv-search.c inc/contributors.h inc/global.h \
+  inc/defines.h inc/parsetcommon.h inc/q_matrix.h inc/q_offsets.h \
+  inc/minmax.h inc/context_ini.h inc/image.h inc/mbuffer.h \
+  inc/mv-search.h inc/refbuf.h inc/memalloc.h inc/mb_access.h \
+  inc/fast_me.h inc/simplified_fast_me.h inc/epzs.h
+obj/lencod.o: src/lencod.c inc/contributors.h inc/global.h inc/defines.h \
+  inc/parsetcommon.h inc/q_matrix.h inc/q_offsets.h inc/minmax.h \
+  inc/context_ini.h inc/configfile.h inc/fmo.h inc/leaky_bucket.h \
+  inc/memalloc.h inc/intrarefresh.h inc/sei.h inc/parset.h inc/nalu.h \
+  inc/nalucommon.h inc/image.h inc/mbuffer.h inc/output.h inc/fast_me.h \
+  inc/simplified_fast_me.h inc/ratectl.h inc/explicit_gop.h inc/epzs.h
+obj/leaky_bucket.o: src/leaky_bucket.c inc/contributors.h inc/global.h \
+  inc/defines.h inc/parsetcommon.h inc/q_matrix.h inc/q_offsets.h \
+  inc/minmax.h inc/context_ini.h
+obj/nal.o: src/nal.c inc/contributors.h inc/global.h inc/defines.h \
+  inc/parsetcommon.h inc/q_matrix.h inc/q_offsets.h inc/minmax.h \
+  inc/context_ini.h
+obj/nalu.o: src/nalu.c inc/global.h inc/defines.h inc/parsetcommon.h \
+  inc/q_matrix.h inc/q_offsets.h inc/minmax.h inc/context_ini.h \
+  inc/nalu.h inc/nalucommon.h
+obj/weighted_prediction.o: src/weighted_prediction.c inc/contributors.h \
+  inc/global.h inc/defines.h inc/parsetcommon.h inc/q_matrix.h \
+  inc/q_offsets.h inc/minmax.h inc/context_ini.h inc/image.h \
+  inc/mbuffer.h
+obj/biariencode.o: src/biariencode.c inc/global.h inc/defines.h \
+  inc/parsetcommon.h inc/q_matrix.h inc/q_offsets.h inc/minmax.h \
+  inc/context_ini.h inc/biariencode.h
+obj/context_ini.o: src/context_ini.c inc/global.h inc/defines.h \
+  inc/parsetcommon.h inc/q_matrix.h inc/q_offsets.h inc/minmax.h \
+  inc/context_ini.h inc/ctx_tables.h inc/cabac.h
+obj/mode_decision.o: src/mode_decision.c inc/global.h inc/defines.h \
+  inc/parsetcommon.h inc/q_matrix.h inc/q_offsets.h inc/minmax.h \
+  inc/context_ini.h inc/rdopt_coding_state.h inc/mb_access.h \
+  inc/intrarefresh.h inc/image.h inc/mbuffer.h inc/transform8x8.h \
+  inc/fast_me.h inc/simplified_fast_me.h inc/ratectl.h \
+  inc/mode_decision.h inc/fmo.h
+obj/ratectl.o: src/ratectl.c inc/global.h inc/defines.h inc/parsetcommon.h \
+  inc/q_matrix.h inc/q_offsets.h inc/minmax.h inc/context_ini.h \
+  inc/ratectl.h
+obj/parsetcommon.o: src/parsetcommon.c inc/global.h inc/defines.h \
+  inc/parsetcommon.h inc/q_matrix.h inc/q_offsets.h inc/minmax.h \
+  inc/context_ini.h inc/memalloc.h
+obj/loopFilter.o: src/loopFilter.c inc/global.h inc/defines.h \
+  inc/parsetcommon.h inc/q_matrix.h inc/q_offsets.h inc/minmax.h \
+  inc/context_ini.h inc/image.h inc/mbuffer.h inc/mb_access.h
+obj/configfile.o: src/configfile.c inc/global.h inc/defines.h \
+  inc/parsetcommon.h inc/q_matrix.h inc/q_offsets.h inc/minmax.h \
+  inc/context_ini.h inc/configfile.h inc/fmo.h
+obj/explicit_gop.o: src/explicit_gop.c inc/global.h inc/defines.h \
+  inc/parsetcommon.h inc/q_matrix.h inc/q_offsets.h inc/minmax.h \
+  inc/context_ini.h inc/contributors.h inc/explicit_gop.h inc/image.h \
+  inc/mbuffer.h inc/nalucommon.h
+obj/q_matrix.o: src/q_matrix.c inc/global.h inc/defines.h inc/parsetcommon.h \
+  inc/q_matrix.h inc/q_offsets.h inc/minmax.h inc/context_ini.h \
+  inc/memalloc.h
+obj/intrarefresh.o: src/intrarefresh.c inc/global.h inc/defines.h \
+  inc/parsetcommon.h inc/q_matrix.h inc/q_offsets.h inc/minmax.h \
+  inc/context_ini.h
+obj/epzs.o: src/epzs.c inc/contributors.h inc/global.h inc/defines.h \
+  inc/parsetcommon.h inc/q_matrix.h inc/q_offsets.h inc/minmax.h \
+  inc/context_ini.h inc/image.h inc/mbuffer.h inc/memalloc.h \
+  inc/mb_access.h inc/refbuf.h inc/epzs.h
+obj/vlc.o: src/vlc.c inc/contributors.h inc/global.h inc/defines.h \
+  inc/parsetcommon.h inc/q_matrix.h inc/q_offsets.h inc/minmax.h \
+  inc/context_ini.h inc/vlc.h
+obj/mb_access.o: src/mb_access.c inc/global.h inc/defines.h \
+  inc/parsetcommon.h inc/q_matrix.h inc/q_offsets.h inc/minmax.h \
+  inc/context_ini.h inc/mb_access.h
+obj/transform8x8.o: src/transform8x8.c inc/global.h inc/defines.h \
+  inc/parsetcommon.h inc/q_matrix.h inc/q_offsets.h inc/minmax.h \
+  inc/context_ini.h inc/image.h inc/mbuffer.h inc/mb_access.h \
+  inc/elements.h inc/cabac.h inc/vlc.h inc/transform8x8.h
+obj/filehandle.o: src/filehandle.c inc/contributors.h inc/global.h \
+  inc/defines.h inc/parsetcommon.h inc/q_matrix.h inc/q_offsets.h \
+  inc/minmax.h inc/context_ini.h inc/rtp.h inc/nalu.h inc/nalucommon.h \
+  inc/annexb.h inc/parset.h inc/mbuffer.h

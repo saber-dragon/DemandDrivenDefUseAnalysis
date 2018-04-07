@@ -1,0 +1,84 @@
+ -------------------------------------------------------------- 
+  This file contains statistics for the last encoded sequence   
+ -------------------------------------------------------------- 
+ Sequence                     : input_base_4CIF_0to8.yuv
+ No.of coded pictures         :    9
+ Freq. for encoded bitstream  :   30
+ I Slice Bitrate(kb/s)        : 808.64
+ P Slice Bitrate(kb/s)        : 839.41
+ B Slice Bitrate(kb/s)        : 1436.88
+ Total Bitrate(kb/s)          : 3085.49
+ Hadamard transform           : Used
+ Image format                 : 704x576
+ Error robustness             : Off
+ Search range                 : 15
+ Total number of references   : 1
+ References for P slices      : 1
+ List0 refs for B slices      : 1
+ List1 refs for B slices      : 1
+ Entropy coding method        : CABAC
+ Profile/Level IDC            : (77,30)
+ Search range restrictions    : none
+ RD-optimized mode decision   : used
+ ---------------------|----------------|---------------|
+     Item             |     Intra      |   All frames  |
+ ---------------------|----------------|---------------|
+ SNR Y(dB)            | 44.12          | 42.16         |
+ SNR U/V (dB)         | 48.01/48.83    | 46.85/47.76   |
+ Average quant        |    22          | 23.00         |
+
+ ---------------------|----------------|---------------|---------------|
+     SNR              |        I       |       P       |       B       |
+ ---------------------|----------------|---------------|---------------|
+ SNR Y(dB)            |      44.118    |     42.815    |     41.617    |
+ SNR U(dB)            |      48.006    |     47.090    |     46.571    |
+ SNR V(dB)            |      48.833    |     47.905    |     47.527    |
+
+ ---------------------|----------------|
+   Intra              |   Mode used    |
+ ---------------------|----------------|
+ Mode 0  intra 4x4    |   1144         |
+ Mode 1  intra 8x8    |      0         |
+ Mode 2+ intra 16x16  |    440         |
+ Mode    intra IPCM   |      0         |
+
+ ---------------------|----------------|-----------------|
+   Inter              |   Mode used    | MotionInfo bits |
+ ---------------------|----------------|-----------------|
+ Mode  0  (copy)      |    332         |        0.00     |
+ Mode  1  (16x16)     |    684         |     3079.00     |
+ Mode  2  (16x8)      |    319         |     2680.00     |
+ Mode  3  (8x16)      |    332         |     2813.00     |
+ Mode  4  (8x8)       |    354         |     8065.50     |
+ Mode  5  intra 4x4   |    680         |-----------------|
+ Mode  6  intra 8x8   |      0         |
+ Mode  7+ intra 16x16 |    467         |
+ Mode     intra IPCM  |      0         |
+
+ ---------------------|----------------|-----------------|
+   B frame            |   Mode used    | MotionInfo bits |
+ ---------------------|----------------|-----------------|
+ Mode  0  (copy)      |   4650         |        0.00     |
+ Mode  1  (16x16)     |   2259         |     2775.83     |
+ Mode  2  (16x8)      |    408         |     1023.00     |
+ Mode  3  (8x16)      |    430         |     1077.17     |
+ Mode  4  (8x8)       |    535         |     2062.67     |
+ Mode  5  intra 4x4   |    807         |-----------------|
+ Mode  6  intra 8x8   |      0         |
+ Mode  7+ intra 16x16 |    415         |
+ Mode     intra IPCM  |      0         |
+
+ ---------------------|----------------|----------------|----------------|
+  Bit usage:          |      Intra     |      Inter     |    B frame     |
+ ---------------------|----------------|----------------|----------------|
+ Header               |      32.00     |      32.00     |      32.00     |
+ Mode                 |    2745.00     |    5966.50     |    5480.17     |
+ Motion Info          |        ./.     |   16637.50     |    6938.67     |
+ CBP Y/C              |    3250.00     |    4285.00     |    2566.83     |
+ Coeffs. Y            |  212651.00     |   90920.50     |   53389.00     |
+ Coeffs. C            |   23688.00     |    7875.50     |    3286.67     |
+ Delta quant          |     123.00     |      73.50     |      33.00     |
+ Stuffing Bits        |       4.00     |       8.00     |       9.67     |
+ ---------------------|----------------|----------------|----------------|
+ average bits/frame   |  242493.00     |  125798.50     |   71736.00     |
+ ---------------------|----------------|----------------|----------------|

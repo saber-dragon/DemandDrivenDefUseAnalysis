@@ -1,0 +1,4 @@
+
+Assuming the executable 'lencod.exe' is linked to 'h264enc', the command line for baseline execution:
+	h264enc -d input_base_4CIF_96bps_encoder.cfg
+
