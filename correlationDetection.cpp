@@ -69,6 +69,8 @@ namespace {
         return os;
     }
 
+#define has_key(dict, key) (dict.find(key) != dict.end())
+#define mkp(a, b, c) (std::make_pair(std::make_pair(a, b), c))
 
     raw_ostream& operator<<(raw_ostream& os, const std::pair<Instruction *,Instruction*>& e){
         os << saber::toString(e.first)
@@ -99,6 +101,29 @@ namespace {
         OTHER
     };
 
+    struct DefUsePair {
+        Instruction* def;
+        Instruction* use;
+        std::string var;
+        DefUsePair(Instruction* d, Instruction* u, const std::string& v) :
+            def(d), use(u), var(v){
+
+        }
+    };
+
+    raw_ostream& operator<<(raw_ostream& os, const DefUsePair& du){
+        os << "["
+           << saber::toString(du.def)
+           << " (BasicBlock: " << du.def->getParent()->getName() << ")"
+           << " | "
+           << saber::toString(du.use)
+           << " (BasicBlock: " << du.use->getParent()->getName() << ")"
+           <<"] : "
+           << du.var;
+        return os;
+
+    }
+
 
     static std::string getQueryAnswerName(const query_anwser& qa){
         switch(qa){
@@ -113,6 +138,31 @@ namespace {
         }
         return "";
     }
+
+    static query_anwser reverseQueryAnswer(const query_anwser& a){
+        if (a == query_anwser::TRUE) return query_anwser::FALSE;
+        else if (a == query_anwser::FALSE) return query_anwser::TRUE;
+
+        return query_anwser::OTHER;
+    }
+
+    template <typename T>
+    std::set<T> set_union(const std::set<T>& s1, const std::set<T>& s2){
+        std::set<T> s;
+        for (const auto &v: s1) s.insert(v);
+        for (const auto &v: s2) s.insert(v);
+        return s;
+    }
+
+    template <typename T>
+    std::set<T> set_intersection(const std::set<T>& s1, const std::set<T>& s2){
+        std::set<T> s;
+        for (const auto &v: s1) {
+            if (s2.count(v) >= 1) s.insert(v);
+        }
+        return s;
+    }
+
 
     template <typename T>
     raw_ostream& operator<<(raw_ostream& os, const std::set<T>& s){
@@ -143,6 +193,15 @@ namespace {
         using EdgeMarkerMap = std::unordered_map<Edge, Marker, PairHash>;
         using EdgeMarkerSetMap = std::unordered_map<Edge, std::set<Marker>, PairHash>;
 
+        // --------------------------------------------------------------------
+        //         Def Use
+        // --------------------------------------------------------------------
+        using DefUseQuery = std::set<Marker>;
+        using DefUseQueryMap = std::unordered_map<Instruction*, DefUseQuery>;
+        using DefUseWorklistEntry = std::pair<Instruction*, DefUseQuery>;
+        using DefUsePairVec = std::vector<DefUsePair>;
+        // --------------------------------------------------------------------
+
 #define Use(inst) _defUsesAtEachInst[inst]->uses
 #define Def(inst) _defUsesAtEachInst[inst]->def
 
@@ -159,6 +218,14 @@ namespace {
         EdgeMarkerSetMap _start;
         EdgeMarkerSetMap _present;
         EdgeMarkerMap _end;
+
+
+        // --------------------------------------------------------------
+        DefUseQueryMap _QDefUse;
+        std::list<DefUseWorklistEntry> _worklistDefUse;
+        StringRef _pendingVariable;
+        Instruction* _pendingUse;
+        DefUsePairVec _defUsePairs;
 
         CorrelatedBranchDetection() : FunctionPass(ID){
 
@@ -184,6 +251,8 @@ namespace {
                 }
             }
 
+            getAllDefUsePairs(F);
+
             return false;
         }
 
@@ -197,6 +266,90 @@ namespace {
             }
 
         }
+
+        void getAllDefUsePairs(Function &F){
+
+            for (auto BI = F.begin(), BE = F.end();BI != BE;++ BI) {
+                for (auto I = BI->rbegin(),EI = BI->rend();I != EI; ++ I) {
+                    Instruction *CI = &(*I);
+                    for(const auto& v: Use(CI)) {
+                        demandDrivenDefUseAnalysis(v, CI);
+                    }
+                }
+            }
+        }
+
+        void demandDrivenDefUseAnalysis(const std::string &v, Instruction* u){
+            _QDefUse.clear();
+            _worklistDefUse.clear();
+
+
+            _pendingUse = u;
+            _pendingVariable = v;
+
+            for(const auto& m: getPred(u)){
+                raise_queryDefUse(std::make_pair(m, u), std::set<Marker>());
+            }
+
+            while (!_worklistDefUse.empty()){
+                auto wle = _worklistDefUse.front();
+                _worklistDefUse.pop_front();
+                for (const auto& m: getPred(wle.first)){
+                    raise_queryDefUse(std::make_pair(m, wle.first), wle.second);
+                }
+            }
+        }
+
+        void raise_queryDefUse(const Edge& e, const DefUseQuery& ipp){
+            bool resolved = false;
+            auto ippPrime = resolveDefUse(e, ipp, resolved);
+            if (!resolved) {
+                size_t originalPathNumber = 0;
+                if (!has_key(_QDefUse, e.first)) _QDefUse.insert({e.first, ippPrime});
+                else {
+                    originalPathNumber = _QDefUse[e.first].size();
+                    _QDefUse[e.first] = set_intersection(
+                            _QDefUse[e.first], ippPrime);
+                }
+                if (_QDefUse[e.first].size() < originalPathNumber){
+                    _worklistDefUse.push_back(std::make_pair(e.first, _QDefUse[e.first]));
+                }
+            }
+        }
+
+        DefUseQuery resolveDefUse(const Edge& e, const DefUseQuery& ipp, bool& resolved){
+            for (const auto& q: ipp){
+                auto nm = std::make_pair(q.first, q.second);
+                nm.second = reverseQueryAnswer(nm.second);
+                if (has_key(_start, e) && has_key(_start[e], nm)) {
+                    resolved = true;
+                    return std::set<Marker>();
+                }
+
+            }
+            DefUseQuery ippNew = (has_key(_present, e)?set_intersection(ipp, _present[e]):DefUseQuery());
+            if (has_key(_end, e)) ippNew.insert(_end[e]);
+
+            ippNew = substitute(e.first, ippNew);
+
+            if (Def(e.first).compare(_pendingVariable) == 0){
+                _defUsePairs.emplace_back(e.first, _pendingUse, _pendingVariable);
+            }
+
+            return ippNew;
+
+        }
+        DefUseQuery substitute(Instruction *m, const DefUseQuery& ipp){
+            DefUseQuery ippNew;
+            for (const auto& q: ipp){
+                auto qPrime = std::make_pair(_subBackwardCache[std::make_pair(m, q.first)], q.second);
+                ippNew.insert(qPrime);
+            }
+            return ippNew;
+        }
+
+
+
         // Analysis the initial query whose id is @qId at
         // statement @n
         void analysis(Instruction *n, size_t qId){
@@ -589,6 +742,13 @@ namespace {
                 O << "\t}\n\n";
             }
         }
+
+        void printDefUses(raw_ostream &O) const {
+            for (const auto& du: _defUsePairs){
+                O << du << "\n";
+            }
+        }
+
         void print(raw_ostream &O, const Module *) const override {
             //
             // printAllQueries(O);
@@ -596,6 +756,8 @@ namespace {
             // printAllQueryAnswers(O);
             //
             printAllMarkers(O);
+            O << "=========================================\n\n";
+            printDefUses(O);
 
         }
         ~CorrelatedBranchDetection() override {
