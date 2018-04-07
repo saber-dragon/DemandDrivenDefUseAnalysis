@@ -34,7 +34,7 @@
 #include "pairutility.hpp"
 
 
-#include "DefUseAnalysisConfig.h"
+#include "DefUseAnalysisConfig_@HEADER_VERSION@.h"
 
 using namespace llvm;
 
@@ -670,7 +670,11 @@ namespace {
             Instruction *trueBranch = &(branch->getSuccessor(0)->front());
             Instruction *falseBranch = &(branch->getSuccessor(1)->front());
             auto key = std::make_pair(std::make_pair(pre, b), qId);
+#if WITH_PATCH != 0
             bool easyInfeasibleCase = (_A[key].size() == 1);
+#else
+            bool easyInfeasibleCase = false;
+#endif
             if (_A[key].find(query_anwser::TRUE) != _A[key].end()) {
                 _end[std::make_pair(b, trueBranch)] = std::make_pair(qId, query_anwser::TRUE);
                 if (easyInfeasibleCase)_noNeedPropagationBackward[std::make_pair(b, falseBranch)] = true;
@@ -811,8 +815,8 @@ namespace {
     };
 
     char CorrelatedBranchDetection::ID = 0;
-    static RegisterPass<CorrelatedBranchDetection> X("brcDetection",
-                                          "Correlated branches Detections",
+    static RegisterPass<CorrelatedBranchDetection> X(PASS_NAME,
+                                          "Def-Use analysis refining with the infeasible path detection",
                                           false,
                                           false);
 }

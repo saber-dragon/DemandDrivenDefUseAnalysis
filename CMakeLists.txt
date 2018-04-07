@@ -77,23 +77,7 @@ endif()
 
 #set(test_filenames "")
 
-# Copy all "*.ll" test files to the destination directory
-# Note that you can add other file types (e.g., *.bc) if you want to use them as test files.
-file(GLOB TEST_FILES *.ll)
-foreach(test_file ${TEST_FILES})
-    get_filename_component(dest_file ${test_file} NAME)
-    message(STATUS "Copying ${dest_file} ...")
-    configure_file(${test_file} ${dest_file} COPYONLY)
-    list(APPEND test_filenames ${dest_file})
-endforeach()
-message(STATUS "Get the following test files: ${test_filenames}")
 
-
-set(VERBOSE_LEVEL 0)
-# Configure file
-configure_file (
-  "${PROJECT_SOURCE_DIR}/defuseanalysisconfig.h.in"
-  "DefUseAnalysisConfig.h")
 INCLUDE_DIRECTORIES(${PROJECT_BINARY_DIR})
 # Function for adding test for @passName with @testFiles.
 function(add_llvm_pass_tests libName passName testFiles)
@@ -138,9 +122,74 @@ function(add_llvm_pass_lib_and_tests)
 endfunction()
 
 
-# Call & add libs and tests
-add_llvm_pass_lib_and_tests()
+# Copy all "*.ll" test files to the destination directory
+# Note that you can add other file types (e.g., *.bc) if you want to use them as test files.
+file(GLOB TEST_FILES "${PROJECT_SOURCE_DIR}/test/*.ll")
+foreach(test_file ${TEST_FILES})
+    get_filename_component(file_we ${test_file} NAME)
+    message(STATUS "Copying ${file_we} ...")
+    set(dest_file "${PROJECT_BINARY_DIR}/test/${file_we}")
+    configure_file("${test_file}" "${dest_file}" COPYONLY)
+    list(APPEND test_filenames "${dest_file}")
+endforeach()
+message(STATUS "Get the following test files: ${test_filenames}")
 
+# Call & add libs and tests
+# add_llvm_pass_lib_and_tests()
+
+# # copy RUNME.sh
+# configure_file("${PROJECT_SOURCE_DIR}/script/RUNME.sh"
+#         "${PROJECT_BINARY_DIR}/script/RUNME.sh"
+#         COPYONLY)
+
+# copy benchmark to build
+file(COPY "${PROJECT_SOURCE_DIR}/benchmark" DESTINATION "${PROJECT_BINARY_DIR}")
+file(COPY "${PROJECT_SOURCE_DIR}/script" DESTINATION "${PROJECT_BINARY_DIR}")
+file(GLOB HEADERS "*.hpp" "*.h")
+
+set(VERBOSE_LEVEL 0)
+
+# for traditional def use
+set(WITH_PATCH 0)
+set(src "defUseAnalysis.cpp")
+get_filename_component(libname "${src}" NAME_WE)
+message(STATUS "adding a library for ${src} named ${libname}")
+add_library(${libname} SHARED ${HEADERS} ${src})
+set(PASS_NAME "${libname}")
+# Configure file
+configure_file (
+  "${PROJECT_SOURCE_DIR}/defuseanalysisconfig.h.in"
+  "DefUseAnalysisConfig.h")
+add_llvm_pass_tests("$<TARGET_FILE:${libname}>" "${libname}" "${test_filenames}")
+
+# for refined version without patch
+include_directories(${PROJECT_SOURCE_DIR})
+set(HEADER_VERSION "RWO")
+set(src "correlationDetection_${HEADER_VERSION}.cpp")
+get_filename_component(libname "${src}" NAME_WE)
+set(PASS_NAME "${libname}")
+configure_file (
+  "${PROJECT_SOURCE_DIR}/defuseanalysisconfig.h.in"
+  "DefUseAnalysisConfig_${HEADER_VERSION}.h")
+configure_file("${PROJECT_SOURCE_DIR}/correlationDetection.cpp" "${src}")
+message(STATUS "adding a library for ${src} named ${libname}")
+add_library(${libname} SHARED ${HEADERS} ${src})
+
+add_llvm_pass_tests("$<TARGET_FILE:${libname}>" "${libname}" "${test_filenames}")
+
+# for refined version with patch
+set(HEADER_VERSION "RW")
+set(WITH_PATCH 1)
+set(src "correlationDetection_${HEADER_VERSION}.cpp")
+get_filename_component(libname "${src}" NAME_WE)
+set(PASS_NAME "${libname}")
+configure_file (
+  "${PROJECT_SOURCE_DIR}/defuseanalysisconfig.h.in"
+  "DefUseAnalysisConfig_${HEADER_VERSION}.h")
+configure_file("${PROJECT_SOURCE_DIR}/correlationDetection.cpp" "${src}")
+message(STATUS "adding a library for ${src} named ${libname}")
+add_library(${libname} SHARED ${HEADERS} ${src})
+add_llvm_pass_tests("$<TARGET_FILE:${libname}>" "${libname}" "${test_filenames}")
 
 
 

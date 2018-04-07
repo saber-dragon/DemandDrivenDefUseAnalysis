@@ -2,4 +2,6 @@
 #define DEFUSEANALYSISCONFIG_H_IN
 // the configured options and settings for Tutorial
 #define DEF_USE_VERBOSE_LEVEL @VERBOSE_LEVEL@
+#define PASS_NAME "@PASS_NAME@"
+#define WITH_PATCH @WITH_PATCH@
 #endif // DEFUSEANALYSISCONFIG_H_IN

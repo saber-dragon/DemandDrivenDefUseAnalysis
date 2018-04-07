@@ -186,7 +186,7 @@ namespace {
     };
 
     char CorrelatedBranchDetection::ID = 0;
-    static RegisterPass<CorrelatedBranchDetection> X("defUse",
+    static RegisterPass<CorrelatedBranchDetection> X(PASS_NAME,
                                           "Def-Use Analysis",
                                           false,
                                           false);
