@@ -56,28 +56,29 @@ namespace {
         query_t(const query_t& other) = default;
     };
 
-
-    //
     raw_ostream& operator<<(raw_ostream& os, const query_t& q)
     {
-        os << "branch statement: "
-           <<  saber::toString(q._branchS)
-           << "\ncomparison statement: "
-           << saber::toString(q._cmpS)
-           << "\npredicate: "
-           << q._variable
-           << " " << CmpInst::getPredicateName(q._predicate) << " "
-           << saber::toString(q._constant)
-           << "\n";
+       os << q._variable
+          << " " << CmpInst::getPredicateName(q._predicate) << " "
+          << saber::toString(q._constant)
+          << " (branchInst: "
+          <<  saber::toString(q._branchS)
+          << " | cmpInst: "
+          << saber::toString(q._cmpS)
+          << ")";
         return os;
     }
 
 
     raw_ostream& operator<<(raw_ostream& os, const std::pair<Instruction *,Instruction*>& e){
         os << saber::toString(e.first)
-           << " --> "
+           << " (BasicBlock: "
+           << e.first->getParent()->getName()
+           << ") --> "
            << saber::toString(e.second)
-           << " :";
+           << " (BasicBlock: "
+           << e.second->getParent()->getName()
+           << ")";
         return os;
     }
 
@@ -517,7 +518,7 @@ namespace {
 
                        }
                         if (count == 1 && _A[std::make_pair(e, q)].size() > 1) {
-                            if (_start.find(e) == _start.end()) {_start[e] = std::set<Marker>();}
+                            if (_start.find(ePrime) == _start.end()) {_start[ePrime] = std::set<Marker>();}
                             _start[ePrime].insert(std::make_pair(qPrime, a));
                         }
                     }
@@ -553,43 +554,39 @@ namespace {
             O << "End markers:\n";
             for (const auto& em: _end){
                 O << em.first
-                  << " :\n"
+                  << " :\n\t{"
                   << _allQueries[em.second.first]
                   << " = "
                   << getQueryAnswerName(em.second.second)
-                  << "\n\n";
+                  << "}\n\n";
             }
             O << "Present markers:\n";
             for (const auto& pm: _present) {
-                O << saber::toString(pm.first.first)
-                  << " --> "
-                  << saber::toString(pm.first.second)
+                O << pm.first
                   << " :\n";
-                O << "{\n";
+                O << "\t{\n";
                 for (const auto& mp: pm.second) {
-                    O << "\t"
+                    O << "\t\t"
                       << _allQueries[mp.first]
                       << " = "
                       << getQueryAnswerName(mp.second)
                       << "\n";
                 }
-                O << "}\n";
+                O << "\t}\n\n";
             }
             O << "Start markers:\n";
             for (const auto& sm: _start) {
-                O << saber::toString(sm.first.first)
-                  << " --> "
-                  << saber::toString(sm.first.second)
+                O << sm.first
                   << " :\n";
-                O << "{\n";
+                O << "\t{\n";
                 for (const auto& mp: sm.second) {
-                    O << "\t"
+                    O << "\t\t"
                       << _allQueries[mp.first]
                       << " = "
                       << getQueryAnswerName(mp.second)
                       << "\n";
                 }
-                O << "}\n";
+                O << "\t}\n\n";
             }
         }
         void print(raw_ostream &O, const Module *) const override {
