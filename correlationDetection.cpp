@@ -566,17 +566,16 @@ namespace {
             if (CI == nullptr) return qa;
 
             if (CI->getPredicate() == _allQueries[qId]._predicate) {
-//                errs() << "trying to resolve:\n " << _allQueries[qId] << " at " << saber::toString(CurrentI) << "\n";
                 if (Use(PredI)[0].compare(_allQueries[qId]._variable) == 0) {
                     qa = resloveIt(CurrentI, CI, SuccI, qId);
                 } else {
-                    auto *grandma = dyn_cast<LoadInst>(PredI->getPrevNode());
-//                    errs() << "My grandma is : " << saber::toString(grandma) << "\n";
-//                    errs() << *_defUsesAtEachInst[grandma] << "\n";
-                    if (grandma &&
-                            Use(grandma)[0].compare(_allQueries[qId]._variable) == 0 &&
-                            Def(grandma).compare(Use(PredI)[0]) == 0) {
-                        qa = resloveIt(CurrentI, CI, SuccI, qId);
+                    if (PredI->getPrevNode() != nullptr){// pay attention
+                        auto *grandma = dyn_cast<LoadInst>(PredI->getPrevNode());
+                        if (grandma &&
+                                Use(grandma)[0].compare(_allQueries[qId]._variable) == 0 &&
+                                Def(grandma).compare(Use(PredI)[0]) == 0) {
+                            qa = resloveIt(CurrentI, CI, SuccI, qId);
+                        }
                     }
                 }
             }
