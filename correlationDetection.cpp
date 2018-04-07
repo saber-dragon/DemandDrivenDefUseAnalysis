@@ -469,7 +469,7 @@ namespace {
         // Note that this function returns a 3-tuple.
         std::tuple<bool, std::string, Constant*, CmpInst::Predicate > isSimpleCmpInst(Instruction* cmp) {
             auto *CI = dyn_cast<CmpInst>(cmp);
-            if (Use(cmp).size() == 1) {
+            if (CI != nullptr && Use(cmp).size() == 1) {
                 Value *operand = CI->getOperand(CI->getNumOperands() - 1);
                 auto *C = dyn_cast<Constant>(operand);
                 return std::make_tuple(C != nullptr,Use(cmp)[0], C, CI->getPredicate());
