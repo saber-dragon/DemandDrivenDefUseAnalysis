@@ -33,9 +33,8 @@
 #include "demandDrivenDataFlowHelper.h"
 #include "pairutility.hpp"
 
-#ifndef DEBUG
-//#define DEBUG 1
-#endif
+
+#include "DefUseAnalysisConfig.h"
 
 using namespace llvm;
 
@@ -230,6 +229,10 @@ namespace {
         Instruction* _pendingUse;
         DefUsePairVec _defUsePairs;
 
+        //
+        size_t _numOfPairs = 0;
+        size_t _totalNumOfPairs = 0;
+
         CorrelatedBranchDetection() : FunctionPass(ID){
 
         }
@@ -256,6 +259,24 @@ namespace {
 
             getAllDefUsePairs(F);
 
+#if DEF_USE_VERBOSE_LEVEL == 0
+            _numOfPairs = _defUsePairs.size();
+            // no need to preserve the contents of all the varaibles
+            // to save space
+            _allQueries.clear();
+            _defUsesAtEachInst.clear();
+            _subBackwardCache.clear();
+            _subForwardCache.clear();
+            _A.clear();
+            _start.clear();
+            _end.clear();
+            _present.clear();
+            _noNeedPropagationBackward.clear();
+            _defUsePairs.clear();
+#else
+            _numOfPairs = _defUsePairs.size() - _totalNumOfPairs;
+#endif
+            _totalNumOfPairs += _numOfPairs;
             return false;
         }
 
@@ -506,6 +527,10 @@ namespace {
                     if (parent) {
                         qa = resolveBySubsumeConditionals(parent, dyn_cast<TerminatorInst>(n), m, qId);
                     }
+                }
+            } else {// query veriable might be killed
+                if (Def(n).compare(_allQueries[qId]._variable) == 0) {
+                    qa = query_anwser::UNDEF;
                 }
             }
             return qa;
@@ -759,11 +784,15 @@ namespace {
 
         void printDefUses(raw_ostream &O) const {
             O << "# of def-use pairs: "
-              << _defUsePairs.size()
+//              << _defUsePairs.size()
+              << _numOfPairs
+              << " (" << _totalNumOfPairs << ")"
               << "\n";
+#if DEF_USE_VERBOSE_LEVEL >= 1
             for (const auto& du: _defUsePairs){
                 O << du << "\n";
             }
+#endif
         }
 
         void print(raw_ostream &O, const Module *) const override {

@@ -22,6 +22,22 @@ Note that in this implementation we only consider the first two of them. For sim
 Note that we **only implement the first one**.
 
 
+## Usage 
+
+```bash 
+cd /root/to/this/repo 
+mkdir build && cd build 
+cmake ..
+make
+```
+
+Note that if the root path of your LLVM is not in the systme's PATH variable, you should tell cmake through a variable by using `cmake .. -DLLVM_ROOT_PATH=/path/to/llvm/root/path`
+
+### Usage of genToyExample 
+
+As you might notice, this repo also provides you a simple tool to generate some toy examples. To use it, you just need to put you `cc` code (the example we want to generate) and then `make`. You will get `ll` file and CFG in `png` of your example. 
+
+
 ## Results
 
 ### Results on A Toy Example

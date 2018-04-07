@@ -26,6 +26,8 @@
 
 #include "demandDrivenDataFlowHelper.h"
 
+#include "DefUseAnalysisConfig.h"
+
 using namespace llvm;
 
 namespace {
@@ -51,6 +53,8 @@ namespace {
         std::list<QueryInfo> Worklist;
         // StringRef V;
         // const Instruction *QueryS = nullptr;
+        size_t numOfPairs = 0;
+        size_t totalNumOfPairs = 0;
 
         CorrelatedBranchDetection() : FunctionPass(ID){
 
@@ -83,6 +87,14 @@ namespace {
                 }
             }
 
+#if DEF_USE_VERBOSE_LEVEL == 0
+            numOfPairs = AllDefUses.size();
+            DefUseMap.clear();
+            AllDefUses.clear();
+#else
+            numOfPairs = AllDefUses.size() - totalNumOfPairs;
+#endif
+            totalNumOfPairs += numOfPairs;
             return false;
         }
 
@@ -156,19 +168,20 @@ namespace {
         //     }
         // }
             O << "# of def-use pairs: "
-              << AllDefUses.size()
+//              << AllDefUses.size()
+              << numOfPairs << " (" << totalNumOfPairs << ")"
               << "\n";
-            for (const auto& du: AllDefUses){
-                O << "[" 
-                << saber::toString(du.def)
-                << " (BasicBlock: " << du.def->getParent()->getName() << ")"
-                << " | "
-                << saber::toString(du.use)
-                << " (BasicBlock: " << du.use->getParent()->getName() << ")"
-                << "]: "
-                << du.variable
-                << "\n";
-            }
+//            for (const auto& du: AllDefUses){
+//                O << "["
+//                << saber::toString(du.def)
+//                << " (BasicBlock: " << du.def->getParent()->getName() << ")"
+//                << " | "
+//                << saber::toString(du.use)
+//                << " (BasicBlock: " << du.use->getParent()->getName() << ")"
+//                << "]: "
+//                << du.variable
+//                << "\n";
+//            }
         }
     };
 

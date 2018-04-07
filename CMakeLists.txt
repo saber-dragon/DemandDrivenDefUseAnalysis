@@ -88,6 +88,13 @@ foreach(test_file ${TEST_FILES})
 endforeach()
 message(STATUS "Get the following test files: ${test_filenames}")
 
+
+set(VERBOSE_LEVEL 0)
+# Configure file
+configure_file (
+  "${PROJECT_SOURCE_DIR}/defuseanalysisconfig.h.in"
+  "DefUseAnalysisConfig.h")
+INCLUDE_DIRECTORIES(${PROJECT_BINARY_DIR})
 # Function for adding test for @passName with @testFiles.
 function(add_llvm_pass_tests libName passName testFiles)
     foreach(test_f ${testFiles})

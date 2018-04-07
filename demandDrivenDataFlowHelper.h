@@ -34,7 +34,7 @@ namespace saber {
     void extractLLVMIRVars(const std::string& cs, SmallVector<std::string, 4>& variables, bool checkLabel=false){
         std::string s(cs);
         std::smatch m;
-        std::regex r("(?:[%@][^ ]+\\s*=)|(?:label\\s+[%@][^ ,]+)|(?:[%@][^ ,)]+)");
+        std::regex r("(?:[%@][^ ()]+\\s*=)|(?:label\\s+[%@][^ ,()]+)|(?:[%@][^ ,()]+)");
 
         while (std::regex_search(s, m, r)) {
             std::string temp(m.str());
@@ -48,6 +48,16 @@ namespace saber {
             s = m.suffix();
         }
 
+
+    }
+    SmallVector<std::string, 4> removeCustomTypeVars(SmallVector<std::string, 4>& defUses){
+        SmallVector<std::string, 4> afterRemove;
+        for (const auto&v: defUses){
+            if (!StringRef(v).startswith("%struct.")) {
+                afterRemove.emplace_back(v);
+            }
+        }
+        return afterRemove;
 
     }
     // Get def & uses from an Instruction, if having def return true
@@ -71,21 +81,25 @@ namespace saber {
             while (defUses.front()[k] == '=' || defUses.front()[k] == ' ') --k;
             defUses.front() = defUses.front().substr(0, k + 1);
         }
+        // new post process
+        defUses = removeCustomTypeVars(defUses);
         // pay attention
         if (isStore && defUses.size() > 1) {
             std::swap(defUses[0], defUses[1]);
         }
 
         // handle call: since function also start with @
-        if (isCall) {
-            if (hasDef) {// remove the second one
-                assert(defUses.size() >= 2 && defUses[1][0] == '@');
-                defUses.erase(defUses.begin() + 1);
-            } else {
-                assert(defUses.size() >= 1 && defUses[0][0] == '@');
-                defUses.erase(defUses.begin());
-            }
-        }
+        // treat function as a norm vraible
+        // TODO: more elegent way to handle with function
+//        if (isCall) {
+//            if (hasDef) {// remove the second one
+//                assert(defUses.size() >= 2 && defUses[1][0] == '@');
+//                defUses.erase(defUses.begin() + 1);
+//            } else {
+//                assert(defUses.size() >= 1 && defUses[0][0] == '@');
+//                defUses.erase(defUses.begin());
+//            }
+//        }
 
         return hasDef;
     }
