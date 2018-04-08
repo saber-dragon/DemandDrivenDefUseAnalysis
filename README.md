@@ -24,14 +24,31 @@ Note that we **only implement the first one**.
 
 ## Usage 
 
+### Compile
+
 ```bash 
+export CC=clang CXX=clang++
 cd /root/to/this/repo 
 mkdir build && cd build 
 cmake ..
 make
+make test
 ```
 
 Note that if the root path of your LLVM is not in the systme's PATH variable, you should tell cmake through a variable by using `cmake .. -DLLVM_ROOT_PATH=/path/to/llvm/root/path`
+
+
+If succeeding, three `.so` files will be produced.
++ libcorrelationDetection_RWO.so : the algorithm in the paper without our patch
++ libcorrelationDetection_RW.so : the algorithm in the paper with our patch
++ libdefUseAnalysis.so : the traditional algorithm 
+
+### Run Benchmark
+
+[./script/RUNME.sh](./script/RUNME.sh) should work. Or you can use the follow command to run the benchmark. Take `libdefUseAnalysis.so` as an example.
+```bash
+opt -load /path/to/libdefUseAnalysis.so -defUseAnalysis -analyze /path/to/benchmark/lencod.ll | tee results_WOP_enc.txt
+```
 
 ### Usage of genToyExample 
 
