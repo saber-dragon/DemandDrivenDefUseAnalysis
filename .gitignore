@@ -23,7 +23,6 @@ tags
 .DS_Store
 .directory
 *.debug
-Makefile*
 *.prl
 *.app
 moc_*.cpp
@@ -77,5 +76,6 @@ cmake-build-debug
 build-*
 .vscode
 .idea
+*build
 
 

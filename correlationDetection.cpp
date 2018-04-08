@@ -583,18 +583,31 @@ namespace {
         }
 
         query_anwser resloveIt(TerminatorInst* CurrentI, CmpInst* CI, Instruction* SuccI, size_t qId){
+
             Value *operand = CI->getOperand(CI->getNumOperands() - 1);
             query_anwser qa = query_anwser::OTHER;
             if (Constant *C = dyn_cast<Constant>(operand)) {
+                // pay attention
 
-                if (CurrentI->getSuccessor(0) == SuccI->getParent())
-                    qa = ConstantExpr::getCompare(_allQueries[qId]._predicate, C, _allQueries[qId]._constant,
-                                                  true)->isOneValue() ?
-                         query_anwser::TRUE : query_anwser::OTHER;
-                else
-                    qa = ConstantExpr::getCompare(_allQueries[qId]._predicate, _allQueries[qId]._constant, C,
-                                                  true)->isOneValue() ?
-                         query_anwser::FALSE : query_anwser::OTHER;
+                if (C->getType() == _allQueries[qId]._constant->getType())  {
+                    try{
+                        if (CurrentI->getSuccessor(0) == SuccI->getParent())
+                            qa = ConstantExpr::getCompare(_allQueries[qId]._predicate, C, _allQueries[qId]._constant,
+                                                          true)->isOneValue() ?
+                                 query_anwser::TRUE : query_anwser::OTHER;
+                        else
+                            qa = ConstantExpr::getCompare(_allQueries[qId]._predicate, _allQueries[qId]._constant, C,
+                                                          true)->isOneValue() ?
+                                 query_anwser::FALSE : query_anwser::OTHER;
+                    } catch (...){
+                        errs() << "Sorry, I can not compare "
+                               << saber::toString(C)
+                               << " with "
+                               << saber::toString(_allQueries[qId]._constant)
+                               << "\n";
+                        qa = query_anwser::OTHER;
+                    }
+                }
             }
             return qa;
         }

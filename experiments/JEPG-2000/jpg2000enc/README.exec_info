@@ -1,0 +1,4 @@
+
+Assuming the executable 'jasper' is linked to 'jpg2000enc', the command line for baseline execution:
+	jpg2000enc -f input_base_4CIF.ppm -F output_base_4CIF_96bps.jp2 -T jp2 -O rate=0.010416667
+

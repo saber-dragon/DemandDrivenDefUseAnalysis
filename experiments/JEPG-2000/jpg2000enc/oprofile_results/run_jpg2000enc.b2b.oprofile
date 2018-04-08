@@ -1,0 +1,21 @@
+
+# Do 30 runs of the MediaBench 2 video benchmark, jpg2000enc, in back-to-back (b2b) order
+
+
+for RUN in 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+do
+
+  opcontrol --no-vmlinux --callgraph=50
+  opcontrol --start-daemon --separate=all
+  opcontrol --start
+  time ./jpg2000enc -f input_base_4CIF.ppm -F output_base_4CIF_96bps.jp2 -T jp2 -O rate=0.010416667
+  echo
+  opcontrol --stop
+  opreport -l ./jpg2000enc > oprofile_run${RUN}.b2b.results
+  opcontrol --reset
+  opcontrol --shutdown
+
+done
+
+../../get_report.b2b > jpg2000enc.combined_results.b2b.oprofile
+

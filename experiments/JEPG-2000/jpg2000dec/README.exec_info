@@ -1,0 +1,4 @@
+
+Assuming the executable 'jasper' is linked to 'jpg2000dec', the command line for baseline execution:
+	jpg2000dec -f input_base_4CIF_96bps.jp2 -F output_base_4CIF_96bps_dec.ppm -T pnm
+

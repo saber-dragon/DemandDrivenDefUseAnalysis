@@ -1,0 +1,25 @@
+CPU: CPU with timer interrupt, speed 0 MHz (estimated)
+Profiling through timer interrupt
+samples  %        image name               symbol name
+22       21.7822  jasper                   jpc_enc_enccblk
+12       11.8812  jasper                   jpc_encclnpass
+8         7.9208  jasper                   jas_image_readcmpt
+8         7.9208  jasper                   jpc_qmfb1d_split
+7         6.9307  jasper                   jas_image_writecmpt
+6         5.9406  jasper                   jpc_mqenc_codemps2
+5         4.9505  jasper                   jpc_ft_analyze
+5         4.9505  jasper                   jpc_mqenc_codelps
+4         3.9604  jasper                   jas_cmshapmatlut_invert
+4         3.9604  jasper                   pnm_decode
+4         3.9604  jasper                   pnm_getuint
+4         3.9604  no-vmlinux               (no symbols)
+3         2.9703  jasper                   jpc_enc_encodemainbody
+1         0.9901  jasper                   bitstoint
+1         0.9901  jasper                   getthebyte
+1         0.9901  jasper                   jas_matrix_asl
+1         0.9901  jasper                   jas_matrix_create
+1         0.9901  jasper                   jas_stream_copy
+1         0.9901  jasper                   jpc_enc_encpkt
+1         0.9901  jasper                   jpc_pow2i
+1         0.9901  jasper                   jpc_rct
+1         0.9901  jasper                   rateallocate
