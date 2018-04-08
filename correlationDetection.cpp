@@ -441,25 +441,11 @@ namespace {
         Instruction* extractBranchWithSimplePredicate(Instruction *TI) {
             if (auto *BI=dyn_cast<BranchInst>(TI)) {// is a branch
                 if (BI->isConditional()) {// only focusing on conditional branch
-#ifdef DEBUG
-                    errs() << "Got a branch predicate: "
-                           << saber::toString(BI)
-                           << "\n";
-#endif
+                    if (Use(TI).empty()) return nullptr; // no usage
                     StringRef branchVariable(Use(TI)[0]);
                     Instruction* parent = TI->getPrevNode();
                     if (parent == nullptr) {
-#ifdef DEBUG
-                        errs() << "Failed to find the comparison statement for "
-                               << saber::toString(TI)
-                               << ", ignoring it.\n";
-#endif
                     } else {
-#ifdef DEBUG
-                        errs() << "Found the comparison associated with it: "
-                               << saber::toString(parent)
-                               << "\n";
-#endif
                         return parent;
                     }
                 }
