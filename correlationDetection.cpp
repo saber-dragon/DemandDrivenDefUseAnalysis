@@ -201,6 +201,7 @@ namespace {
         using DefUseQueryMap = std::unordered_map<Instruction*, DefUseQuery>;
         using DefUseWorklistEntry = std::pair<Instruction*, DefUseQuery>;
         using DefUsePairVec = std::vector<DefUsePair>;
+        using EdgeVisitorMap = std::unordered_map<Edge, bool, PairHash>;
         // --------------------------------------------------------------------
 
 #define Use(inst) _defUsesAtEachInst[inst]->uses
@@ -228,6 +229,7 @@ namespace {
         StringRef _pendingVariable;
         Instruction* _pendingUse;
         DefUsePairVec _defUsePairs;
+        EdgeVisitorMap _visited;
 
         //
         size_t _numOfPairs = 0;
@@ -306,6 +308,7 @@ namespace {
         void demandDrivenDefUseAnalysis(const std::string &v, Instruction* u){
             _QDefUse.clear();
             _worklistDefUse.clear();
+            _visited.clear();
 
 
             _pendingUse = u;
@@ -327,7 +330,7 @@ namespace {
         void raise_queryDefUse(const Edge& e, const DefUseQuery& ipp){
             bool resolved = false;
             auto ippPrime = resolveDefUse(e, ipp, resolved);
-            if (!resolved) {
+            if (!resolved && !has_key(_visited, e)) {
                 size_t originalPathNumber = std::numeric_limits<size_t>::max();
                 if (!has_key(_QDefUse, e.first)) _QDefUse.insert({e.first, ippPrime});
                 else {
@@ -339,6 +342,7 @@ namespace {
                     _worklistDefUse.push_back(std::make_pair(e.first, _QDefUse[e.first]));
                 }
             }
+            _visited[e] = true;
         }
 
         DefUseQuery resolveDefUse(const Edge& e, const DefUseQuery& ipp, bool& resolved){
