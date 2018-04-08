@@ -1,0 +1,708 @@
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'Scaling_List':
+# of def-use pairs: 34 (34)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'InterpretSPS':
+# of def-use pairs: 183 (217)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'ReadVUI':
+# of def-use pairs: 96 (313)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'ReadHRDParameters':
+# of def-use pairs: 31 (344)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'InitVUI':
+# of def-use pairs: 0 (344)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'InterpretPPS':
+# of def-use pairs: 203 (547)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'PPSConsistencyCheck':
+# of def-use pairs: 0 (547)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'SPSConsistencyCheck':
+# of def-use pairs: 0 (547)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'MakePPSavailable':
+# of def-use pairs: 38 (585)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'MakeSPSavailable':
+# of def-use pairs: 7 (592)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'ProcessSPS':
+# of def-use pairs: 65 (657)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'ProcessPPS':
+# of def-use pairs: 49 (706)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'activate_sps':
+# of def-use pairs: 82 (788)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'activate_pps':
+# of def-use pairs: 7 (795)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'UseParameterSet':
+# of def-use pairs: 62 (857)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'CheckAvailabilityOfNeighborsCABAC':
+# of def-use pairs: 47 (904)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'cabac_new_slice':
+# of def-use pairs: 0 (904)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'create_contexts_MotionInfo':
+# of def-use pairs: 4 (908)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'create_contexts_TextureInfo':
+# of def-use pairs: 4 (912)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'delete_contexts_MotionInfo':
+# of def-use pairs: 2 (914)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'delete_contexts_TextureInfo':
+# of def-use pairs: 2 (916)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'readFieldModeInfo_CABAC':
+# of def-use pairs: 39 (955)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'check_next_mb_and_get_field_mode_CABAC':
+# of def-use pairs: 256 (1211)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'readMB_skip_flagInfo_CABAC':
+# of def-use pairs: 66 (1277)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'readMVD_CABAC':
+# of def-use pairs: 171 (1448)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'unary_exp_golomb_mv_decode':
+# of def-use pairs: 54 (1502)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'readB8_typeInfo_CABAC':
+# of def-use pairs: 61 (1563)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'readMB_transform_size_flag_CABAC':
+# of def-use pairs: 29 (1592)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'readMB_typeInfo_CABAC':
+# of def-use pairs: 295 (1887)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'readIntraPredMode_CABAC':
+# of def-use pairs: 26 (1913)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'readRefFrame_CABAC':
+# of def-use pairs: 217 (2130)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'unary_bin_decode':
+# of def-use pairs: 10 (2140)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'readDquant_CABAC':
+# of def-use pairs: 32 (2172)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'readCBP_CABAC':
+# of def-use pairs: 193 (2365)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'readCIPredMode_CABAC':
+# of def-use pairs: 50 (2415)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'unary_bin_max_decode':
+# of def-use pairs: 24 (2439)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'read_and_store_CBP_block_bit':
+# of def-use pairs: 278 (2717)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'read_significance_map':
+# of def-use pairs: 114 (2831)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'read_significant_coefficients':
+# of def-use pairs: 73 (2904)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'unary_exp_golomb_level_decode':
+# of def-use pairs: 41 (2945)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'readRunLevel_CABAC':
+# of def-use pairs: 52 (2997)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'readSyntaxElement_CABAC':
+# of def-use pairs: 9 (3006)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'cabac_startcode_follows':
+# of def-use pairs: 17 (3023)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'exp_golomb_decode_eq_prob':
+# of def-use pairs: 23 (3046)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'readIPCMBytes_CABAC':
+# of def-use pairs: 20 (3066)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'ercConcealIntraFrame':
+# of def-use pairs: 20 (3086)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'concealBlocks':
+# of def-use pairs: 365 (3451)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'ercPixConcealIMB':
+# of def-use pairs: 157 (3608)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'ercCollect8PredBlocks':
+# of def-use pairs: 108 (3716)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'ercCollectColumnBlocks':
+# of def-use pairs: 19 (3735)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'start_macroblock':
+# of def-use pairs: 182 (3917)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'exit_macroblock':
+# of def-use pairs: 28 (3945)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'interpret_mb_mode_P':
+# of def-use pairs: 57 (4002)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'interpret_mb_mode_I':
+# of def-use pairs: 40 (4042)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'interpret_mb_mode_B':
+# of def-use pairs: 108 (4150)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'interpret_mb_mode_SI':
+# of def-use pairs: 57 (4207)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'init_macroblock':
+# of def-use pairs: 326 (4533)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'SetB8Mode':
+# of def-use pairs: 20 (4553)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'reset_coeffs':
+# of def-use pairs: 136 (4689)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'field_flag_inference':
+# of def-use pairs: 30 (4719)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'read_one_macroblock':
+# of def-use pairs: 1260 (5979)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'readMotionInfoFromNAL':
+# of def-use pairs: 2862 (8841)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'SetMotionVectorPredictor':
+# of def-use pairs: 683 (9524)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'read_ipred_modes':
+# of def-use pairs: 336 (9860)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'readCBPandCoeffsFromNAL':
+# of def-use pairs: 3183 (13043)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'readIPCMcoeffsFromNAL':
+# of def-use pairs: 288 (13331)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'readCoeff4x4_CAVLC':
+# of def-use pairs: 431 (13762)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'readLumaCoeff8x8_CABAC':
+# of def-use pairs: 196 (13958)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'predict_nnz':
+# of def-use pairs: 108 (14066)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'predict_nnz_chroma':
+# of def-use pairs: 231 (14297)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'init_decoding_engine_IPCM':
+# of def-use pairs: 26 (14323)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'BType2CtxRef':
+# of def-use pairs: 2 (14325)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'CalculateQuant8Param':
+# of def-use pairs: 167 (14492)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'decode_ipcm_mb':
+# of def-use pairs: 243 (14735)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'decode_one_macroblock':
+# of def-use pairs: 6428 (21163)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'dump_dpb':
+# of def-use pairs: 0 (21163)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'getDpbSize':
+# of def-use pairs: 70 (21233)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'check_num_ref':
+# of def-use pairs: 8 (21241)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'init_dpb':
+# of def-use pairs: 166 (21407)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'free_dpb':
+# of def-use pairs: 116 (21523)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'free_storable_picture':
+# of def-use pairs: 41 (21564)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'free_frame_store':
+# of def-use pairs: 14 (21578)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'alloc_frame_store':
+# of def-use pairs: 7 (21585)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'alloc_storable_picture':
+# of def-use pairs: 90 (21675)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'is_short_ref':
+# of def-use pairs: 8 (21683)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'is_long_ref':
+# of def-use pairs: 8 (21691)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'init_lists':
+# of def-use pairs: 1205 (22896)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'compare_pic_by_pic_num_desc':
+# of def-use pairs: 14 (22910)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'compare_pic_by_lt_pic_num_asc':
+# of def-use pairs: 14 (22924)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'compare_fs_by_frame_num_desc':
+# of def-use pairs: 14 (22938)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'gen_pic_list_from_frame_list':
+# of def-use pairs: 191 (23129)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'compare_fs_by_lt_pic_idx_asc':
+# of def-use pairs: 14 (23143)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'compare_pic_by_poc_desc':
+# of def-use pairs: 14 (23157)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'compare_pic_by_poc_asc':
+# of def-use pairs: 14 (23171)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'compare_fs_by_poc_desc':
+# of def-use pairs: 14 (23185)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'compare_fs_by_poc_asc':
+# of def-use pairs: 14 (23199)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'init_mbaff_lists':
+# of def-use pairs: 178 (23377)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'reorder_ref_pic_list':
+# of def-use pairs: 304 (23681)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'update_ref_list':
+# of def-use pairs: 136 (23817)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'update_ltref_list':
+# of def-use pairs: 136 (23953)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'mm_update_max_long_term_frame_idx':
+# of def-use pairs: 58 (24011)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'store_picture_in_dpb':
+# of def-use pairs: 1412 (25423)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'flush_dpb':
+# of def-use pairs: 78 (25501)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'unmark_for_reference':
+# of def-use pairs: 88 (25589)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'unmark_long_term_field_for_reference_by_frame_idx':
+# of def-use pairs: 449 (26038)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'insert_picture_in_dpb':
+# of def-use pairs: 80 (26118)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'remove_frame_from_dpb':
+# of def-use pairs: 121 (26239)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'output_one_frame_from_dpb':
+# of def-use pairs: 116 (26355)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'dpb_split_field':
+# of def-use pairs: 1457 (27812)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'dpb_combine_field':
+# of def-use pairs: 572 (28384)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'gen_field_ref_ids':
+# of def-use pairs: 107 (28491)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'dpb_combine_field_yuv':
+# of def-use pairs: 284 (28775)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'alloc_ref_pic_list_reordering_buffer':
+# of def-use pairs: 49 (28824)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'free_ref_pic_list_reordering_buffer':
+# of def-use pairs: 34 (28858)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'fill_frame_num_gap':
+# of def-use pairs: 58 (28916)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'alloc_colocated':
+# of def-use pairs: 75 (28991)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'free_colocated':
+# of def-use pairs: 48 (29039)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'compute_colocated':
+# of def-use pairs: 2022 (31061)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'ercInit':
+# of def-use pairs: 18 (31079)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'ercClose':
+# of def-use pairs: 24 (31103)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'ercOpen':
+# of def-use pairs: 11 (31114)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'ercSetErrorConcealment':
+# of def-use pairs: 1 (31115)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'ercReset':
+# of def-use pairs: 150 (31265)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'ercStartSegment':
+# of def-use pairs: 9 (31274)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'ercStopSegment':
+# of def-use pairs: 10 (31284)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'ercMarkCurrSegmentLost':
+# of def-use pairs: 71 (31355)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'ercMarkCurrSegmentOK':
+# of def-use pairs: 65 (31420)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'ercMarkCurrMBConcealed':
+# of def-use pairs: 51 (31471)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'testEndian':
+# of def-use pairs: 0 (31471)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'img2buf':
+# of def-use pairs: 123 (31594)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'write_picture':
+# of def-use pairs: 0 (31594)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'write_out_picture':
+# of def-use pairs: 1105 (32699)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'init_out_buffer':
+# of def-use pairs: 1 (32700)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'uninit_out_buffer':
+# of def-use pairs: 1 (32701)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'clear_picture':
+# of def-use pairs: 397 (33098)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'write_unpaired_field':
+# of def-use pairs: 72 (33170)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'flush_direct_output':
+# of def-use pairs: 14 (33184)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'write_stored_frame':
+# of def-use pairs: 19 (33203)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'direct_output':
+# of def-use pairs: 108 (33311)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'get_mem2Dpel':
+# of def-use pairs: 82 (33393)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'no_mem_exit':
+# of def-use pairs: 0 (33393)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'get_mem3Dpel':
+# of def-use pairs: 16 (33409)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'free_mem2Dpel':
+# of def-use pairs: 6 (33415)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'free_mem3Dpel':
+# of def-use pairs: 19 (33434)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'get_mem2D':
+# of def-use pairs: 80 (33514)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'get_mem2Dint':
+# of def-use pairs: 82 (33596)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'get_mem2Dint64':
+# of def-use pairs: 82 (33678)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'get_mem3D':
+# of def-use pairs: 15 (33693)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'get_mem3Dint':
+# of def-use pairs: 16 (33709)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'get_mem3Dint64':
+# of def-use pairs: 16 (33725)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'get_mem4Dint':
+# of def-use pairs: 31 (33756)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'free_mem2D':
+# of def-use pairs: 5 (33761)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'free_mem2Dint':
+# of def-use pairs: 6 (33767)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'free_mem2Dint64':
+# of def-use pairs: 6 (33773)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'free_mem3D':
+# of def-use pairs: 18 (33791)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'free_mem3Dint':
+# of def-use pairs: 19 (33810)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'free_mem3Dint64':
+# of def-use pairs: 19 (33829)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'free_mem4Dint':
+# of def-use pairs: 11 (33840)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'get_mem2Dshort':
+# of def-use pairs: 82 (33922)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'get_mem3Dshort':
+# of def-use pairs: 16 (33938)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'get_mem4Dshort':
+# of def-use pairs: 31 (33969)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'free_mem2Dshort':
+# of def-use pairs: 6 (33975)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'free_mem3Dshort':
+# of def-use pairs: 19 (33994)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'free_mem4Dshort':
+# of def-use pairs: 11 (34005)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'CeilLog2':
+# of def-use pairs: 11 (34016)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'FirstPartOfSliceHeader':
+# of def-use pairs: 34 (34050)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'RestOfSliceHeader':
+# of def-use pairs: 784 (34834)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'dec_ref_pic_marking':
+# of def-use pairs: 69 (34903)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'decode_poc':
+# of def-use pairs: 385 (35288)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'dumppoc':
+# of def-use pairs: 50 (35338)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'picture_order':
+# of def-use pairs: 11 (35349)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'RBSPtoSODB':
+# of def-use pairs: 29 (35378)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'EBSPtoRBSP':
+# of def-use pairs: 37 (35415)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'InterpretSEIMessage':
+# of def-use pairs: 192 (35607)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'interpret_buffering_period_info':
+# of def-use pairs: 64 (35671)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'interpret_picture_timing_info':
+# of def-use pairs: 123 (35794)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'interpret_pan_scan_rect_info':
+# of def-use pairs: 25 (35819)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'interpret_dec_ref_pic_marking_repetition_info':
+# of def-use pairs: 35 (35854)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'interpret_spare_pic':
+# of def-use pairs: 413 (36267)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'interpret_subsequence_info':
+# of def-use pairs: 17 (36284)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'interpret_subsequence_layer_characteristics_info':
+# of def-use pairs: 19 (36303)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'interpret_subsequence_characteristics_info':
+# of def-use pairs: 31 (36334)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'interpret_motion_constrained_slice_group_set_info':
+# of def-use pairs: 22 (36356)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'interpret_film_grain_characteristics_info':
+# of def-use pairs: 90 (36446)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'interpret_stereo_video_info_info':
+# of def-use pairs: 16 (36462)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'interpret_filler_payload_info':
+# of def-use pairs: 11 (36473)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'interpret_user_data_registered_itu_t_t35_info':
+# of def-use pairs: 0 (36473)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'interpret_user_data_unregistered_info':
+# of def-use pairs: 1 (36474)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'interpret_recovery_point_info':
+# of def-use pairs: 12 (36486)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'interpret_scene_information':
+# of def-use pairs: 13 (36499)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'interpret_full_frame_freeze_info':
+# of def-use pairs: 0 (36499)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'interpret_full_frame_freeze_release_info':
+# of def-use pairs: 0 (36499)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'interpret_full_frame_snapshot_info':
+# of def-use pairs: 9 (36508)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'interpret_progressive_refinement_end_info':
+# of def-use pairs: 9 (36517)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'interpret_deblocking_filter_display_preference_info':
+# of def-use pairs: 14 (36531)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'interpret_reserved_info':
+# of def-use pairs: 1 (36532)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'interpret_progressive_refinement_start_info':
+# of def-use pairs: 10 (36542)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'set_ec_flag':
+# of def-use pairs: 0 (36542)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'reset_ec_flags':
+# of def-use pairs: 0 (36542)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'get_concealed_element':
+# of def-use pairs: 12 (36554)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'free_Partition':
+# of def-use pairs: 2 (36556)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'GetAnnexbNALU':
+# of def-use pairs: 202 (36758)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'OpenBitstreamFile':
+# of def-use pairs: 5 (36763)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'CloseBitstreamFile':
+# of def-use pairs: 1 (36764)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'CheckZeroByteNonVCL':
+# of def-use pairs: 28 (36792)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'CheckZeroByteVCL':
+# of def-use pairs: 13 (36805)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'mb_is_available':
+# of def-use pairs: 21 (36826)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'CheckAvailabilityOfNeighbors':
+# of def-use pairs: 276 (37102)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'get_mb_block_pos':
+# of def-use pairs: 22 (37124)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'get_mb_pos':
+# of def-use pairs: 29 (37153)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'getNonAffNeighbour':
+# of def-use pairs: 141 (37294)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'getAffNeighbour':
+# of def-use pairs: 349 (37643)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'getNeighbour':
+# of def-use pairs: 5 (37648)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'getLuma4x4Neighbour':
+# of def-use pairs: 19 (37667)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'getChroma4x4Neighbour':
+# of def-use pairs: 19 (37686)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'error':
+# of def-use pairs: 1 (37687)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'AllocNALU':
+# of def-use pairs: 12 (37699)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'FreeNALU':
+# of def-use pairs: 6 (37705)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'FmoInit':
+# of def-use pairs: 760 (38465)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'FmoFinit':
+# of def-use pairs: 8 (38473)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'FmoGetNumberOfSliceGroup':
+# of def-use pairs: 1 (38474)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'FmoGetLastMBOfPicture':
+# of def-use pairs: 22 (38496)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'FmoGetLastMBInSliceGroup':
+# of def-use pairs: 20 (38516)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'FmoGetSliceGroupId':
+# of def-use pairs: 10 (38526)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'FmoGetNextMBNr':
+# of def-use pairs: 28 (38554)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'intrapred8x8':
+# of def-use pairs: 3435 (41989)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'LowPassForIntra8x8Pred':
+# of def-use pairs: 285 (42274)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'itrans8x8':
+# of def-use pairs: 366 (42640)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'arideco_create_decoding_environment':
+# of def-use pairs: 4 (42644)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'arideco_delete_decoding_environment':
+# of def-use pairs: 2 (42646)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'arideco_start_decoding':
+# of def-use pairs: 261 (42907)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'arideco_bits_read':
+# of def-use pairs: 8 (42915)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'arideco_done_decoding':
+# of def-use pairs: 4 (42919)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'biari_decode_symbol':
+# of def-use pairs: 85 (43004)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'biari_decode_symbol_eq_prob':
+# of def-use pairs: 38 (43042)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'biari_decode_final':
+# of def-use pairs: 51 (43093)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'biari_init_context':
+# of def-use pairs: 26 (43119)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'intrapred':
+# of def-use pairs: 1352 (44471)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'intrapred_luma_16x16':
+# of def-use pairs: 775 (45246)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'intrapred_chroma':
+# of def-use pairs: 1814 (47060)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'itrans':
+# of def-use pairs: 578 (47638)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'AssignQuantParam':
+# of def-use pairs: 163 (47801)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'CalculateQuantParam':
+# of def-use pairs: 215 (48016)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'itrans_2':
+# of def-use pairs: 198 (48214)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'itrans_sp':
+# of def-use pairs: 740 (48954)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'sign':
+# of def-use pairs: 7 (48961)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'copyblock_sp':
+# of def-use pairs: 768 (49729)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'itrans_sp_chroma':
+# of def-use pairs: 896 (50625)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'ercConcealInterFrame':
+# of def-use pairs: 216 (50841)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'concealByTrial':
+# of def-use pairs: 255 (51096)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'concealByCopy':
+# of def-use pairs: 287 (51383)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'buildPredRegionYUV':
+# of def-use pairs: 644 (52027)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'edgeDistortion':
+# of def-use pairs: 286 (52313)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'copyPredMB':
+# of def-use pairs: 230 (52543)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'conceal_lost_frames':
+# of def-use pairs: 101 (52644)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'copy_to_conceal':
+# of def-use pairs: 1172 (53816)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'init_lists_for_non_reference_loss':
+# of def-use pairs: 536 (54352)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'compare_pic_by_pic_num_desc.543':
+# of def-use pairs: 14 (54366)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'compare_pic_by_poc_desc.544':
+# of def-use pairs: 14 (54380)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'compare_pic_by_poc_asc.545':
+# of def-use pairs: 14 (54394)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'compare_pic_by_lt_pic_num_asc.546':
+# of def-use pairs: 14 (54408)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'update_ref_list_for_concealment':
+# of def-use pairs: 55 (54463)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'get_pic_from_dpb':
+# of def-use pairs: 30 (54493)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'comp':
+# of def-use pairs: 5 (54498)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'init_node':
+# of def-use pairs: 8 (54506)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'print_node':
+# of def-use pairs: 2 (54508)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'print_list':
+# of def-use pairs: 9 (54517)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'add_node':
+# of def-use pairs: 4 (54521)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'delete_node':
+# of def-use pairs: 9 (54530)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'delete_list':
+# of def-use pairs: 20 (54550)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'conceal_non_ref_pics':
+# of def-use pairs: 154 (54704)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'sliding_window_poc_management':
+# of def-use pairs: 120 (54824)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'write_lost_non_ref_pic':
+# of def-use pairs: 28 (54852)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'write_lost_ref_after_idr':
+# of def-use pairs: 35 (54887)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'OpenRTPFile':
+# of def-use pairs: 5 (54892)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'CloseRTPFile':
+# of def-use pairs: 1 (54893)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'GetRTPNALU':
+# of def-use pairs: 55 (54948)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'RTPReadPacket':
+# of def-use pairs: 43 (54991)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'DecomposeRTPpacket':
+# of def-use pairs: 77 (55068)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'DumpRTPHeader':
+# of def-use pairs: 28 (55096)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'ue_v':
+# of def-use pairs: 17 (55113)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'linfo_ue':
+# of def-use pairs: 5 (55118)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'readSyntaxElement_VLC':
+# of def-use pairs: 96 (55214)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'se_v':
+# of def-use pairs: 17 (55231)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'linfo_se':
+# of def-use pairs: 11 (55242)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'u_v':
+# of def-use pairs: 51 (55293)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'readSyntaxElement_FLC':
+# of def-use pairs: 54 (55347)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'u_1':
+# of def-use pairs: 50 (55397)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'linfo_cbp_intra':
+# of def-use pairs: 14 (55411)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'linfo_cbp_inter':
+# of def-use pairs: 14 (55425)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'linfo_levrun_inter':
+# of def-use pairs: 40 (55465)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'linfo_levrun_c2x2':
+# of def-use pairs: 40 (55505)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'GetVLCSymbol':
+# of def-use pairs: 73 (55578)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'readSyntaxElement_UVLC':
+# of def-use pairs: 3 (55581)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'readSyntaxElement_Intra4x4PredictionMode':
+# of def-use pairs: 96 (55677)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'GetVLCSymbol_IntraMode':
+# of def-use pairs: 74 (55751)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'more_rbsp_data':
+# of def-use pairs: 35 (55786)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'uvlc_startcode_follows':
+# of def-use pairs: 57 (55843)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'code_from_bitstream_2d':
+# of def-use pairs: 86 (55929)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'ShowBits':
+# of def-use pairs: 38 (55967)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'GetBits':
+# of def-use pairs: 38 (56005)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'readSyntaxElement_NumCoeffTrailingOnes':
+# of def-use pairs: 300 (56305)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'readSyntaxElement_NumCoeffTrailingOnesChromaDC':
+# of def-use pairs: 245 (56550)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'readSyntaxElement_Level_VLC0':
+# of def-use pairs: 188 (56738)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'readSyntaxElement_Level_VLCN':
+# of def-use pairs: 222 (56960)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'readSyntaxElement_TotalZeros':
+# of def-use pairs: 72 (57032)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'readSyntaxElement_TotalZerosChromaDC':
+# of def-use pairs: 78 (57110)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'readSyntaxElement_Run':
+# of def-use pairs: 72 (57182)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'peekSyntaxElement_UVLC':
+# of def-use pairs: 96 (57278)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'NALUtoRBSP':
+# of def-use pairs: 7 (57285)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'JMDecHelpExit':
+# of def-use pairs: 1 (57286)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'Configure':
+# of def-use pairs: 121 (57407)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'init_conf':
+# of def-use pairs: 75 (57482)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'main':
+# of def-use pairs: 82 (57564)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'malloc_slice':
+# of def-use pairs: 17 (57581)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'report':
+# of def-use pairs: 156 (57737)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'FreePartition':
+# of def-use pairs: 28 (57765)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'free_global_buffers':
+# of def-use pairs: 44 (57809)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'AllocPartition':
+# of def-use pairs: 22 (57831)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'init':
+# of def-use pairs: 0 (57831)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'free_slice':
+# of def-use pairs: 13 (57844)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'init_frext':
+# of def-use pairs: 54 (57898)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'init_global_buffers':
+# of def-use pairs: 147 (58045)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'init_contexts':
+# of def-use pairs: 969 (59014)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'AllocPPS':
+# of def-use pairs: 9 (59023)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'AllocSPS':
+# of def-use pairs: 4 (59027)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'FreePPS':
+# of def-use pairs: 7 (59034)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'FreeSPS':
+# of def-use pairs: 2 (59036)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'sps_is_equal':
+# of def-use pairs: 270 (59306)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'pps_is_equal':
+# of def-use pairs: 285 (59591)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'DeblockPicture':
+# of def-use pairs: 10 (59601)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'DeblockMb':
+# of def-use pairs: 298 (59899)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'GetStrength':
+# of def-use pairs: 499 (60398)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'EdgeLoop':
+# of def-use pairs: 589 (60987)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'MbAffPostProc':
+# of def-use pairs: 818 (61805)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'decode_one_frame':
+# of def-use pairs: 41 (61846)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'read_new_slice':
+# of def-use pairs: 379 (62225)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'exit_picture':
+# of def-use pairs: 343 (62568)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'fill_wp_params':
+# of def-use pairs: 468 (63036)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'decode_one_slice':
+# of def-use pairs: 83 (63119)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'set_ref_pic_num':
+# of def-use pairs: 313 (63432)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'ercWriteMBMODEandMV':
+# of def-use pairs: 321 (63753)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'is_new_picture':
+# of def-use pairs: 98 (63851)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'init_picture':
+# of def-use pairs: 334 (64185)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'reorder_lists':
+# of def-use pairs: 62 (64247)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'decode_slice':
+# of def-use pairs: 27 (64274)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'buf2img':
+# of def-use pairs: 497 (64771)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'find_snr':
+# of def-use pairs: 542 (65313)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'get_block':
+# of def-use pairs: 2079 (67392)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'frame_postprocessing':
+# of def-use pairs: 0 (67392)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'field_postprocessing':
+# of def-use pairs: 3 (67395)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'init_old_slice':
+# of def-use pairs: 0 (67395)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'exit_slice':
+# of def-use pairs: 46 (67441)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'reset_wp_params':
+# of def-use pairs: 30 (67471)

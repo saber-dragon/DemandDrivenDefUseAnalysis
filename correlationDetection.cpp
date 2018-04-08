@@ -474,6 +474,10 @@ namespace {
                 if (auto *SI=dyn_cast<StoreInst>(n)) {
                     if (Def(n).compare(_allQueries[qId]._variable) == 0) {
                         query_t newQ(_allQueries[qId]);
+                        if (Use(n).empty()) {
+                            errs() << saber::toString(n)
+                                   << "\n";
+                        }
                         newQ._variable = Use(n)[0];
                         _allQueries.push_back(newQ);
                         _subBackwardCache[p] = _allQueries.size() - 1;
@@ -481,6 +485,10 @@ namespace {
                 }  else if (auto *LI = dyn_cast<LoadInst>(n)){
                     if (Def(n).compare(_allQueries[qId]._variable) == 0) {
                         query_t newQ(_allQueries[qId]);
+                        if (Use(n).empty()) {
+                            errs() << saber::toString(n)
+                                   << "\n";
+                        }
                         newQ._variable = Use(n)[0];
                         _allQueries.push_back(newQ);
                         _subBackwardCache[p] = _allQueries.size() - 1;
@@ -507,12 +515,11 @@ namespace {
             if (auto *SI = dyn_cast<StoreInst>(n)) {
                 // constant assignment
                 qa = resolveByCostantAssignment(SI, qId);
-            } else if (auto *LI = dyn_cast<LoadInst>(n)){
-                // it seems that load instruction cannot assign constant
             } else if (BranchInst *BI = dyn_cast<BranchInst>(n)) {
                 // subsume conditionals
                 if (BI->isConditional()) {
-                    StringRef branchVariable(_defUsesAtEachInst[n]->uses[0]);
+                    if (Use(n).empty()) return qa;
+                    StringRef branchVariable(Use(n)[0]);
                     Instruction* parent = n->getPrevNode();
                     if (parent) {
                         qa = resolveBySubsumeConditionals(parent, dyn_cast<TerminatorInst>(n), m, qId);
@@ -531,8 +538,23 @@ namespace {
             if (Def(SI).compare(_allQueries[qId]._variable) == 0){
                 Constant *v = dyn_cast<Constant>(SI->getValueOperand());
                 if (v != nullptr ) {
-                    qa = ConstantExpr::getCompare(_allQueries[qId]._predicate, v, _allQueries[qId]._constant, true)->isOneValue() ?
-                            query_anwser::TRUE : query_anwser::FALSE;
+                    if (v->getType() == _allQueries[qId]._constant->getType()){
+                        try {
+                        qa = ConstantExpr::getCompare(_allQueries[qId]._predicate, v, _allQueries[qId]._constant, true)->isOneValue() ?
+                                query_anwser::TRUE : query_anwser::FALSE;
+                        } catch (...) {
+                            errs() << "Sorry, we can not compare "
+                                   << saber::toString(v)
+                                   << " with "
+                                   << saber::toString(_allQueries[qId]._constant)
+                                   << "\n";
+                            qa = query_anwser::UNDEF;// killed
+                        }
+                    } else {
+                        qa = query_anwser::UNDEF; // killed
+                    }
+                } else {
+                    qa = query_anwser::UNDEF; // killed
                 }
             }
             return qa;
@@ -561,7 +583,7 @@ namespace {
                 } else {
                     if (PredI->getPrevNode() != nullptr){// pay attention
                         auto *grandma = dyn_cast<LoadInst>(PredI->getPrevNode());
-                        if (grandma &&
+                        if (grandma && !Use(grandma).empty() &&
                                 Use(grandma)[0].compare(_allQueries[qId]._variable) == 0 &&
                                 Def(grandma).compare(Use(PredI)[0]) == 0) {
                             qa = resloveIt(CurrentI, CI, SuccI, qId);

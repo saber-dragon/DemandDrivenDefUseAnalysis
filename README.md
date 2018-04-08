@@ -129,16 +129,16 @@ Printing analysis 'Def-Use Analysis' for function '_Z3foov':
 |  algorithm       | def-use pairs | reduction |
 | ------------- |:-------------:| -----:|
 | tradit      | 165298 | - |
-| corr-P-WP      | -      |   - |
-| corr-P-WOP | -      |    - |
+| corr-P-WP      | 165266      |   0.02% |
+| corr-P-WOP | 165298      |    0 |
 
 > Decoder 
 
 |  algorithm       | def-use pairs | reduction |
 | ------------- |:-------------:| -----:|
 | tradit      | 67498 | - |
-| corr-P-WP      | -      |   - |
-| corr-P-WOP | -      |    - |
+| corr-P-WP      | 67471      |   0.04% |
+| corr-P-WOP | 67498      |    0|
 
 ### Benchmark Program : JPEG 2000
 
