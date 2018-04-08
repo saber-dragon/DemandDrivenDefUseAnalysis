@@ -508,8 +508,8 @@ namespace {
         // raise query along the reverse direction of the edge n --> m
         bool raise_query(Instruction *n, Instruction *m, size_t qId){
             auto e = std::make_pair(n, m);
-            if (_Q.find(e) == _Q.end()){_Q[e] = std::set<size_t>();}
-            if (_Q[e].find(qId) == _Q[e].end()) {
+            if (!has_key(_Q, e)){_Q[e] = std::set<size_t>();}
+            if (!has_key(_Q[e], qId)) {
                 _Q[e].insert(qId);
                 _worklist.emplace_back(n, m, qId);
                 return true;
@@ -657,6 +657,8 @@ namespace {
 
         void propagateQueryAnswer(QueryAnsQueue& queryAns, Instruction *b){
             bool changed = false;
+            //
+            EdgeVisitorMap visited;
             while (!queryAns.empty()){
                 auto key = queryAns.front();
                 queryAns.pop();
@@ -665,8 +667,13 @@ namespace {
                     auto q = key.second;
                     auto qPrime = _subForwardCache.at(std::make_pair(m, q));
                     for (auto& c: getSucc(m)) {
+
                         changed = false;
                         auto e = std::make_pair(m, c);
+                        // allow each edge to be visited at most once
+                        if (has_key(visited, e)) continue;
+                        else visited[e] = true;
+
                         auto newKey = std::make_pair(e, qPrime);
                         if (_Q[e].find(qPrime) != _Q[e].end()) {
                             if (_A.find(newKey) == _A.end()) _A[newKey] = std::set<query_anwser>();
