@@ -1,4 +1,0 @@
-
-Assuming the executable 'ldecod.exe' is linked to 'h264dec', the command line for baseline execution:
-	h264dec input_base_4CIF_96bps_decoder.cfg
-

@@ -77,5 +77,6 @@ build-*
 .vscode
 .idea
 *build
-
+experiments
+tests
 
