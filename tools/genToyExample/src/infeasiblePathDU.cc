@@ -13,6 +13,7 @@ int foo(int a){
         y = 7;
         z = 6;
     }
+    w += x;
 
     if (x > 5) {
         w = y + z;

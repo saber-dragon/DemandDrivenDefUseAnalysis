@@ -34,26 +34,30 @@ if.else:                                          ; preds = %entry
 
 if.end:                                           ; preds = %if.else, %if.then
   %1 = load i32, i32* %x, align 4
-  %cmp = icmp sgt i32 %1, 5
-  br i1 %cmp, label %if.then1, label %if.else2
+  %2 = load i32, i32* %w, align 4
+  %add = add nsw i32 %2, %1
+  store i32 %add, i32* %w, align 4
+  %3 = load i32, i32* %x, align 4
+  %cmp = icmp sgt i32 %3, 5
+  br i1 %cmp, label %if.then1, label %if.else3
 
 if.then1:                                         ; preds = %if.end
-  %2 = load i32, i32* %y, align 4
-  %3 = load i32, i32* %z, align 4
-  %add = add nsw i32 %2, %3
-  store i32 %add, i32* %w, align 4
-  br label %if.end3
-
-if.else2:                                         ; preds = %if.end
   %4 = load i32, i32* %y, align 4
   %5 = load i32, i32* %z, align 4
-  %sub = sub nsw i32 %4, %5
-  store i32 %sub, i32* %w, align 4
-  br label %if.end3
+  %add2 = add nsw i32 %4, %5
+  store i32 %add2, i32* %w, align 4
+  br label %if.end4
 
-if.end3:                                          ; preds = %if.else2, %if.then1
-  %6 = load i32, i32* %w, align 4
-  ret i32 %6
+if.else3:                                         ; preds = %if.end
+  %6 = load i32, i32* %y, align 4
+  %7 = load i32, i32* %z, align 4
+  %sub = sub nsw i32 %6, %7
+  store i32 %sub, i32* %w, align 4
+  br label %if.end4
+
+if.end4:                                          ; preds = %if.else3, %if.then1
+  %8 = load i32, i32* %w, align 4
+  ret i32 %8
 }
 
 attributes #0 = { noinline nounwind uwtable "correctly-rounded-divide-sqrt-fp-math"="false" "disable-tail-calls"="false" "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-jump-tables"="false" "no-nans-fp-math"="false" "no-signed-zeros-fp-math"="false" "no-trapping-math"="false" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+fxsr,+mmx,+sse,+sse2,+x87" "unsafe-fp-math"="false" "use-soft-float"="false" }

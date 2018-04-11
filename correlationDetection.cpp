@@ -525,7 +525,9 @@ namespace {
                         qa = resolveBySubsumeConditionals(parent, dyn_cast<TerminatorInst>(n), m, qId);
                     }
                 }
-            } else {// query veriable might be killed
+            } else if (auto *LI = dyn_cast<LoadInst>(n)){
+                // do nothing (do not remove this else if)
+            }else {// query veriable might be killed
                 if (Def(n).compare(_allQueries[qId]._variable) == 0) {
                     qa = query_anwser::UNDEF;
                 }
@@ -553,8 +555,8 @@ namespace {
                     } else {
                         qa = query_anwser::UNDEF; // killed
                     }
-                } else {
-                    qa = query_anwser::UNDEF; // killed
+                } else {// not a constant, let it propagate (this sentence is unncedessary)
+                    qa = query_anwser::OTHER;
                 }
             }
             return qa;
@@ -623,18 +625,6 @@ namespace {
             }
             return qa;
         }
-
-//        void getPreds(Instruction *I, SmallVector<Instruction*, 4>& preds){
-//            if (auto p = I->getPrevNode()){
-//                preds.push_back(p);
-//            } else {
-//                auto b = I->getParent();
-//                for (auto it=pred_begin(b),et=pred_end(b);it!=et;++it) {
-//                    BasicBlock *pb = *it;
-//                    preds.push_back(&(pb->back()));
-//                }
-//            }
-//        }
         SmallVector<Instruction*, 4> getPred(Instruction *I){
             SmallVector<Instruction*, 4> preds;
             if (auto p = I->getPrevNode()){
