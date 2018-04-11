@@ -59,6 +59,8 @@ Note that the pass name for each LLVM pass is just the `.so` filename by removin
 
 ### Run Benchmark
 
+Note that before you run the benchmark, please set `VERBOSE_LEVEL` to `0`, otherwise you will too many printing messages. You can set `VERBOSE_LEVEL` by modifying [this line](./CMakeLists.txt#L150) of the `CMakeLists.txt`.
+
 [./script/RUNME.sh](./script/RUNME.sh) should work. Or you can use the follow command to run the benchmark. Take `libdefUseAnalysis.so` as an example.
 ```bash
 opt -load /path/to/libdefUseAnalysis.so -defUseAnalysis -analyze /path/to/benchmark/lencod.ll | tee results_WOP_enc.txt
