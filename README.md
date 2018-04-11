@@ -73,109 +73,14 @@ As you might notice, this repo also provides you a simple tool to generate some 
 
 ## Results
 
-### Results on A Toy Example
+### Toy Example Results
 
-In this part, we use a very simple example to demonstrate the advantage of our simple patch (_i.e,_ simple idea 1 in [Simple Ideas We Patched](#markdown-header-simple-ideas-we-patched)). The original C/C++ code can be found in [`defUseIntra.cc`](./tests/genToyExample/src/defUseIntra.cc), of which the LLVM IR code can be found at [`defUseIntra.ll`](./tests/genToyExample/src/defUseIntra.ll). The following figure presents the CFG (not in SSA form) of the LLVM IR. 
-[foo](./tests/genToyExample/src/defUseIntra.png)
+See [here](./results/results-toy-examples.md)
 
-Clearly, the basic block entitled `if.then` is unaccessible from basic block `B1`. However, with the original algorithm we can not detect it. In other words, the algorithm without our patch will produce the same results as the traditional one. The results of the algorithm (with our patch) and the traditional def-use analysis are presented as follows.
+### Benchmark Results 
 
-> Results from the algorithm with our patch 
-```text
-Printing analysis 'Correlated branches Detections' for function '_Z3foov':
-# of def-use pairs: 21
-[  %cmp = icmp sgt i32 %0, 20 (BasicBlock: B1) |   br i1 %cmp, label %if.then, label %if.else (BasicBlock: B1)] : %cmp
-[  %0 = load i32, i32* %x, align 4 (BasicBlock: B1) |   %cmp = icmp sgt i32 %0, 20 (BasicBlock: B1)] : %0
-[  store i32 10, i32* %x, align 4 (BasicBlock: B1) |   %0 = load i32, i32* %x, align 4 (BasicBlock: B1)] : %x
-[  %add1 = add nsw i32 %2, %3 (BasicBlock: if.then) |   store i32 %add1, i32* %w, align 4 (BasicBlock: if.then)] : %add1
-[  %2 = load i32, i32* %y, align 4 (BasicBlock: if.then) |   %add1 = add nsw i32 %2, %3 (BasicBlock: if.then)] : %2
-[  %3 = load i32, i32* %z, align 4 (BasicBlock: if.then) |   %add1 = add nsw i32 %2, %3 (BasicBlock: if.then)] : %3
-[  store i32 %add, i32* %z, align 4 (BasicBlock: if.then) |   %3 = load i32, i32* %z, align 4 (BasicBlock: if.then)] : %z
-[  %add = add nsw i32 %1, 1 (BasicBlock: if.then) |   store i32 %add, i32* %z, align 4 (BasicBlock: if.then)] : %add
-[  %1 = load i32, i32* %x, align 4 (BasicBlock: if.then) |   %add = add nsw i32 %1, 1 (BasicBlock: if.then)] : %1
-[  %add3 = add nsw i32 %7, %8 (BasicBlock: if.else) |   store i32 %add3, i32* %c, align 4 (BasicBlock: if.else)] : %add3
-[  %7 = load i32, i32* %a, align 4 (BasicBlock: if.else) |   %add3 = add nsw i32 %7, %8 (BasicBlock: if.else)] : %7
-[  %8 = load i32, i32* %b, align 4 (BasicBlock: if.else) |   %add3 = add nsw i32 %7, %8 (BasicBlock: if.else)] : %8
-[  store i32 %add2, i32* %b, align 4 (BasicBlock: if.else) |   %8 = load i32, i32* %b, align 4 (BasicBlock: if.else)] : %b
-[  store i32 %4, i32* %a, align 4 (BasicBlock: if.else) |   %7 = load i32, i32* %a, align 4 (BasicBlock: if.else)] : %a
-[  %add2 = add nsw i32 %5, %6 (BasicBlock: if.else) |   store i32 %add2, i32* %b, align 4 (BasicBlock: if.else)] : %add2
-[  %5 = load i32, i32* %x, align 4 (BasicBlock: if.else) |   %add2 = add nsw i32 %5, %6 (BasicBlock: if.else)] : %5
-[  %6 = load i32, i32* %a, align 4 (BasicBlock: if.else) |   %add2 = add nsw i32 %5, %6 (BasicBlock: if.else)] : %6
-[  store i32 %4, i32* %a, align 4 (BasicBlock: if.else) |   %6 = load i32, i32* %a, align 4 (BasicBlock: if.else)] : %a
-[  store i32 10, i32* %x, align 4 (BasicBlock: B1) |   %5 = load i32, i32* %x, align 4 (BasicBlock: if.else)] : %x
-[  %4 = load i32, i32* %y, align 4 (BasicBlock: if.else) |   store i32 %4, i32* %a, align 4 (BasicBlock: if.else)] : %4
-[  store i32 9, i32* %y, align 4 (BasicBlock: B1) |   %4 = load i32, i32* %y, align 4 (BasicBlock: if.else)] : %y
-```
+See [here](./results/results-benchmarks.md)
 
-> Results from the traditional analysis (or the algorithm without our patch)
-```test 
-Printing analysis 'Def-Use Analysis' for function '_Z3foov':
-# of def-use pairs: 23
-[  %cmp = icmp sgt i32 %0, 20 (BasicBlock: B1) |   br i1 %cmp, label %if.then, label %if.else (BasicBlock: B1)]: %cmp
-[  %0 = load i32, i32* %x, align 4 (BasicBlock: B1) |   %cmp = icmp sgt i32 %0, 20 (BasicBlock: B1)]: %0
-[  store i32 10, i32* %x, align 4 (BasicBlock: B1) |   %0 = load i32, i32* %x, align 4 (BasicBlock: B1)]: %x
-[  %add1 = add nsw i32 %2, %3 (BasicBlock: if.then) |   store i32 %add1, i32* %w, align 4 (BasicBlock: if.then)]: %add1
-[  %2 = load i32, i32* %y, align 4 (BasicBlock: if.then) |   %add1 = add nsw i32 %2, %3 (BasicBlock: if.then)]: %2
-[  %3 = load i32, i32* %z, align 4 (BasicBlock: if.then) |   %add1 = add nsw i32 %2, %3 (BasicBlock: if.then)]: %3
-[  store i32 %add, i32* %z, align 4 (BasicBlock: if.then) |   %3 = load i32, i32* %z, align 4 (BasicBlock: if.then)]: %z
-[  store i32 9, i32* %y, align 4 (BasicBlock: B1) |   %2 = load i32, i32* %y, align 4 (BasicBlock: if.then)]: %y
-[  %add = add nsw i32 %1, 1 (BasicBlock: if.then) |   store i32 %add, i32* %z, align 4 (BasicBlock: if.then)]: %add
-[  %1 = load i32, i32* %x, align 4 (BasicBlock: if.then) |   %add = add nsw i32 %1, 1 (BasicBlock: if.then)]: %1
-[  store i32 10, i32* %x, align 4 (BasicBlock: B1) |   %1 = load i32, i32* %x, align 4 (BasicBlock: if.then)]: %x
-[  %add3 = add nsw i32 %7, %8 (BasicBlock: if.else) |   store i32 %add3, i32* %c, align 4 (BasicBlock: if.else)]: %add3
-[  %7 = load i32, i32* %a, align 4 (BasicBlock: if.else) |   %add3 = add nsw i32 %7, %8 (BasicBlock: if.else)]: %7
-[  %8 = load i32, i32* %b, align 4 (BasicBlock: if.else) |   %add3 = add nsw i32 %7, %8 (BasicBlock: if.else)]: %8
-[  store i32 %add2, i32* %b, align 4 (BasicBlock: if.else) |   %8 = load i32, i32* %b, align 4 (BasicBlock: if.else)]: %b
-[  store i32 %4, i32* %a, align 4 (BasicBlock: if.else) |   %7 = load i32, i32* %a, align 4 (BasicBlock: if.else)]: %a
-[  %add2 = add nsw i32 %5, %6 (BasicBlock: if.else) |   store i32 %add2, i32* %b, align 4 (BasicBlock: if.else)]: %add2
-[  %5 = load i32, i32* %x, align 4 (BasicBlock: if.else) |   %add2 = add nsw i32 %5, %6 (BasicBlock: if.else)]: %5
-[  %6 = load i32, i32* %a, align 4 (BasicBlock: if.else) |   %add2 = add nsw i32 %5, %6 (BasicBlock: if.else)]: %6
-[  store i32 %4, i32* %a, align 4 (BasicBlock: if.else) |   %6 = load i32, i32* %a, align 4 (BasicBlock: if.else)]: %a
-[  store i32 10, i32* %x, align 4 (BasicBlock: B1) |   %5 = load i32, i32* %x, align 4 (BasicBlock: if.else)]: %x
-[  %4 = load i32, i32* %y, align 4 (BasicBlock: if.else) |   store i32 %4, i32* %a, align 4 (BasicBlock: if.else)]: %4
-[  store i32 9, i32* %y, align 4 (BasicBlock: B1) |   %4 = load i32, i32* %y, align 4 (BasicBlock: if.else)]: %y
-```
-
-## Benchmark Results 
-
-### Benchmark Program : H.264/MPEG-4 AVC 
-
-> Encoder
-
-|  algorithm       | def-use pairs | reduction |
-| ------------- |:-------------:| -----:|
-| tradit      | 165298 | - |
-| corr-P-WP      | 165266      |   0.02% |
-| corr-P-WOP | 165298      |    0 |
-
-> Decoder 
-
-|  algorithm       | def-use pairs | reduction |
-| ------------- |:-------------:| -----:|
-| tradit      | 67498 | - |
-| corr-P-WP      | 67471      |   0.04% |
-| corr-P-WOP | 67498      |    0|
-
-### Benchmark Program : JPEG 2000
-
-> Encoder 
-
-|  algorithm       | def-use pairs | reduction |
-| ------------- |:-------------:| -----:|
-| tradit      | 165298 | - |
-| corr-P-WP      | -      |   - |
-| corr-P-WOP | -      |    - |
-
-> Decoder 
-
-|  algorithm       | def-use pairs | reduction |
-| ------------- |:-------------:| -----:|
-| tradit      | 165298 | - |
-| corr-P-WP      | -      |   - |
-| corr-P-WOP | -      |    - |
-
-
-### Caveats
 
 ## Notice
 
