@@ -707,11 +707,11 @@ namespace {
 #else
             bool easyInfeasibleCase = false;
 #endif
-            if (_A[key].find(query_anwser::TRUE) != _A[key].end()) {
+            if (has_key(_A[key], query_anwser::TRUE)) {
                 _end[std::make_pair(b, trueBranch)] = std::make_pair(qId, query_anwser::TRUE);
                 if (easyInfeasibleCase)_noNeedPropagationBackward[std::make_pair(b, falseBranch)] = true;
             }
-            if (_A[key].find(query_anwser::FALSE) != _A[key].end()) {
+            if (has_key(_A[key], query_anwser::FALSE)) {
                 _end[std::make_pair(b, falseBranch)] = std::make_pair(qId, query_anwser::FALSE);
                 if (easyInfeasibleCase) _noNeedPropagationBackward[std::make_pair(b, trueBranch)] = true;
             }
@@ -760,6 +760,8 @@ namespace {
             O << "\n";
         }
         void printAllQueryAnswers(raw_ostream &O) const {
+            O << "\nQuery answers:\n";
+            O << "===============================================================\n";
             for (const auto& ans: _A){
                 if (!ans.second.empty()) {
                     O << saber::toString(ans.first.first.first)
@@ -777,7 +779,8 @@ namespace {
             }
         }
         void printAllMarkers(raw_ostream &O) const {
-            O << "\n\n";
+            O << "\nMarkers:\n";
+            O << "===============================================================\n";
             O << "End markers:\n";
             for (const auto& em: _end){
                 O << em.first
@@ -787,6 +790,7 @@ namespace {
                   << getQueryAnswerName(em.second.second)
                   << "}\n\n";
             }
+            O << "===============================================================\n";
             O << "Present markers:\n";
             for (const auto& pm: _present) {
                 O << pm.first
@@ -801,6 +805,7 @@ namespace {
                 }
                 O << "\t}\n\n";
             }
+            O << "===============================================================\n";
             O << "Start markers:\n";
             for (const auto& sm: _start) {
                 O << sm.first
@@ -815,6 +820,7 @@ namespace {
                 }
                 O << "\t}\n\n";
             }
+            O << "===============================================================\n\n\n";
         }
 
         void printDefUses(raw_ostream &O) const {
@@ -824,6 +830,7 @@ namespace {
               << " (" << _totalNumOfPairs << ")"
               << "\n";
 #if DEF_USE_VERBOSE_LEVEL >= 1
+            O << "===============================================================\n";
             for (const auto& du: _defUsePairs){
                 O << du << "\n";
             }
@@ -834,9 +841,12 @@ namespace {
             //
             // printAllQueries(O);
             //
-            // printAllQueryAnswers(O);
             //
-            // printAllMarkers(O);
+            //
+#if DEF_USE_VERBOSE_LEVEL >= 2
+            printAllQueryAnswers(O);
+            printAllMarkers(O);
+#endif
             // O << "=========================================\n\n";
             printDefUses(O);
 
