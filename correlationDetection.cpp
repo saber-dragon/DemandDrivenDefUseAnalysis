@@ -202,7 +202,7 @@ namespace {
         using DefUseWorklistEntry = std::pair<Instruction*, DefUseQuery>;
         using DefUsePairVec = std::vector<DefUsePair>;
         using EdgeVisitorMap = std::unordered_map<Edge, bool, PairHash>;
-        using EdgeQueryVisitorMap = std::unordered_map<std::pair<Edge, size_t>, bool, PairHash>;
+        using EdgeQueryVisitorMap = std::unordered_map<std::pair<Edge, size_t>, size_t, PairHash>;
         // --------------------------------------------------------------------
 
 #define Use(inst) _defUsesAtEachInst[inst]->uses
@@ -683,9 +683,16 @@ namespace {
                         changed = false;
                         auto e = std::make_pair(m, c);
                         auto vKey =std::make_pair(e, qPrime);
-                        // allow each edge to be visited at most once
-                    //    if (has_key(visited, vKey)) continue;
-                    //    else visited[vKey] = true;
+                        // allow each edge to be visited at most 20 times
+                        // since there exists infinite loops 
+                        // do not why
+                       if (has_key(visited, vKey)) { 
+                           visited[vKey] ++; 
+                           if (visited[vKey] >= 20) continue;
+                       }
+                       else {
+                           visited[vKey] = 0;
+                       }
 
                         auto newKey = std::make_pair(e, qPrime);
                         if (has_key(_Q[e], qPrime)) {

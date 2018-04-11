@@ -122,7 +122,8 @@ Start markers:
 [  store i32 9, i32* %y, align 4 (BasicBlock: B1) |   %4 = load i32, i32* %y, align 4 (BasicBlock: if.else)] : %y
 ```
 
-> Refining with infeasible paths with the simple patch 
+### Refining with infeasible paths with the simple patch 
+
 ```text 
 Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function '_Z3foov':
 
