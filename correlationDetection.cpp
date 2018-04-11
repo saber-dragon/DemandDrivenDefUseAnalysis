@@ -350,6 +350,8 @@ namespace {
                 resolved = true;
                 return std::set<Marker>();
             }
+
+
             for (const auto& q: ipp){
                 auto nm = std::make_pair(q.first, q.second);
                 nm.second = reverseQueryAnswer(nm.second);
@@ -374,7 +376,9 @@ namespace {
         DefUseQuery substitute(Instruction *m, const DefUseQuery& ipp){
             DefUseQuery ippNew;
             for (const auto& q: ipp){
-                auto qPrime = std::make_pair(_subBackwardCache[std::make_pair(m, q.first)], q.second);
+                auto t = std::make_pair(m, q.first);
+                assert(has_key(_subBackwardCache, t));
+                auto qPrime = std::make_pair(_subBackwardCache[t], q.second);
                 ippNew.insert(qPrime);
             }
             return ippNew;
@@ -424,17 +428,25 @@ namespace {
             // so we should manually fill all query infomation on the edge between them.
             auto b = n->getNextNode();
             assert(dyn_cast<BranchInst>(b) != nullptr);
-            _subBackwardCache[std::make_pair(b, qId)] = qId;
+            _subBackwardCache[std::make_pair(n, qId)] = qId;
             _subForwardCache[std::make_pair(n, qId)] = qId;
             auto e = std::make_pair(n, b);
             _A[std::make_pair(e, qId)] = std::set<query_anwser>();
+//            if(!has_key(_Q, e)) _Q[e] = std::set<size_t>();
+//            _Q[e].insert(qId);
             for (auto& p: getPred(n)){
-                for (const auto &a: _A[std::make_pair(std::make_pair(p, n), qId)]){
+                auto eTmp = std::make_pair(p, n);
+                for (const auto &a: _A[std::make_pair(eTmp, qId)]){
                     _A[std::make_pair(e, qId)].insert(a);
                 }
             }
-            if (_Q.find(e) == _Q.end()) _Q[e] = std::set<size_t>();
+            if (!has_key(_Q, e)) _Q[e] = std::set<size_t>();
             _Q[e].insert(qId);
+
+            //
+            _subBackwardCache[std::make_pair(b, qId)] = qId;
+            _subForwardCache[std::make_pair(b, qId)] = qId;
+
 
             placeCFGLabel(b, n, qId);
         }
@@ -669,12 +681,12 @@ namespace {
                         changed = false;
                         auto e = std::make_pair(m, c);
                         // allow each edge to be visited at most once
-                        if (has_key(visited, e)) continue;
-                        else visited[e] = true;
+//                        if (has_key(visited, e)) continue;
+//                        else visited[e] = true;
 
                         auto newKey = std::make_pair(e, qPrime);
-                        if (_Q[e].find(qPrime) != _Q[e].end()) {
-                            if (_A.find(newKey) == _A.end()) _A[newKey] = std::set<query_anwser>();
+                        if (has_key(_Q[e], qPrime)) {
+                            if (!has_key(_A, newKey)) _A[newKey] = std::set<query_anwser>();
                             for (const auto& a: _A[key]){
                                 _A[newKey].insert(a);
                                 changed = true;
@@ -691,7 +703,8 @@ namespace {
 
             Instruction *trueBranch = &(branch->getSuccessor(0)->front());
             Instruction *falseBranch = &(branch->getSuccessor(1)->front());
-            auto key = std::make_pair(std::make_pair(pre, b), qId);
+            auto sEdge = std::make_pair(pre, b);
+            auto key = std::make_pair(sEdge, qId);
 #if WITH_PATCH != 0
             bool easyInfeasibleCase = (_A[key].size() == 1);
 #else
@@ -700,10 +713,14 @@ namespace {
             if (has_key(_A[key], query_anwser::TRUE)) {
                 _end[std::make_pair(b, trueBranch)] = std::make_pair(qId, query_anwser::TRUE);
                 if (easyInfeasibleCase)_noNeedPropagationBackward[std::make_pair(b, falseBranch)] = true;
+                if(!has_key(_present, sEdge)) _present[sEdge] = std::set<Marker>();
+                _present[sEdge].insert(std::make_pair(qId, query_anwser::TRUE));
             }
             if (has_key(_A[key], query_anwser::FALSE)) {
                 _end[std::make_pair(b, falseBranch)] = std::make_pair(qId, query_anwser::FALSE);
                 if (easyInfeasibleCase) _noNeedPropagationBackward[std::make_pair(b, trueBranch)] = true;
+                if(!has_key(_present, sEdge)) _present[sEdge] = std::set<Marker>();
+                _present[sEdge].insert(std::make_pair(qId, query_anwser::FALSE));
             }
 
             for (const auto& qPair: _Q) {
@@ -711,31 +728,30 @@ namespace {
                 auto n = e.first;
                 for (const auto& q: qPair.second) {
                     auto ePrime = std::make_pair(n, q);
-                    if (_subBackwardCache.find(ePrime) == _subBackwardCache.end()) continue;// q is resolved here
+                    if (!has_key(_subBackwardCache, ePrime)) continue;// q is resolved here
                     auto qPrime = _subBackwardCache.at(ePrime);
                     for (const auto& m: getPred(n)){
-                        auto preKey = std::make_pair(std::make_pair(m, n), qPrime);
                         auto ePrime = std::make_pair(m ,n);
-                        //std::set<query_anwser> ans;
+                        auto preKey = std::make_pair(ePrime, qPrime);
                         size_t count = 0;
                         query_anwser a;
-                        if (_A.find(preKey) != _A.end()){// have answer(s)
-                            if (_A[preKey].find(query_anwser::TRUE) != _A[preKey].end()) {
+                        if (has_key(_A, preKey)){// have answer(s)
+                            if (has_key(_A[preKey], query_anwser::TRUE)) {
                                 a = query_anwser::TRUE;
-                                if (_present.find(ePrime) == _present.end()) {_present[ePrime] = std::set<Marker>();}
+                                if (!has_key(_present, ePrime)) {_present[ePrime] = std::set<Marker>();}
                                 _present[ePrime].insert(std::make_pair(qPrime, a));
                                 ++ count;
                             }
-                            if (_A[preKey].find(query_anwser::FALSE) != _A[preKey].end()) {
+                            if (has_key(_A[preKey], query_anwser::FALSE)) {
                                 a = query_anwser::FALSE;
-                                if (_present.find(ePrime) == _present.end()) {_present[ePrime] = std::set<Marker>();}
+                                if (!has_key(_present, ePrime)) {_present[ePrime] = std::set<Marker>();}
                                 _present[ePrime].insert(std::make_pair(qPrime, a));
                                 ++ count;
                             }
 
                        }
                         if (count == 1 && _A[std::make_pair(e, q)].size() > 1) {
-                            if (_start.find(ePrime) == _start.end()) {_start[ePrime] = std::set<Marker>();}
+                            if (!has_key(_start, ePrime)) {_start[ePrime] = std::set<Marker>();}
                             _start[ePrime].insert(std::make_pair(qPrime, a));
                         }
                     }
@@ -744,6 +760,8 @@ namespace {
             }
         }
         void printAllQueries(raw_ostream &O) const {
+            O << "\nQueries:\n";
+            O << "===============================================================\n";
             for (const auto& q: _allQueries){
                 O << q << "\n";
             }
@@ -829,11 +847,12 @@ namespace {
 
         void print(raw_ostream &O, const Module *) const override {
             //
-            // printAllQueries(O);
+            //
             //
             //
             //
 #if DEF_USE_VERBOSE_LEVEL >= 2
+            printAllQueries(O);
             printAllQueryAnswers(O);
             printAllMarkers(O);
 #endif
