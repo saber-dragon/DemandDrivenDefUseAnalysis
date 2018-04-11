@@ -26,6 +26,8 @@ Note that we **only implement the first one**.
 
 ### Compile
 
+Please make sure the version of your clang is **4.0.1**, otherwise there might be some unknown issues. Here we assume that `clang/clang++` is accessible by simply typing `clang/clang++` in the terminal. That is, you have added the llvm bin path into your system environment variable `PATH`. Please make sure you have installed `cmake` and `c++11` is supported by your compiler.
+
 ```bash 
 export CC=clang CXX=clang++
 cd /root/to/this/repo 
@@ -42,6 +44,18 @@ If succeeding, three `.so` files will be produced.
 + libcorrelationDetection_RWO.so : the algorithm in the paper without our patch
 + libcorrelationDetection_RW.so : the algorithm in the paper with our patch
 + libdefUseAnalysis.so : the traditional algorithm 
+
+### Run Toy Examples
+
+In the directory `test`, there are two toy examples. The first one is `defUseIntra.ll` which is compiled from [`defUseIntra.cc`](./tools/genToyExample/src/defUseIntra.cc). This one is to demonstrate that our simple idea sometimes can bring some reduction in the def-use pairs. The second one is `infeasiblePathDU.ll` which is compiled from [`infeasiblePathDU.cc`](./tools/genToyExample/src/infeasiblePathDU.cc). Thhis one is to demonstrate that sometimes detecting infeasible paths can refine
+refine the def-use pairs compared to the traditional algorithm.
+
+After you build the codes, you can run those toy examples by simply using the following commands (assume that you are still in the build directory)
+```bash
+opt -load <so-lib-name> -<pass-name> -analyze ./test/<ll-filename>
+```
+
+Note that the pass name for each LLVM pass is just the `.so` filename by removing "lib" and ".so". 
 
 ### Run Benchmark
 
