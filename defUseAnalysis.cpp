@@ -171,17 +171,19 @@ namespace {
 //              << AllDefUses.size()
               << numOfPairs << " (" << totalNumOfPairs << ")"
               << "\n";
-//            for (const auto& du: AllDefUses){
-//                O << "["
-//                << saber::toString(du.def)
-//                << " (BasicBlock: " << du.def->getParent()->getName() << ")"
-//                << " | "
-//                << saber::toString(du.use)
-//                << " (BasicBlock: " << du.use->getParent()->getName() << ")"
-//                << "]: "
-//                << du.variable
-//                << "\n";
-//            }
+#if DEF_USE_VERBOSE_LEVEL >= 1
+           for (const auto& du: AllDefUses){
+               O << "["
+               << saber::toString(du.def)
+               << " (BasicBlock: " << du.def->getParent()->getName() << ")"
+               << " | "
+               << saber::toString(du.use)
+               << " (BasicBlock: " << du.use->getParent()->getName() << ")"
+               << "]: "
+               << du.variable
+               << "\n";
+           }
+#endif
         }
     };
 

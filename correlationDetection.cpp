@@ -361,14 +361,14 @@ namespace {
                 }
             }
             DefUseQuery ippNew = (has_key(_present, e)?set_intersection(ipp, _present[e]):DefUseQuery());
-            if (has_key(_end, e)) ippNew.insert(_end[e]);
-
-            ippNew = substitute(e.first, ippNew);
+            if (has_key(_end, e)) ippNew.insert(_end[e]);       
 
             if (Def(e.first).compare(_pendingVariable) == 0){
                 _defUsePairs.emplace_back(e.first, _pendingUse, _pendingVariable);
                 resolved = true;
             }
+
+            ippNew = substitute(e.first, ippNew);
 
             return ippNew;
 
@@ -377,6 +377,7 @@ namespace {
             DefUseQuery ippNew;
             for (const auto& q: ipp){
                 auto t = std::make_pair(m, q.first);
+                if (!has_key(_subBackwardCache, t)) continue;
                 assert(has_key(_subBackwardCache, t));
                 auto qPrime = std::make_pair(_subBackwardCache[t], q.second);
                 ippNew.insert(qPrime);
@@ -432,8 +433,7 @@ namespace {
             _subForwardCache[std::make_pair(n, qId)] = qId;
             auto e = std::make_pair(n, b);
             _A[std::make_pair(e, qId)] = std::set<query_anwser>();
-//            if(!has_key(_Q, e)) _Q[e] = std::set<size_t>();
-//            _Q[e].insert(qId);
+
             for (auto& p: getPred(n)){
                 auto eTmp = std::make_pair(p, n);
                 for (const auto &a: _A[std::make_pair(eTmp, qId)]){
