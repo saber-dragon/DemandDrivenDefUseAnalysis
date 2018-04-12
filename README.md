@@ -79,7 +79,7 @@ See [here](./results/results-toy-examples.md)
 
 ### Benchmark Results 
 
-See [here](./results/results-benchmarks.md)
+See [here](./results/results-benchmark.md)
 
 
 ## Notice

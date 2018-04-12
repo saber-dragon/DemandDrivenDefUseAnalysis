@@ -147,7 +147,7 @@ file(COPY "${PROJECT_SOURCE_DIR}/benchmark" DESTINATION "${PROJECT_BINARY_DIR}")
 file(COPY "${PROJECT_SOURCE_DIR}/script" DESTINATION "${PROJECT_BINARY_DIR}")
 file(GLOB HEADERS "*.hpp" "*.h")
 
-set(VERBOSE_LEVEL 2)
+set(VERBOSE_LEVEL 0)
 
 # for traditional def use
 set(WITH_PATCH 0)
