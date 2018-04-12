@@ -15,7 +15,7 @@
 |  algorithm       | def-use pairs | reduction |
 | ------------- |:-------------:| -----:|
 | tradit      | 67498 | - |
-| corr-P-WP      | 67471      |   0.04% |
+| corr-P-WP      | 67137      |   0.53% |
 | corr-P-WOP | 67498      |    0.16%|
 
 ## Benchmark Program : JPEG 2000
