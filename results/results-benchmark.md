@@ -7,7 +7,7 @@
 |  algorithm       | def-use pairs | reduction |
 | ------------- |:-------------:| -----:|
 | tradit      | 165298 | - |
-| corr-P-WP      | 165266      |   0.02% |
+| corr-P-WP      | 164906      |   0.24% |
 | corr-P-WOP | 165132      |    0.08% |
 
 > Decoder 
