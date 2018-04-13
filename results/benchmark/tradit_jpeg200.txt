@@ -1,0 +1,1040 @@
+Printing analysis 'Def-Use Analysis' for function 'main':
+# of def-use pairs: 179 (179)
+Printing analysis 'Def-Use Analysis' for function 'cmdopts_parse':
+# of def-use pairs: 132 (311)
+Printing analysis 'Def-Use Analysis' for function 'cmdusage':
+# of def-use pairs: 45 (356)
+Printing analysis 'Def-Use Analysis' for function 'badusage':
+# of def-use pairs: 3 (359)
+Printing analysis 'Def-Use Analysis' for function 'cmdinfo':
+# of def-use pairs: 3 (362)
+Printing analysis 'Def-Use Analysis' for function 'cmdopts_destroy':
+# of def-use pairs: 1 (363)
+Printing analysis 'Def-Use Analysis' for function 'addopt':
+# of def-use pairs: 13 (376)
+Printing analysis 'Def-Use Analysis' for function 'jas_image_create':
+# of def-use pairs: 160 (536)
+Printing analysis 'Def-Use Analysis' for function 'jas_image_destroy':
+# of def-use pairs: 39 (575)
+Printing analysis 'Def-Use Analysis' for function 'jas_image_cmpt_create':
+# of def-use pairs: 100 (675)
+Printing analysis 'Def-Use Analysis' for function 'jas_image_setbbox':
+# of def-use pairs: 105 (780)
+Printing analysis 'Def-Use Analysis' for function 'jas_image_create0':
+# of def-use pairs: 13 (793)
+Printing analysis 'Def-Use Analysis' for function 'jas_image_copy':
+# of def-use pairs: 153 (946)
+Printing analysis 'Def-Use Analysis' for function 'jas_image_cmpt_copy':
+# of def-use pairs: 56 (1002)
+Printing analysis 'Def-Use Analysis' for function 'jas_image_decode':
+# of def-use pairs: 82 (1084)
+Printing analysis 'Def-Use Analysis' for function 'jas_image_getfmt':
+# of def-use pairs: 28 (1112)
+Printing analysis 'Def-Use Analysis' for function 'jas_image_lookupfmtbyid':
+# of def-use pairs: 20 (1132)
+Printing analysis 'Def-Use Analysis' for function 'jas_image_encode':
+# of def-use pairs: 24 (1156)
+Printing analysis 'Def-Use Analysis' for function 'jas_image_readcmpt':
+# of def-use pairs: 186 (1342)
+Printing analysis 'Def-Use Analysis' for function 'jas_image_writecmpt':
+# of def-use pairs: 212 (1554)
+Printing analysis 'Def-Use Analysis' for function 'jas_image_clearfmts':
+# of def-use pairs: 23 (1577)
+Printing analysis 'Def-Use Analysis' for function 'jas_image_addfmt':
+# of def-use pairs: 36 (1613)
+Printing analysis 'Def-Use Analysis' for function 'jas_image_strtofmt':
+# of def-use pairs: 22 (1635)
+Printing analysis 'Def-Use Analysis' for function 'jas_image_lookupfmtbyname':
+# of def-use pairs: 21 (1656)
+Printing analysis 'Def-Use Analysis' for function 'jas_image_fmttostr':
+# of def-use pairs: 21 (1677)
+Printing analysis 'Def-Use Analysis' for function 'jas_image_fmtfromname':
+# of def-use pairs: 28 (1705)
+Printing analysis 'Def-Use Analysis' for function 'jas_image_rawsize':
+# of def-use pairs: 34 (1739)
+Printing analysis 'Def-Use Analysis' for function 'jas_image_delcmpt':
+# of def-use pairs: 38 (1777)
+Printing analysis 'Def-Use Analysis' for function 'jas_image_addcmpt':
+# of def-use pairs: 164 (1941)
+Printing analysis 'Def-Use Analysis' for function 'jas_image_copycmpt':
+# of def-use pairs: 138 (2079)
+Printing analysis 'Def-Use Analysis' for function 'jas_image_dump':
+# of def-use pairs: 92 (2171)
+Printing analysis 'Def-Use Analysis' for function 'jas_image_readcmpt2':
+# of def-use pairs: 102 (2273)
+Printing analysis 'Def-Use Analysis' for function 'getint':
+# of def-use pairs: 59 (2332)
+Printing analysis 'Def-Use Analysis' for function 'jas_image_depalettize':
+# of def-use pairs: 94 (2426)
+Printing analysis 'Def-Use Analysis' for function 'jas_image_readcmptsample':
+# of def-use pairs: 114 (2540)
+Printing analysis 'Def-Use Analysis' for function 'jas_image_writecmptsample':
+# of def-use pairs: 131 (2671)
+Printing analysis 'Def-Use Analysis' for function 'jas_image_getcmptbytype':
+# of def-use pairs: 22 (2693)
+Printing analysis 'Def-Use Analysis' for function 'jas_image_writecmpt2':
+# of def-use pairs: 97 (2790)
+Printing analysis 'Def-Use Analysis' for function 'putint':
+# of def-use pairs: 65 (2855)
+Printing analysis 'Def-Use Analysis' for function 'jas_image_sampcmpt':
+# of def-use pairs: 463 (3318)
+Printing analysis 'Def-Use Analysis' for function 'jas_image_ishomosamp':
+# of def-use pairs: 35 (3353)
+Printing analysis 'Def-Use Analysis' for function 'jas_image_chclrspc':
+# of def-use pairs: 631 (3984)
+Printing analysis 'Def-Use Analysis' for function 'jas_strdup':
+# of def-use pairs: 10 (3994)
+Printing analysis 'Def-Use Analysis' for function 'jas_setdbglevel':
+# of def-use pairs: 2 (3996)
+Printing analysis 'Def-Use Analysis' for function 'jas_getdbglevel':
+# of def-use pairs: 1 (3997)
+Printing analysis 'Def-Use Analysis' for function 'jas_eprintf':
+# of def-use pairs: 11 (4008)
+Printing analysis 'Def-Use Analysis' for function 'jas_memdump':
+# of def-use pairs: 22 (4030)
+Printing analysis 'Def-Use Analysis' for function 'jas_cmprof_createfromclrspc':
+# of def-use pairs: 205 (4235)
+Printing analysis 'Def-Use Analysis' for function 'jas_cmprof_createfromiccprof':
+# of def-use pairs: 93 (4328)
+Printing analysis 'Def-Use Analysis' for function 'jas_cmshapmat_invmat':
+# of def-use pairs: 166 (4494)
+Printing analysis 'Def-Use Analysis' for function 'jas_cmpxformseq_insertpxform':
+# of def-use pairs: 77 (4571)
+Printing analysis 'Def-Use Analysis' for function 'jas_cmshapmat_destroy':
+# of def-use pairs: 15 (4586)
+Printing analysis 'Def-Use Analysis' for function 'jas_cmshapmat_apply':
+# of def-use pairs: 502 (5088)
+Printing analysis 'Def-Use Analysis' for function 'mono':
+# of def-use pairs: 170 (5258)
+Printing analysis 'Def-Use Analysis' for function 'triclr':
+# of def-use pairs: 403 (5661)
+Printing analysis 'Def-Use Analysis' for function 'jas_cmshapmatlut_set':
+# of def-use pairs: 105 (5766)
+Printing analysis 'Def-Use Analysis' for function 'jas_cmshapmatlut_invert':
+# of def-use pairs: 142 (5908)
+Printing analysis 'Def-Use Analysis' for function 'jas_clrspc_numchans':
+# of def-use pairs: 7 (5915)
+Printing analysis 'Def-Use Analysis' for function 'jas_cmprof_destroy':
+# of def-use pairs: 62 (5977)
+Printing analysis 'Def-Use Analysis' for function 'jas_cmprof_copy':
+# of def-use pairs: 142 (6119)
+Printing analysis 'Def-Use Analysis' for function 'jas_cmxform_create':
+# of def-use pairs: 1006 (7125)
+Printing analysis 'Def-Use Analysis' for function 'jas_cmxform_apply':
+# of def-use pairs: 420 (7545)
+Printing analysis 'Def-Use Analysis' for function 'jas_cmxform_destroy':
+# of def-use pairs: 53 (7598)
+Printing analysis 'Def-Use Analysis' for function 'jas_iccprof_createfromcmprof':
+# of def-use pairs: 3 (7601)
+Printing analysis 'Def-Use Analysis' for function 'jas_stream_memopen':
+# of def-use pairs: 89 (7690)
+Printing analysis 'Def-Use Analysis' for function 'jas_stream_close':
+# of def-use pairs: 65 (7755)
+Printing analysis 'Def-Use Analysis' for function 'mem_read':
+# of def-use pairs: 23 (7778)
+Printing analysis 'Def-Use Analysis' for function 'mem_write':
+# of def-use pairs: 123 (7901)
+Printing analysis 'Def-Use Analysis' for function 'mem_seek':
+# of def-use pairs: 17 (7918)
+Printing analysis 'Def-Use Analysis' for function 'mem_close':
+# of def-use pairs: 8 (7926)
+Printing analysis 'Def-Use Analysis' for function 'jas_stream_fopen':
+# of def-use pairs: 141 (8067)
+Printing analysis 'Def-Use Analysis' for function 'file_read':
+# of def-use pairs: 5 (8072)
+Printing analysis 'Def-Use Analysis' for function 'file_write':
+# of def-use pairs: 5 (8077)
+Printing analysis 'Def-Use Analysis' for function 'file_seek':
+# of def-use pairs: 3 (8080)
+Printing analysis 'Def-Use Analysis' for function 'file_close':
+# of def-use pairs: 10 (8090)
+Printing analysis 'Def-Use Analysis' for function 'jas_stream_freopen':
+# of def-use pairs: 82 (8172)
+Printing analysis 'Def-Use Analysis' for function 'sfile_read':
+# of def-use pairs: 5 (8177)
+Printing analysis 'Def-Use Analysis' for function 'sfile_write':
+# of def-use pairs: 5 (8182)
+Printing analysis 'Def-Use Analysis' for function 'sfile_seek':
+# of def-use pairs: 4 (8186)
+Printing analysis 'Def-Use Analysis' for function 'sfile_close':
+# of def-use pairs: 3 (8189)
+Printing analysis 'Def-Use Analysis' for function 'jas_stream_tmpfile':
+# of def-use pairs: 91 (8280)
+Printing analysis 'Def-Use Analysis' for function 'jas_stream_fdopen':
+# of def-use pairs: 103 (8383)
+Printing analysis 'Def-Use Analysis' for function 'jas_stream_flush':
+# of def-use pairs: 50 (8433)
+Printing analysis 'Def-Use Analysis' for function 'jas_stream_getc_func':
+# of def-use pairs: 41 (8474)
+Printing analysis 'Def-Use Analysis' for function 'jas_stream_fillbuf':
+# of def-use pairs: 61 (8535)
+Printing analysis 'Def-Use Analysis' for function 'jas_stream_putc_func':
+# of def-use pairs: 43 (8578)
+Printing analysis 'Def-Use Analysis' for function 'jas_stream_flushbuf':
+# of def-use pairs: 64 (8642)
+Printing analysis 'Def-Use Analysis' for function 'jas_stream_ungetc':
+# of def-use pairs: 20 (8662)
+Printing analysis 'Def-Use Analysis' for function 'jas_stream_read':
+# of def-use pairs: 55 (8717)
+Printing analysis 'Def-Use Analysis' for function 'jas_stream_write':
+# of def-use pairs: 56 (8773)
+Printing analysis 'Def-Use Analysis' for function 'jas_stream_printf':
+# of def-use pairs: 67 (8840)
+Printing analysis 'Def-Use Analysis' for function 'jas_stream_puts':
+# of def-use pairs: 50 (8890)
+Printing analysis 'Def-Use Analysis' for function 'jas_stream_gets':
+# of def-use pairs: 62 (8952)
+Printing analysis 'Def-Use Analysis' for function 'jas_stream_gobble':
+# of def-use pairs: 40 (8992)
+Printing analysis 'Def-Use Analysis' for function 'jas_stream_pad':
+# of def-use pairs: 46 (9038)
+Printing analysis 'Def-Use Analysis' for function 'jas_stream_isseekable':
+# of def-use pairs: 13 (9051)
+Printing analysis 'Def-Use Analysis' for function 'jas_stream_rewind':
+# of def-use pairs: 2 (9053)
+Printing analysis 'Def-Use Analysis' for function 'jas_stream_seek':
+# of def-use pairs: 87 (9140)
+Printing analysis 'Def-Use Analysis' for function 'jas_stream_tell':
+# of def-use pairs: 36 (9176)
+Printing analysis 'Def-Use Analysis' for function 'jas_stream_copy':
+# of def-use pairs: 93 (9269)
+Printing analysis 'Def-Use Analysis' for function 'jas_stream_setrwcount':
+# of def-use pairs: 4 (9273)
+Printing analysis 'Def-Use Analysis' for function 'jas_stream_display':
+# of def-use pairs: 128 (9401)
+Printing analysis 'Def-Use Analysis' for function 'jas_stream_length':
+# of def-use pairs: 84 (9485)
+Printing analysis 'Def-Use Analysis' for function 'jas_init':
+# of def-use pairs: 26 (9511)
+Printing analysis 'Def-Use Analysis' for function 'jas_cleanup':
+# of def-use pairs: 0 (9511)
+Printing analysis 'Def-Use Analysis' for function 'jas_malloc':
+# of def-use pairs: 1 (9512)
+Printing analysis 'Def-Use Analysis' for function 'jas_free':
+# of def-use pairs: 0 (9512)
+Printing analysis 'Def-Use Analysis' for function 'jas_realloc':
+# of def-use pairs: 1 (9513)
+Printing analysis 'Def-Use Analysis' for function 'jas_calloc':
+# of def-use pairs: 10 (9523)
+Printing analysis 'Def-Use Analysis' for function 'jas_getversion':
+# of def-use pairs: 0 (9523)
+Printing analysis 'Def-Use Analysis' for function 'jas_getopt':
+# of def-use pairs: 112 (9635)
+Printing analysis 'Def-Use Analysis' for function 'jas_seq2d_create':
+# of def-use pairs: 18 (9653)
+Printing analysis 'Def-Use Analysis' for function 'jas_matrix_create':
+# of def-use pairs: 160 (9813)
+Printing analysis 'Def-Use Analysis' for function 'jas_matrix_destroy':
+# of def-use pairs: 15 (9828)
+Printing analysis 'Def-Use Analysis' for function 'jas_seq2d_copy':
+# of def-use pairs: 88 (9916)
+Printing analysis 'Def-Use Analysis' for function 'jas_matrix_copy':
+# of def-use pairs: 49 (9965)
+Printing analysis 'Def-Use Analysis' for function 'jas_seq2d_bindsub':
+# of def-use pairs: 20 (9985)
+Printing analysis 'Def-Use Analysis' for function 'jas_matrix_bindsub':
+# of def-use pairs: 83 (10068)
+Printing analysis 'Def-Use Analysis' for function 'jas_matrix_cmp':
+# of def-use pairs: 42 (10110)
+Printing analysis 'Def-Use Analysis' for function 'jas_matrix_divpow2':
+# of def-use pairs: 66 (10176)
+Printing analysis 'Def-Use Analysis' for function 'jas_matrix_clip':
+# of def-use pairs: 63 (10239)
+Printing analysis 'Def-Use Analysis' for function 'jas_matrix_asr':
+# of def-use pairs: 146 (10385)
+Printing analysis 'Def-Use Analysis' for function 'jas_matrix_asl':
+# of def-use pairs: 145 (10530)
+Printing analysis 'Def-Use Analysis' for function 'jas_matrix_resize':
+# of def-use pairs: 82 (10612)
+Printing analysis 'Def-Use Analysis' for function 'jas_matrix_output':
+# of def-use pairs: 38 (10650)
+Printing analysis 'Def-Use Analysis' for function 'jas_matrix_setall':
+# of def-use pairs: 175 (10825)
+Printing analysis 'Def-Use Analysis' for function 'bmp_encode':
+# of def-use pairs: 1049 (11874)
+Printing analysis 'Def-Use Analysis' for function 'bmp_putint16':
+# of def-use pairs: 71 (11945)
+Printing analysis 'Def-Use Analysis' for function 'bmp_putint32':
+# of def-use pairs: 58 (12003)
+Printing analysis 'Def-Use Analysis' for function 'bmp_info_create':
+# of def-use pairs: 7 (12010)
+Printing analysis 'Def-Use Analysis' for function 'bmp_info_destroy':
+# of def-use pairs: 6 (12016)
+Printing analysis 'Def-Use Analysis' for function 'bmp_isgrayscalepal':
+# of def-use pairs: 25 (12041)
+Printing analysis 'Def-Use Analysis' for function 'bmp_numcmpts':
+# of def-use pairs: 37 (12078)
+Printing analysis 'Def-Use Analysis' for function 'bmp_decode':
+# of def-use pairs: 2154 (14232)
+Printing analysis 'Def-Use Analysis' for function 'bmp_getint16':
+# of def-use pairs: 71 (14303)
+Printing analysis 'Def-Use Analysis' for function 'bmp_validate':
+# of def-use pairs: 31 (14334)
+Printing analysis 'Def-Use Analysis' for function 'jp2_encode':
+# of def-use pairs: 401 (14735)
+Printing analysis 'Def-Use Analysis' for function 'jp2_decode':
+# of def-use pairs: 745 (15480)
+Printing analysis 'Def-Use Analysis' for function 'jp2_dec_destroy':
+# of def-use pairs: 34 (15514)
+Printing analysis 'Def-Use Analysis' for function 'jp2_validate':
+# of def-use pairs: 48 (15562)
+Printing analysis 'Def-Use Analysis' for function 'jpc_dec_process_soc':
+# of def-use pairs: 0 (15562)
+Printing analysis 'Def-Use Analysis' for function 'jpc_dec_process_sot':
+# of def-use pairs: 371 (15933)
+Printing analysis 'Def-Use Analysis' for function 'jpc_dec_process_sod':
+# of def-use pairs: 1506 (17439)
+Printing analysis 'Def-Use Analysis' for function 'jpc_dec_process_eoc':
+# of def-use pairs: 26 (17465)
+Printing analysis 'Def-Use Analysis' for function 'jpc_dec_process_siz':
+# of def-use pairs: 312 (17777)
+Printing analysis 'Def-Use Analysis' for function 'jpc_dec_process_cod':
+# of def-use pairs: 227 (18004)
+Printing analysis 'Def-Use Analysis' for function 'jpc_dec_process_coc':
+# of def-use pairs: 156 (18160)
+Printing analysis 'Def-Use Analysis' for function 'jpc_dec_process_rgn':
+# of def-use pairs: 38 (18198)
+Printing analysis 'Def-Use Analysis' for function 'jpc_dec_process_qcd':
+# of def-use pairs: 528 (18726)
+Printing analysis 'Def-Use Analysis' for function 'jpc_dec_process_qcc':
+# of def-use pairs: 458 (19184)
+Printing analysis 'Def-Use Analysis' for function 'jpc_dec_process_poc':
+# of def-use pairs: 51 (19235)
+Printing analysis 'Def-Use Analysis' for function 'jpc_dec_process_ppm':
+# of def-use pairs: 28 (19263)
+Printing analysis 'Def-Use Analysis' for function 'jpc_dec_process_ppt':
+# of def-use pairs: 31 (19294)
+Printing analysis 'Def-Use Analysis' for function 'jpc_dec_process_crg':
+# of def-use pairs: 0 (19294)
+Printing analysis 'Def-Use Analysis' for function 'jpc_dec_process_com':
+# of def-use pairs: 0 (19294)
+Printing analysis 'Def-Use Analysis' for function 'jpc_dec_process_unk':
+# of def-use pairs: 2 (19296)
+Printing analysis 'Def-Use Analysis' for function 'jpc_ppxstab_insert':
+# of def-use pairs: 160 (19456)
+Printing analysis 'Def-Use Analysis' for function 'jpc_dec_cp_setfrompoc':
+# of def-use pairs: 36 (19492)
+Printing analysis 'Def-Use Analysis' for function 'jpc_dec_cp_create':
+# of def-use pairs: 76 (19568)
+Printing analysis 'Def-Use Analysis' for function 'jpc_dec_tiledecode':
+# of def-use pairs: 598 (20166)
+Printing analysis 'Def-Use Analysis' for function 'jpc_dec_tilefini':
+# of def-use pairs: 282 (20448)
+Printing analysis 'Def-Use Analysis' for function 'jpc_ppmstabtostreams':
+# of def-use pairs: 319 (20767)
+Printing analysis 'Def-Use Analysis' for function 'jpc_decode':
+# of def-use pairs: 161 (20928)
+Printing analysis 'Def-Use Analysis' for function 'jpc_dec_destroy':
+# of def-use pairs: 68 (20996)
+Printing analysis 'Def-Use Analysis' for function 'jpc_seglist_insert':
+# of def-use pairs: 13 (21009)
+Printing analysis 'Def-Use Analysis' for function 'jpc_seglist_remove':
+# of def-use pairs: 17 (21026)
+Printing analysis 'Def-Use Analysis' for function 'jpc_seg_alloc':
+# of def-use pairs: 12 (21038)
+Printing analysis 'Def-Use Analysis' for function 'jpc_seg_destroy':
+# of def-use pairs: 5 (21043)
+Printing analysis 'Def-Use Analysis' for function 'jpc_streamlist_create':
+# of def-use pairs: 33 (21076)
+Printing analysis 'Def-Use Analysis' for function 'jpc_streamlist_insert':
+# of def-use pairs: 96 (21172)
+Printing analysis 'Def-Use Analysis' for function 'jpc_streamlist_remove':
+# of def-use pairs: 120 (21292)
+Printing analysis 'Def-Use Analysis' for function 'jpc_streamlist_destroy':
+# of def-use pairs: 25 (21317)
+Printing analysis 'Def-Use Analysis' for function 'jpc_streamlist_get':
+# of def-use pairs: 8 (21325)
+Printing analysis 'Def-Use Analysis' for function 'jpc_streamlist_numstreams':
+# of def-use pairs: 2 (21327)
+Printing analysis 'Def-Use Analysis' for function 'jpc_ppxstab_create':
+# of def-use pairs: 6 (21333)
+Printing analysis 'Def-Use Analysis' for function 'jpc_ppxstab_destroy':
+# of def-use pairs: 32 (21365)
+Printing analysis 'Def-Use Analysis' for function 'jpc_ppxstabent_destroy':
+# of def-use pairs: 5 (21370)
+Printing analysis 'Def-Use Analysis' for function 'jpc_ppxstab_grow':
+# of def-use pairs: 19 (21389)
+Printing analysis 'Def-Use Analysis' for function 'jpc_pptstabwrite':
+# of def-use pairs: 29 (21418)
+Printing analysis 'Def-Use Analysis' for function 'jpc_ppxstabent_create':
+# of def-use pairs: 6 (21424)
+Printing analysis 'Def-Use Analysis' for function 'jpc_dec_decodepkts':
+# of def-use pairs: 815 (22239)
+Printing analysis 'Def-Use Analysis' for function 'jpc_dec_lookahead':
+# of def-use pairs: 29 (22268)
+Printing analysis 'Def-Use Analysis' for function 'jpc_dec_pi_create':
+# of def-use pairs: 346 (22614)
+Printing analysis 'Def-Use Analysis' for function 'jpc_mqdec_create':
+# of def-use pairs: 195 (22809)
+Printing analysis 'Def-Use Analysis' for function 'jpc_mqdec_init':
+# of def-use pairs: 113 (22922)
+Printing analysis 'Def-Use Analysis' for function 'jpc_mqdec_setctxs':
+# of def-use pairs: 200 (23122)
+Printing analysis 'Def-Use Analysis' for function 'jpc_mqdec_destroy':
+# of def-use pairs: 6 (23128)
+Printing analysis 'Def-Use Analysis' for function 'jpc_mqdec_setinput':
+# of def-use pairs: 0 (23128)
+Printing analysis 'Def-Use Analysis' for function 'jpc_mqdec_setctx':
+# of def-use pairs: 12 (23140)
+Printing analysis 'Def-Use Analysis' for function 'jpc_mqdec_getbit_func':
+# of def-use pairs: 27 (23167)
+Printing analysis 'Def-Use Analysis' for function 'jpc_mqdec_mpsexchrenormd':
+# of def-use pairs: 118 (23285)
+Printing analysis 'Def-Use Analysis' for function 'jpc_mqdec_lpsexchrenormd':
+# of def-use pairs: 120 (23405)
+Printing analysis 'Def-Use Analysis' for function 'jpc_mqdec_dump':
+# of def-use pairs: 26 (23431)
+Printing analysis 'Def-Use Analysis' for function 'jpc_cstate_create':
+# of def-use pairs: 6 (23437)
+Printing analysis 'Def-Use Analysis' for function 'jpc_cstate_destroy':
+# of def-use pairs: 1 (23438)
+Printing analysis 'Def-Use Analysis' for function 'jpc_getms':
+# of def-use pairs: 156 (23594)
+Printing analysis 'Def-Use Analysis' for function 'jpc_getuint16':
+# of def-use pairs: 73 (23667)
+Printing analysis 'Def-Use Analysis' for function 'jpc_ms_dump':
+# of def-use pairs: 34 (23701)
+Printing analysis 'Def-Use Analysis' for function 'jpc_sot_getparms':
+# of def-use pairs: 83 (23784)
+Printing analysis 'Def-Use Analysis' for function 'jpc_sot_putparms':
+# of def-use pairs: 84 (23868)
+Printing analysis 'Def-Use Analysis' for function 'jpc_sot_dumpparms':
+# of def-use pairs: 14 (23882)
+Printing analysis 'Def-Use Analysis' for function 'jpc_siz_destroyparms':
+# of def-use pairs: 6 (23888)
+Printing analysis 'Def-Use Analysis' for function 'jpc_siz_getparms':
+# of def-use pairs: 252 (24140)
+Printing analysis 'Def-Use Analysis' for function 'jpc_siz_putparms':
+# of def-use pairs: 228 (24368)
+Printing analysis 'Def-Use Analysis' for function 'jpc_siz_dumpparms':
+# of def-use pairs: 66 (24434)
+Printing analysis 'Def-Use Analysis' for function 'jpc_cod_destroyparms':
+# of def-use pairs: 0 (24434)
+Printing analysis 'Def-Use Analysis' for function 'jpc_cod_getparms':
+# of def-use pairs: 116 (24550)
+Printing analysis 'Def-Use Analysis' for function 'jpc_cod_putparms':
+# of def-use pairs: 128 (24678)
+Printing analysis 'Def-Use Analysis' for function 'jpc_cod_dumpparms':
+# of def-use pairs: 52 (24730)
+Printing analysis 'Def-Use Analysis' for function 'jpc_coc_destroyparms':
+# of def-use pairs: 0 (24730)
+Printing analysis 'Def-Use Analysis' for function 'jpc_coc_getparms':
+# of def-use pairs: 90 (24820)
+Printing analysis 'Def-Use Analysis' for function 'jpc_coc_putparms':
+# of def-use pairs: 95 (24915)
+Printing analysis 'Def-Use Analysis' for function 'jpc_coc_dumpparms':
+# of def-use pairs: 28 (24943)
+Printing analysis 'Def-Use Analysis' for function 'jpc_rgn_getparms':
+# of def-use pairs: 117 (25060)
+Printing analysis 'Def-Use Analysis' for function 'jpc_rgn_putparms':
+# of def-use pairs: 122 (25182)
+Printing analysis 'Def-Use Analysis' for function 'jpc_rgn_dumpparms':
+# of def-use pairs: 13 (25195)
+Printing analysis 'Def-Use Analysis' for function 'jpc_qcd_destroyparms':
+# of def-use pairs: 6 (25201)
+Printing analysis 'Def-Use Analysis' for function 'jpc_qcd_getparms':
+# of def-use pairs: 6 (25207)
+Printing analysis 'Def-Use Analysis' for function 'jpc_qcd_putparms':
+# of def-use pairs: 101 (25308)
+Printing analysis 'Def-Use Analysis' for function 'jpc_qcd_dumpparms':
+# of def-use pairs: 35 (25343)
+Printing analysis 'Def-Use Analysis' for function 'jpc_qcc_destroyparms':
+# of def-use pairs: 7 (25350)
+Printing analysis 'Def-Use Analysis' for function 'jpc_qcc_getparms':
+# of def-use pairs: 63 (25413)
+Printing analysis 'Def-Use Analysis' for function 'jpc_qcc_putparms':
+# of def-use pairs: 151 (25564)
+Printing analysis 'Def-Use Analysis' for function 'jpc_qcc_dumpparms':
+# of def-use pairs: 41 (25605)
+Printing analysis 'Def-Use Analysis' for function 'jpc_poc_destroyparms':
+# of def-use pairs: 6 (25611)
+Printing analysis 'Def-Use Analysis' for function 'jpc_poc_getparms':
+# of def-use pairs: 323 (25934)
+Printing analysis 'Def-Use Analysis' for function 'jpc_poc_putparms':
+# of def-use pairs: 298 (26232)
+Printing analysis 'Def-Use Analysis' for function 'jpc_poc_dumpparms':
+# of def-use pairs: 46 (26278)
+Printing analysis 'Def-Use Analysis' for function 'jpc_unk_getparms':
+# of def-use pairs: 23 (26301)
+Printing analysis 'Def-Use Analysis' for function 'jpc_unk_putparms':
+# of def-use pairs: 0 (26301)
+Printing analysis 'Def-Use Analysis' for function 'jpc_ppm_destroyparms':
+# of def-use pairs: 5 (26306)
+Printing analysis 'Def-Use Analysis' for function 'jpc_ppm_getparms':
+# of def-use pairs: 64 (26370)
+Printing analysis 'Def-Use Analysis' for function 'jpc_ppm_putparms':
+# of def-use pairs: 12 (26382)
+Printing analysis 'Def-Use Analysis' for function 'jpc_ppm_dumpparms':
+# of def-use pairs: 13 (26395)
+Printing analysis 'Def-Use Analysis' for function 'jpc_ppt_destroyparms':
+# of def-use pairs: 5 (26400)
+Printing analysis 'Def-Use Analysis' for function 'jpc_ppt_getparms':
+# of def-use pairs: 64 (26464)
+Printing analysis 'Def-Use Analysis' for function 'jpc_ppt_putparms':
+# of def-use pairs: 47 (26511)
+Printing analysis 'Def-Use Analysis' for function 'jpc_ppt_dumpparms':
+# of def-use pairs: 13 (26524)
+Printing analysis 'Def-Use Analysis' for function 'jpc_sop_getparms':
+# of def-use pairs: 5 (26529)
+Printing analysis 'Def-Use Analysis' for function 'jpc_sop_putparms':
+# of def-use pairs: 6 (26535)
+Printing analysis 'Def-Use Analysis' for function 'jpc_sop_dumpparms':
+# of def-use pairs: 3 (26538)
+Printing analysis 'Def-Use Analysis' for function 'jpc_crg_getparms':
+# of def-use pairs: 42 (26580)
+Printing analysis 'Def-Use Analysis' for function 'jpc_crg_putparms':
+# of def-use pairs: 31 (26611)
+Printing analysis 'Def-Use Analysis' for function 'jpc_crg_dumpparms':
+# of def-use pairs: 27 (26638)
+Printing analysis 'Def-Use Analysis' for function 'jpc_com_destroyparms':
+# of def-use pairs: 5 (26643)
+Printing analysis 'Def-Use Analysis' for function 'jpc_com_getparms':
+# of def-use pairs: 25 (26668)
+Printing analysis 'Def-Use Analysis' for function 'jpc_com_putparms':
+# of def-use pairs: 18 (26686)
+Printing analysis 'Def-Use Analysis' for function 'jpc_com_dumpparms':
+# of def-use pairs: 35 (26721)
+Printing analysis 'Def-Use Analysis' for function 'jpc_unk_destroyparms':
+# of def-use pairs: 5 (26726)
+Printing analysis 'Def-Use Analysis' for function 'jpc_unk_dumpparms':
+# of def-use pairs: 20 (26746)
+Printing analysis 'Def-Use Analysis' for function 'jpc_putuint16':
+# of def-use pairs: 70 (26816)
+Printing analysis 'Def-Use Analysis' for function 'jpc_qcx_getcompparms':
+# of def-use pairs: 144 (26960)
+Printing analysis 'Def-Use Analysis' for function 'jpc_cox_putcompparms':
+# of def-use pairs: 231 (27191)
+Printing analysis 'Def-Use Analysis' for function 'jpc_cox_getcompparms':
+# of def-use pairs: 233 (27424)
+Printing analysis 'Def-Use Analysis' for function 'jpc_putuint32':
+# of def-use pairs: 138 (27562)
+Printing analysis 'Def-Use Analysis' for function 'jpc_getuint32':
+# of def-use pairs: 149 (27711)
+Printing analysis 'Def-Use Analysis' for function 'jpc_ms_create':
+# of def-use pairs: 27 (27738)
+Printing analysis 'Def-Use Analysis' for function 'jpc_ms_destroy':
+# of def-use pairs: 9 (27747)
+Printing analysis 'Def-Use Analysis' for function 'jpc_putms':
+# of def-use pairs: 55 (27802)
+Printing analysis 'Def-Use Analysis' for function 'jpc_getuint8':
+# of def-use pairs: 35 (27837)
+Printing analysis 'Def-Use Analysis' for function 'jpc_putuint8':
+# of def-use pairs: 33 (27870)
+Printing analysis 'Def-Use Analysis' for function 'jpc_validate':
+# of def-use pairs: 31 (27901)
+Printing analysis 'Def-Use Analysis' for function 'jpc_getdata':
+# of def-use pairs: 2 (27903)
+Printing analysis 'Def-Use Analysis' for function 'jpc_putdata':
+# of def-use pairs: 2 (27905)
+Printing analysis 'Def-Use Analysis' for function 'jpc_rct':
+# of def-use pairs: 227 (28132)
+Printing analysis 'Def-Use Analysis' for function 'jpc_irct':
+# of def-use pairs: 223 (28355)
+Printing analysis 'Def-Use Analysis' for function 'jpc_ict':
+# of def-use pairs: 118 (28473)
+Printing analysis 'Def-Use Analysis' for function 'jpc_iict':
+# of def-use pairs: 106 (28579)
+Printing analysis 'Def-Use Analysis' for function 'jpc_mct_getsynweight':
+# of def-use pairs: 8 (28587)
+Printing analysis 'Def-Use Analysis' for function 'jpc_tagtree_create':
+# of def-use pairs: 216 (28803)
+Printing analysis 'Def-Use Analysis' for function 'jpc_tagtree_reset':
+# of def-use pairs: 21 (28824)
+Printing analysis 'Def-Use Analysis' for function 'jpc_tagtree_destroy':
+# of def-use pairs: 6 (28830)
+Printing analysis 'Def-Use Analysis' for function 'jpc_tagtree_copy':
+# of def-use pairs: 46 (28876)
+Printing analysis 'Def-Use Analysis' for function 'jpc_tagtree_setvalue':
+# of def-use pairs: 13 (28889)
+Printing analysis 'Def-Use Analysis' for function 'jpc_tagtree_getleaf':
+# of def-use pairs: 4 (28893)
+Printing analysis 'Def-Use Analysis' for function 'jpc_tagtree_encode':
+# of def-use pairs: 223 (29116)
+Printing analysis 'Def-Use Analysis' for function 'jpc_tagtree_decode':
+# of def-use pairs: 101 (29217)
+Printing analysis 'Def-Use Analysis' for function 'jpc_tagtree_dump':
+# of def-use pairs: 31 (29248)
+Printing analysis 'Def-Use Analysis' for function 'JPC_PASSTYPE':
+# of def-use pairs: 6 (29254)
+Printing analysis 'Def-Use Analysis' for function 'JPC_NOMINALGAIN':
+# of def-use pairs: 8 (29262)
+Printing analysis 'Def-Use Analysis' for function 'JPC_SEGTYPE':
+# of def-use pairs: 9 (29271)
+Printing analysis 'Def-Use Analysis' for function 'JPC_SEGPASSCNT':
+# of def-use pairs: 24 (29295)
+Printing analysis 'Def-Use Analysis' for function 'JPC_ISTERMINATED':
+# of def-use pairs: 33 (29328)
+Printing analysis 'Def-Use Analysis' for function 'jpc_initluts':
+# of def-use pairs: 298 (29626)
+Printing analysis 'Def-Use Analysis' for function 'jpc_getzcctxno':
+# of def-use pairs: 65 (29691)
+Printing analysis 'Def-Use Analysis' for function 'jpc_initmqctxs':
+# of def-use pairs: 0 (29691)
+Printing analysis 'Def-Use Analysis' for function 'jpc_getspb':
+# of def-use pairs: 50 (29741)
+Printing analysis 'Def-Use Analysis' for function 'jpc_getscctxno':
+# of def-use pairs: 65 (29806)
+Printing analysis 'Def-Use Analysis' for function 'jpc_getmagctxno':
+# of def-use pairs: 6 (29812)
+Printing analysis 'Def-Use Analysis' for function 'jpc_pow2i':
+# of def-use pairs: 23 (29835)
+Printing analysis 'Def-Use Analysis' for function 'jpc_getsignmsedec_func':
+# of def-use pairs: 20 (29855)
+Printing analysis 'Def-Use Analysis' for function 'jpc_initctxs':
+# of def-use pairs: 0 (29855)
+Printing analysis 'Def-Use Analysis' for function 'jpc_pi_next':
+# of def-use pairs: 1772 (31627)
+Printing analysis 'Def-Use Analysis' for function 'jpc_pchglist_numpchgs':
+# of def-use pairs: 2 (31629)
+Printing analysis 'Def-Use Analysis' for function 'jpc_pchglist_get':
+# of def-use pairs: 5 (31634)
+Printing analysis 'Def-Use Analysis' for function 'jpc_pi_destroy':
+# of def-use pairs: 105 (31739)
+Printing analysis 'Def-Use Analysis' for function 'jpc_pchglist_destroy':
+# of def-use pairs: 27 (31766)
+Printing analysis 'Def-Use Analysis' for function 'jpc_pi_create0':
+# of def-use pairs: 19 (31785)
+Printing analysis 'Def-Use Analysis' for function 'jpc_pchglist_create':
+# of def-use pairs: 6 (31791)
+Printing analysis 'Def-Use Analysis' for function 'jpc_pi_addpchg':
+# of def-use pairs: 133 (31924)
+Printing analysis 'Def-Use Analysis' for function 'jpc_pchglist_insert':
+# of def-use pairs: 129 (32053)
+Printing analysis 'Def-Use Analysis' for function 'jpc_pchglist_remove':
+# of def-use pairs: 120 (32173)
+Printing analysis 'Def-Use Analysis' for function 'jpc_pchg_copy':
+# of def-use pairs: 7 (32180)
+Printing analysis 'Def-Use Analysis' for function 'jpc_pchglist_copy':
+# of def-use pairs: 198 (32378)
+Printing analysis 'Def-Use Analysis' for function 'jpc_pchg_destroy':
+# of def-use pairs: 1 (32379)
+Printing analysis 'Def-Use Analysis' for function 'jpc_pi_init':
+# of def-use pairs: 67 (32446)
+Printing analysis 'Def-Use Analysis' for function 'jpc_dec_decodecblks':
+# of def-use pairs: 3961 (36407)
+Printing analysis 'Def-Use Analysis' for function 'jpc_tsfb_wavelet':
+# of def-use pairs: 100 (36507)
+Printing analysis 'Def-Use Analysis' for function 'jpc_tsfbnode_destroy':
+# of def-use pairs: 33 (36540)
+Printing analysis 'Def-Use Analysis' for function 'jpc_tsfb_destroy':
+# of def-use pairs: 5 (36545)
+Printing analysis 'Def-Use Analysis' for function 'jpc_tsfb_analyze':
+# of def-use pairs: 4 (36549)
+Printing analysis 'Def-Use Analysis' for function 'jpc_tsfbnode_analyze':
+# of def-use pairs: 110 (36659)
+Printing analysis 'Def-Use Analysis' for function 'qmfb2d_getbands':
+# of def-use pairs: 134 (36793)
+Printing analysis 'Def-Use Analysis' for function 'jpc_tsfb_synthesize':
+# of def-use pairs: 4 (36797)
+Printing analysis 'Def-Use Analysis' for function 'jpc_tsfbnode_synthesize':
+# of def-use pairs: 109 (36906)
+Printing analysis 'Def-Use Analysis' for function 'jpc_tsfb_getbands':
+# of def-use pairs: 26 (36932)
+Printing analysis 'Def-Use Analysis' for function 'jpc_tsfbnode_getbandstree':
+# of def-use pairs: 354 (37286)
+Printing analysis 'Def-Use Analysis' for function 'jpc_cod_gettsfb':
+# of def-use pairs: 12 (37298)
+Printing analysis 'Def-Use Analysis' for function 'jpc_floorlog2':
+# of def-use pairs: 14 (37312)
+Printing analysis 'Def-Use Analysis' for function 'jpc_firstone':
+# of def-use pairs: 14 (37326)
+Printing analysis 'Def-Use Analysis' for function 'jpc_encode':
+# of def-use pairs: 2731 (40057)
+Printing analysis 'Def-Use Analysis' for function 'jpc_enc_destroy':
+# of def-use pairs: 35 (40092)
+Printing analysis 'Def-Use Analysis' for function 'jpc_abstorelstepsize':
+# of def-use pairs: 29 (40121)
+Printing analysis 'Def-Use Analysis' for function 'jpc_enc_tile_create':
+# of def-use pairs: 1433 (41554)
+Printing analysis 'Def-Use Analysis' for function 'jpc_enc_dump':
+# of def-use pairs: 190 (41744)
+Printing analysis 'Def-Use Analysis' for function 'rateallocate':
+# of def-use pairs: 965 (42709)
+Printing analysis 'Def-Use Analysis' for function 'jpc_enc_tile_destroy':
+# of def-use pairs: 78 (42787)
+Printing analysis 'Def-Use Analysis' for function 'rlvl_destroy':
+# of def-use pairs: 67 (42854)
+Printing analysis 'Def-Use Analysis' for function 'prc_destroy':
+# of def-use pairs: 70 (42924)
+Printing analysis 'Def-Use Analysis' for function 'dump_layeringinfo':
+# of def-use pairs: 165 (43089)
+Printing analysis 'Def-Use Analysis' for function 'jpc_enc_create':
+# of def-use pairs: 23 (43112)
+Printing analysis 'Def-Use Analysis' for function 'jpc_enc_cp_destroy':
+# of def-use pairs: 15 (43127)
+Printing analysis 'Def-Use Analysis' for function 'ratestrtosize':
+# of def-use pairs: 17 (43144)
+Printing analysis 'Def-Use Analysis' for function 'jpc_enc_encodetiledata':
+# of def-use pairs: 7 (43151)
+Printing analysis 'Def-Use Analysis' for function 'dump_passes':
+# of def-use pairs: 46 (43197)
+Printing analysis 'Def-Use Analysis' for function 'quantize':
+# of def-use pairs: 49 (43246)
+Printing analysis 'Def-Use Analysis' for function 'calcrdslopes':
+# of def-use pairs: 115 (43361)
+Printing analysis 'Def-Use Analysis' for function 'jpc_bitstream_sopen':
+# of def-use pairs: 27 (43388)
+Printing analysis 'Def-Use Analysis' for function 'jpc_bitstream_close':
+# of def-use pairs: 34 (43422)
+Printing analysis 'Def-Use Analysis' for function 'jpc_bitstream_inalign':
+# of def-use pairs: 284 (43706)
+Printing analysis 'Def-Use Analysis' for function 'jpc_bitstream_outalign':
+# of def-use pairs: 83 (43789)
+Printing analysis 'Def-Use Analysis' for function 'jpc_bitstream_putbits':
+# of def-use pairs: 101 (43890)
+Printing analysis 'Def-Use Analysis' for function 'jpc_bitstream_fillbuf':
+# of def-use pairs: 84 (43974)
+Printing analysis 'Def-Use Analysis' for function 'jpc_bitstream_align':
+# of def-use pairs: 13 (43987)
+Printing analysis 'Def-Use Analysis' for function 'jpc_bitstream_getbit_func':
+# of def-use pairs: 19 (44006)
+Printing analysis 'Def-Use Analysis' for function 'jpc_bitstream_putbit_func':
+# of def-use pairs: 80 (44086)
+Printing analysis 'Def-Use Analysis' for function 'jpc_bitstream_getbits':
+# of def-use pairs: 39 (44125)
+Printing analysis 'Def-Use Analysis' for function 'jpc_bitstream_needalign':
+# of def-use pairs: 23 (44148)
+Printing analysis 'Def-Use Analysis' for function 'jpc_bitstream_pending':
+# of def-use pairs: 9 (44157)
+Printing analysis 'Def-Use Analysis' for function 'jpg_decode':
+# of def-use pairs: 233 (44390)
+Printing analysis 'Def-Use Analysis' for function 'jpg_start_output':
+# of def-use pairs: 0 (44390)
+Printing analysis 'Def-Use Analysis' for function 'jpg_put_pixel_rows':
+# of def-use pairs: 83 (44473)
+Printing analysis 'Def-Use Analysis' for function 'jpg_finish_output':
+# of def-use pairs: 0 (44473)
+Printing analysis 'Def-Use Analysis' for function 'jpg_encode':
+# of def-use pairs: 385 (44858)
+Printing analysis 'Def-Use Analysis' for function 'jpg_validate':
+# of def-use pairs: 33 (44891)
+Printing analysis 'Def-Use Analysis' for function 'mif_decode':
+# of def-use pairs: 872 (45763)
+Printing analysis 'Def-Use Analysis' for function 'mif_encode':
+# of def-use pairs: 581 (46344)
+Printing analysis 'Def-Use Analysis' for function 'mif_validate':
+# of def-use pairs: 47 (46391)
+Printing analysis 'Def-Use Analysis' for function 'pgx_decode':
+# of def-use pairs: 448 (46839)
+Printing analysis 'Def-Use Analysis' for function 'pgx_getc':
+# of def-use pairs: 82 (46921)
+Printing analysis 'Def-Use Analysis' for function 'pgx_validate':
+# of def-use pairs: 36 (46957)
+Printing analysis 'Def-Use Analysis' for function 'pgx_encode':
+# of def-use pairs: 165 (47122)
+Printing analysis 'Def-Use Analysis' for function 'pnm_encode':
+# of def-use pairs: 560 (47682)
+Printing analysis 'Def-Use Analysis' for function 'pnm_type':
+# of def-use pairs: 5 (47687)
+Printing analysis 'Def-Use Analysis' for function 'pnm_fmt':
+# of def-use pairs: 5 (47692)
+Printing analysis 'Def-Use Analysis' for function 'pnm_maxvaltodepth':
+# of def-use pairs: 13 (47705)
+Printing analysis 'Def-Use Analysis' for function 'pnm_decode':
+# of def-use pairs: 745 (48450)
+Printing analysis 'Def-Use Analysis' for function 'pnm_getsintstr':
+# of def-use pairs: 56 (48506)
+Printing analysis 'Def-Use Analysis' for function 'pnm_getc':
+# of def-use pairs: 82 (48588)
+Printing analysis 'Def-Use Analysis' for function 'pnm_validate':
+# of def-use pairs: 37 (48625)
+Printing analysis 'Def-Use Analysis' for function 'ras_decode':
+# of def-use pairs: 657 (49282)
+Printing analysis 'Def-Use Analysis' for function 'ras_getint':
+# of def-use pairs: 165 (49447)
+Printing analysis 'Def-Use Analysis' for function 'ras_validate':
+# of def-use pairs: 47 (49494)
+Printing analysis 'Def-Use Analysis' for function 'ras_encode':
+# of def-use pairs: 517 (50011)
+Printing analysis 'Def-Use Analysis' for function 'ras_putint':
+# of def-use pairs: 150 (50161)
+Printing analysis 'Def-Use Analysis' for function 'jas_icccurv_destroy':
+# of def-use pairs: 6 (50167)
+Printing analysis 'Def-Use Analysis' for function 'jas_icccurv_copy':
+# of def-use pairs: 0 (50167)
+Printing analysis 'Def-Use Analysis' for function 'jas_icccurv_input':
+# of def-use pairs: 52 (50219)
+Printing analysis 'Def-Use Analysis' for function 'jas_icccurv_output':
+# of def-use pairs: 286 (50505)
+Printing analysis 'Def-Use Analysis' for function 'jas_icccurv_getsize':
+# of def-use pairs: 6 (50511)
+Printing analysis 'Def-Use Analysis' for function 'jas_icccurv_dump':
+# of def-use pairs: 46 (50557)
+Printing analysis 'Def-Use Analysis' for function 'jas_iccxyz_input':
+# of def-use pairs: 13 (50570)
+Printing analysis 'Def-Use Analysis' for function 'jas_iccxyz_output':
+# of def-use pairs: 617 (51187)
+Printing analysis 'Def-Use Analysis' for function 'jas_iccxyz_getsize':
+# of def-use pairs: 0 (51187)
+Printing analysis 'Def-Use Analysis' for function 'jas_iccxyz_dump':
+# of def-use pairs: 13 (51200)
+Printing analysis 'Def-Use Analysis' for function 'jas_icctxtdesc_destroy':
+# of def-use pairs: 10 (51210)
+Printing analysis 'Def-Use Analysis' for function 'jas_icctxtdesc_copy':
+# of def-use pairs: 0 (51210)
+Printing analysis 'Def-Use Analysis' for function 'jas_icctxtdesc_input':
+# of def-use pairs: 121 (51331)
+Printing analysis 'Def-Use Analysis' for function 'jas_icctxtdesc_output':
+# of def-use pairs: 946 (52277)
+Printing analysis 'Def-Use Analysis' for function 'jas_icctxtdesc_getsize':
+# of def-use pairs: 10 (52287)
+Printing analysis 'Def-Use Analysis' for function 'jas_icctxtdesc_dump':
+# of def-use pairs: 13 (52300)
+Printing analysis 'Def-Use Analysis' for function 'jas_icctxt_destroy':
+# of def-use pairs: 5 (52305)
+Printing analysis 'Def-Use Analysis' for function 'jas_icctxt_copy':
+# of def-use pairs: 8 (52313)
+Printing analysis 'Def-Use Analysis' for function 'jas_icctxt_input':
+# of def-use pairs: 24 (52337)
+Printing analysis 'Def-Use Analysis' for function 'jas_icctxt_output':
+# of def-use pairs: 35 (52372)
+Printing analysis 'Def-Use Analysis' for function 'jas_icctxt_getsize':
+# of def-use pairs: 6 (52378)
+Printing analysis 'Def-Use Analysis' for function 'jas_icctxt_dump':
+# of def-use pairs: 3 (52381)
+Printing analysis 'Def-Use Analysis' for function 'jas_icclut8_destroy':
+# of def-use pairs: 22 (52403)
+Printing analysis 'Def-Use Analysis' for function 'jas_icclut8_copy':
+# of def-use pairs: 0 (52403)
+Printing analysis 'Def-Use Analysis' for function 'jas_icclut8_input':
+# of def-use pairs: 548 (52951)
+Printing analysis 'Def-Use Analysis' for function 'jas_icclut8_output':
+# of def-use pairs: 577 (53528)
+Printing analysis 'Def-Use Analysis' for function 'jas_icclut8_getsize':
+# of def-use pairs: 37 (53565)
+Printing analysis 'Def-Use Analysis' for function 'jas_icclut8_dump':
+# of def-use pairs: 49 (53614)
+Printing analysis 'Def-Use Analysis' for function 'jas_icclut16_destroy':
+# of def-use pairs: 30 (53644)
+Printing analysis 'Def-Use Analysis' for function 'jas_icclut16_copy':
+# of def-use pairs: 0 (53644)
+Printing analysis 'Def-Use Analysis' for function 'jas_icclut16_input':
+# of def-use pairs: 450 (54094)
+Printing analysis 'Def-Use Analysis' for function 'jas_icclut16_output':
+# of def-use pairs: 779 (54873)
+Printing analysis 'Def-Use Analysis' for function 'jas_icclut16_getsize':
+# of def-use pairs: 38 (54911)
+Printing analysis 'Def-Use Analysis' for function 'jas_icclut16_dump':
+# of def-use pairs: 49 (54960)
+Printing analysis 'Def-Use Analysis' for function 'jas_iccputsint':
+# of def-use pairs: 152 (55112)
+Printing analysis 'Def-Use Analysis' for function 'jas_iccgetsint32':
+# of def-use pairs: 176 (55288)
+Printing analysis 'Def-Use Analysis' for function 'jas_iccgetuint16':
+# of def-use pairs: 79 (55367)
+Printing analysis 'Def-Use Analysis' for function 'jas_iccgetuint32':
+# of def-use pairs: 170 (55537)
+Printing analysis 'Def-Use Analysis' for function 'jas_iccprof_copy':
+# of def-use pairs: 98 (55635)
+Printing analysis 'Def-Use Analysis' for function 'jas_iccattrtab_destroy':
+# of def-use pairs: 60 (55695)
+Printing analysis 'Def-Use Analysis' for function 'jas_iccattrtab_add':
+# of def-use pairs: 72 (55767)
+Printing analysis 'Def-Use Analysis' for function 'jas_iccprof_destroy':
+# of def-use pairs: 10 (55777)
+Printing analysis 'Def-Use Analysis' for function 'jas_iccprof_dump':
+# of def-use pairs: 2 (55779)
+Printing analysis 'Def-Use Analysis' for function 'jas_iccattrtab_dump':
+# of def-use pairs: 252 (56031)
+Printing analysis 'Def-Use Analysis' for function 'jas_iccattrval_dump':
+# of def-use pairs: 214 (56245)
+Printing analysis 'Def-Use Analysis' for function 'jas_iccprof_load':
+# of def-use pairs: 532 (56777)
+Printing analysis 'Def-Use Analysis' for function 'jas_icctagtabent_cmp':
+# of def-use pairs: 12 (56789)
+Printing analysis 'Def-Use Analysis' for function 'jas_iccprof_setattr':
+# of def-use pairs: 107 (56896)
+Printing analysis 'Def-Use Analysis' for function 'jas_iccattrval_clone':
+# of def-use pairs: 3 (56899)
+Printing analysis 'Def-Use Analysis' for function 'jas_iccattrval_destroy':
+# of def-use pairs: 12 (56911)
+Printing analysis 'Def-Use Analysis' for function 'jas_iccattrval_create':
+# of def-use pairs: 29 (56940)
+Printing analysis 'Def-Use Analysis' for function 'jas_iccprof_save':
+# of def-use pairs: 18543 (75483)
+Printing analysis 'Def-Use Analysis' for function 'jas_iccprof_getattr':
+# of def-use pairs: 38 (75521)
+Printing analysis 'Def-Use Analysis' for function 'jas_iccprof_gethdr':
+# of def-use pairs: 2 (75523)
+Printing analysis 'Def-Use Analysis' for function 'jas_iccprof_sethdr':
+# of def-use pairs: 2 (75525)
+Printing analysis 'Def-Use Analysis' for function 'jas_iccattrval_allowmodify':
+# of def-use pairs: 34 (75559)
+Printing analysis 'Def-Use Analysis' for function 'jas_iccprof_createfrombuf':
+# of def-use pairs: 10 (75569)
+Printing analysis 'Def-Use Analysis' for function 'jas_iccprof_createfromclrspc':
+# of def-use pairs: 16 (75585)
+Printing analysis 'Def-Use Analysis' for function 'jas_tvparser_create':
+# of def-use pairs: 17 (75602)
+Printing analysis 'Def-Use Analysis' for function 'jas_tvparser_destroy':
+# of def-use pairs: 5 (75607)
+Printing analysis 'Def-Use Analysis' for function 'jas_tvparser_next':
+# of def-use pairs: 107 (75714)
+Printing analysis 'Def-Use Analysis' for function 'jas_tvparser_gettag':
+# of def-use pairs: 2 (75716)
+Printing analysis 'Def-Use Analysis' for function 'jas_tvparser_getval':
+# of def-use pairs: 2 (75718)
+Printing analysis 'Def-Use Analysis' for function 'jas_taginfos_lookup':
+# of def-use pairs: 19 (75737)
+Printing analysis 'Def-Use Analysis' for function 'jas_taginfo_nonull':
+# of def-use pairs: 2 (75739)
+Printing analysis 'Def-Use Analysis' for function 'jp2_jp_getdata':
+# of def-use pairs: 4 (75743)
+Printing analysis 'Def-Use Analysis' for function 'jp2_jp_putdata':
+# of def-use pairs: 5 (75748)
+Printing analysis 'Def-Use Analysis' for function 'jp2_ftyp_getdata':
+# of def-use pairs: 30 (75778)
+Printing analysis 'Def-Use Analysis' for function 'jp2_ftyp_putdata':
+# of def-use pairs: 28 (75806)
+Printing analysis 'Def-Use Analysis' for function 'jp2_ihdr_getdata':
+# of def-use pairs: 153 (75959)
+Printing analysis 'Def-Use Analysis' for function 'jp2_ihdr_putdata':
+# of def-use pairs: 159 (76118)
+Printing analysis 'Def-Use Analysis' for function 'jp2_bpcc_destroy':
+# of def-use pairs: 5 (76123)
+Printing analysis 'Def-Use Analysis' for function 'jp2_bpcc_getdata':
+# of def-use pairs: 74 (76197)
+Printing analysis 'Def-Use Analysis' for function 'jp2_bpcc_putdata':
+# of def-use pairs: 58 (76255)
+Printing analysis 'Def-Use Analysis' for function 'jp2_colr_destroy':
+# of def-use pairs: 5 (76260)
+Printing analysis 'Def-Use Analysis' for function 'jp2_colr_getdata':
+# of def-use pairs: 134 (76394)
+Printing analysis 'Def-Use Analysis' for function 'jp2_colr_putdata':
+# of def-use pairs: 124 (76518)
+Printing analysis 'Def-Use Analysis' for function 'jp2_colr_dumpdata':
+# of def-use pairs: 26 (76544)
+Printing analysis 'Def-Use Analysis' for function 'jp2_pclr_destroy':
+# of def-use pairs: 11 (76555)
+Printing analysis 'Def-Use Analysis' for function 'jp2_pclr_getdata':
+# of def-use pairs: 254 (76809)
+Printing analysis 'Def-Use Analysis' for function 'jp2_pclr_putdata':
+# of def-use pairs: 0 (76809)
+Printing analysis 'Def-Use Analysis' for function 'jp2_pclr_dumpdata':
+# of def-use pairs: 54 (76863)
+Printing analysis 'Def-Use Analysis' for function 'jp2_cmap_destroy':
+# of def-use pairs: 6 (76869)
+Printing analysis 'Def-Use Analysis' for function 'jp2_cmap_getdata':
+# of def-use pairs: 124 (76993)
+Printing analysis 'Def-Use Analysis' for function 'jp2_cmap_putdata':
+# of def-use pairs: 0 (76993)
+Printing analysis 'Def-Use Analysis' for function 'jp2_cmap_dumpdata':
+# of def-use pairs: 33 (77026)
+Printing analysis 'Def-Use Analysis' for function 'jp2_cdef_destroy':
+# of def-use pairs: 6 (77032)
+Printing analysis 'Def-Use Analysis' for function 'jp2_cdef_getdata':
+# of def-use pairs: 49 (77081)
+Printing analysis 'Def-Use Analysis' for function 'jp2_cdef_putdata':
+# of def-use pairs: 39 (77120)
+Printing analysis 'Def-Use Analysis' for function 'jp2_cdef_dumpdata':
+# of def-use pairs: 27 (77147)
+Printing analysis 'Def-Use Analysis' for function 'jp2_putuint16':
+# of def-use pairs: 70 (77217)
+Printing analysis 'Def-Use Analysis' for function 'jp2_getuint16':
+# of def-use pairs: 73 (77290)
+Printing analysis 'Def-Use Analysis' for function 'jp2_putuint32':
+# of def-use pairs: 138 (77428)
+Printing analysis 'Def-Use Analysis' for function 'jp2_getuint32':
+# of def-use pairs: 149 (77577)
+Printing analysis 'Def-Use Analysis' for function 'jp2_box_create':
+# of def-use pairs: 35 (77612)
+Printing analysis 'Def-Use Analysis' for function 'jp2_boxinfolookup':
+# of def-use pairs: 17 (77629)
+Printing analysis 'Def-Use Analysis' for function 'jp2_box_destroy':
+# of def-use pairs: 7 (77636)
+Printing analysis 'Def-Use Analysis' for function 'jp2_box_get':
+# of def-use pairs: 98 (77734)
+Printing analysis 'Def-Use Analysis' for function 'jp2_box_dump':
+# of def-use pairs: 34 (77768)
+Printing analysis 'Def-Use Analysis' for function 'jp2_box_put':
+# of def-use pairs: 66 (77834)
+Printing analysis 'Def-Use Analysis' for function 'jp2_cdef_lookup':
+# of def-use pairs: 24 (77858)
+Printing analysis 'Def-Use Analysis' for function 'jpc_enc_enccblks':
+# of def-use pairs: 257 (78115)
+Printing analysis 'Def-Use Analysis' for function 'jpc_enc_enccblk':
+# of def-use pairs: 5455 (83570)
+Printing analysis 'Def-Use Analysis' for function 'getthebyte':
+# of def-use pairs: 14 (83584)
+Printing analysis 'Def-Use Analysis' for function 'jpc_ft_getnumchans':
+# of def-use pairs: 0 (83584)
+Printing analysis 'Def-Use Analysis' for function 'jpc_ft_getanalfilters':
+# of def-use pairs: 0 (83584)
+Printing analysis 'Def-Use Analysis' for function 'jpc_ft_getsynfilters':
+# of def-use pairs: 86 (83670)
+Printing analysis 'Def-Use Analysis' for function 'jpc_ft_analyze':
+# of def-use pairs: 532 (84202)
+Printing analysis 'Def-Use Analysis' for function 'jpc_ft_synthesize':
+# of def-use pairs: 542 (84744)
+Printing analysis 'Def-Use Analysis' for function 'jpc_qmfb1d_join':
+# of def-use pairs: 303 (85047)
+Printing analysis 'Def-Use Analysis' for function 'jpc_qmfb1d_split':
+# of def-use pairs: 259 (85306)
+Printing analysis 'Def-Use Analysis' for function 'jpc_ns_getnumchans':
+# of def-use pairs: 0 (85306)
+Printing analysis 'Def-Use Analysis' for function 'jpc_ns_getanalfilters':
+# of def-use pairs: 0 (85306)
+Printing analysis 'Def-Use Analysis' for function 'jpc_ns_getsynfilters':
+# of def-use pairs: 118 (85424)
+Printing analysis 'Def-Use Analysis' for function 'jpc_ns_analyze':
+# of def-use pairs: 533 (85957)
+Printing analysis 'Def-Use Analysis' for function 'jpc_ns_synthesize':
+# of def-use pairs: 539 (86496)
+Printing analysis 'Def-Use Analysis' for function 'jpc_qmfb1d_make':
+# of def-use pairs: 10 (86506)
+Printing analysis 'Def-Use Analysis' for function 'jpc_qmfb1d_destroy':
+# of def-use pairs: 1 (86507)
+Printing analysis 'Def-Use Analysis' for function 'jpc_qmfb1d_copy':
+# of def-use pairs: 9 (86516)
+Printing analysis 'Def-Use Analysis' for function 'jpc_qmfb1d_getbands':
+# of def-use pairs: 41 (86557)
+Printing analysis 'Def-Use Analysis' for function 'jpc_qmfb1d_getnumchans':
+# of def-use pairs: 4 (86561)
+Printing analysis 'Def-Use Analysis' for function 'jpc_qmfb1d_getanalfilters':
+# of def-use pairs: 5 (86566)
+Printing analysis 'Def-Use Analysis' for function 'jpc_qmfb1d_getsynfilters':
+# of def-use pairs: 5 (86571)
+Printing analysis 'Def-Use Analysis' for function 'jpc_qmfb1d_analyze':
+# of def-use pairs: 4 (86575)
+Printing analysis 'Def-Use Analysis' for function 'jpc_qmfb1d_synthesize':
+# of def-use pairs: 4 (86579)
+Printing analysis 'Def-Use Analysis' for function 'jpc_mqenc_create':
+# of def-use pairs: 194 (86773)
+Printing analysis 'Def-Use Analysis' for function 'jpc_mqenc_init':
+# of def-use pairs: 1 (86774)
+Printing analysis 'Def-Use Analysis' for function 'jpc_mqenc_setctxs':
+# of def-use pairs: 200 (86974)
+Printing analysis 'Def-Use Analysis' for function 'jpc_mqenc_destroy':
+# of def-use pairs: 6 (86980)
+Printing analysis 'Def-Use Analysis' for function 'jpc_mqenc_getstate':
+# of def-use pairs: 12 (86992)
+Printing analysis 'Def-Use Analysis' for function 'jpc_mqenc_putbit_func':
+# of def-use pairs: 322 (87314)
+Printing analysis 'Def-Use Analysis' for function 'jpc_mqenc_codemps2':
+# of def-use pairs: 311 (87625)
+Printing analysis 'Def-Use Analysis' for function 'jpc_mqenc_codelps':
+# of def-use pairs: 314 (87939)
+Printing analysis 'Def-Use Analysis' for function 'jpc_mqenc_flush':
+# of def-use pairs: 991 (88930)
+Printing analysis 'Def-Use Analysis' for function 'jpc_mqenc_dump':
+# of def-use pairs: 18 (88948)
+Printing analysis 'Def-Use Analysis' for function 'jpc_enc_encpkts':
+# of def-use pairs: 32 (88980)
+Printing analysis 'Def-Use Analysis' for function 'jpc_init_t2state':
+# of def-use pairs: 181 (89161)
+Printing analysis 'Def-Use Analysis' for function 'jpc_enc_encpkt':
+# of def-use pairs: 1027 (90188)
+Printing analysis 'Def-Use Analysis' for function 'jpc_save_t2state':
+# of def-use pairs: 138 (90326)
+Printing analysis 'Def-Use Analysis' for function 'jpc_restore_t2state':
+# of def-use pairs: 138 (90464)
+Printing analysis 'Def-Use Analysis' for function 'jpc_enc_pi_create':
+# of def-use pairs: 343 (90807)
+Printing analysis 'Def-Use Analysis' for function 'jpc_atoaf':
+# of def-use pairs: 60 (90867)
+Printing analysis 'Def-Use Analysis' for function 'jpc_seq_upsample':
+# of def-use pairs: 68 (90935)
+Printing analysis 'Def-Use Analysis' for function 'jpc_seq_norm':
+# of def-use pairs: 112 (91047)
+Printing analysis 'Def-Use Analysis' for function 'jpc_seq_conv':
+# of def-use pairs: 91 (91138)

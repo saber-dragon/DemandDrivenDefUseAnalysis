@@ -1,0 +1,1040 @@
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'main':
+# of def-use pairs: 179 (179)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'cmdopts_parse':
+# of def-use pairs: 130 (309)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'cmdusage':
+# of def-use pairs: 45 (354)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'badusage':
+# of def-use pairs: 3 (357)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'cmdinfo':
+# of def-use pairs: 3 (360)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'cmdopts_destroy':
+# of def-use pairs: 1 (361)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'addopt':
+# of def-use pairs: 13 (374)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_image_create':
+# of def-use pairs: 160 (534)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_image_destroy':
+# of def-use pairs: 39 (573)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_image_cmpt_create':
+# of def-use pairs: 100 (673)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_image_setbbox':
+# of def-use pairs: 105 (778)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_image_create0':
+# of def-use pairs: 13 (791)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_image_copy':
+# of def-use pairs: 153 (944)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_image_cmpt_copy':
+# of def-use pairs: 56 (1000)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_image_decode':
+# of def-use pairs: 82 (1082)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_image_getfmt':
+# of def-use pairs: 28 (1110)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_image_lookupfmtbyid':
+# of def-use pairs: 20 (1130)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_image_encode':
+# of def-use pairs: 24 (1154)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_image_readcmpt':
+# of def-use pairs: 186 (1340)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_image_writecmpt':
+# of def-use pairs: 212 (1552)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_image_clearfmts':
+# of def-use pairs: 23 (1575)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_image_addfmt':
+# of def-use pairs: 36 (1611)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_image_strtofmt':
+# of def-use pairs: 22 (1633)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_image_lookupfmtbyname':
+# of def-use pairs: 21 (1654)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_image_fmttostr':
+# of def-use pairs: 21 (1675)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_image_fmtfromname':
+# of def-use pairs: 28 (1703)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_image_rawsize':
+# of def-use pairs: 34 (1737)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_image_delcmpt':
+# of def-use pairs: 38 (1775)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_image_addcmpt':
+# of def-use pairs: 164 (1939)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_image_copycmpt':
+# of def-use pairs: 138 (2077)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_image_dump':
+# of def-use pairs: 92 (2169)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_image_readcmpt2':
+# of def-use pairs: 102 (2271)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'getint':
+# of def-use pairs: 59 (2330)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_image_depalettize':
+# of def-use pairs: 94 (2424)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_image_readcmptsample':
+# of def-use pairs: 114 (2538)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_image_writecmptsample':
+# of def-use pairs: 131 (2669)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_image_getcmptbytype':
+# of def-use pairs: 22 (2691)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_image_writecmpt2':
+# of def-use pairs: 97 (2788)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'putint':
+# of def-use pairs: 65 (2853)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_image_sampcmpt':
+# of def-use pairs: 463 (3316)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_image_ishomosamp':
+# of def-use pairs: 35 (3351)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_image_chclrspc':
+# of def-use pairs: 631 (3982)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_strdup':
+# of def-use pairs: 10 (3992)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_setdbglevel':
+# of def-use pairs: 2 (3994)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_getdbglevel':
+# of def-use pairs: 1 (3995)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_eprintf':
+# of def-use pairs: 11 (4006)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_memdump':
+# of def-use pairs: 22 (4028)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_cmprof_createfromclrspc':
+# of def-use pairs: 205 (4233)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_cmprof_createfromiccprof':
+# of def-use pairs: 93 (4326)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_cmshapmat_invmat':
+# of def-use pairs: 166 (4492)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_cmpxformseq_insertpxform':
+# of def-use pairs: 77 (4569)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_cmshapmat_destroy':
+# of def-use pairs: 15 (4584)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_cmshapmat_apply':
+# of def-use pairs: 502 (5086)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'mono':
+# of def-use pairs: 170 (5256)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'triclr':
+# of def-use pairs: 403 (5659)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_cmshapmatlut_set':
+# of def-use pairs: 105 (5764)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_cmshapmatlut_invert':
+# of def-use pairs: 142 (5906)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_clrspc_numchans':
+# of def-use pairs: 7 (5913)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_cmprof_destroy':
+# of def-use pairs: 62 (5975)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_cmprof_copy':
+# of def-use pairs: 142 (6117)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_cmxform_create':
+# of def-use pairs: 1006 (7123)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_cmxform_apply':
+# of def-use pairs: 420 (7543)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_cmxform_destroy':
+# of def-use pairs: 53 (7596)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_iccprof_createfromcmprof':
+# of def-use pairs: 3 (7599)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_stream_memopen':
+# of def-use pairs: 89 (7688)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_stream_close':
+# of def-use pairs: 65 (7753)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'mem_read':
+# of def-use pairs: 23 (7776)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'mem_write':
+# of def-use pairs: 123 (7899)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'mem_seek':
+# of def-use pairs: 17 (7916)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'mem_close':
+# of def-use pairs: 8 (7924)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_stream_fopen':
+# of def-use pairs: 141 (8065)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'file_read':
+# of def-use pairs: 5 (8070)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'file_write':
+# of def-use pairs: 5 (8075)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'file_seek':
+# of def-use pairs: 3 (8078)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'file_close':
+# of def-use pairs: 10 (8088)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_stream_freopen':
+# of def-use pairs: 82 (8170)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'sfile_read':
+# of def-use pairs: 5 (8175)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'sfile_write':
+# of def-use pairs: 5 (8180)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'sfile_seek':
+# of def-use pairs: 4 (8184)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'sfile_close':
+# of def-use pairs: 3 (8187)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_stream_tmpfile':
+# of def-use pairs: 91 (8278)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_stream_fdopen':
+# of def-use pairs: 103 (8381)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_stream_flush':
+# of def-use pairs: 50 (8431)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_stream_getc_func':
+# of def-use pairs: 41 (8472)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_stream_fillbuf':
+# of def-use pairs: 61 (8533)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_stream_putc_func':
+# of def-use pairs: 43 (8576)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_stream_flushbuf':
+# of def-use pairs: 64 (8640)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_stream_ungetc':
+# of def-use pairs: 20 (8660)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_stream_read':
+# of def-use pairs: 55 (8715)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_stream_write':
+# of def-use pairs: 56 (8771)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_stream_printf':
+# of def-use pairs: 67 (8838)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_stream_puts':
+# of def-use pairs: 50 (8888)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_stream_gets':
+# of def-use pairs: 62 (8950)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_stream_gobble':
+# of def-use pairs: 40 (8990)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_stream_pad':
+# of def-use pairs: 46 (9036)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_stream_isseekable':
+# of def-use pairs: 13 (9049)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_stream_rewind':
+# of def-use pairs: 2 (9051)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_stream_seek':
+# of def-use pairs: 87 (9138)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_stream_tell':
+# of def-use pairs: 36 (9174)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_stream_copy':
+# of def-use pairs: 93 (9267)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_stream_setrwcount':
+# of def-use pairs: 4 (9271)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_stream_display':
+# of def-use pairs: 128 (9399)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_stream_length':
+# of def-use pairs: 84 (9483)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_init':
+# of def-use pairs: 26 (9509)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_cleanup':
+# of def-use pairs: 0 (9509)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_malloc':
+# of def-use pairs: 1 (9510)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_free':
+# of def-use pairs: 0 (9510)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_realloc':
+# of def-use pairs: 1 (9511)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_calloc':
+# of def-use pairs: 10 (9521)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_getversion':
+# of def-use pairs: 0 (9521)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_getopt':
+# of def-use pairs: 112 (9633)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_seq2d_create':
+# of def-use pairs: 18 (9651)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_matrix_create':
+# of def-use pairs: 160 (9811)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_matrix_destroy':
+# of def-use pairs: 15 (9826)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_seq2d_copy':
+# of def-use pairs: 88 (9914)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_matrix_copy':
+# of def-use pairs: 49 (9963)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_seq2d_bindsub':
+# of def-use pairs: 20 (9983)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_matrix_bindsub':
+# of def-use pairs: 83 (10066)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_matrix_cmp':
+# of def-use pairs: 42 (10108)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_matrix_divpow2':
+# of def-use pairs: 66 (10174)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_matrix_clip':
+# of def-use pairs: 63 (10237)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_matrix_asr':
+# of def-use pairs: 146 (10383)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_matrix_asl':
+# of def-use pairs: 145 (10528)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_matrix_resize':
+# of def-use pairs: 82 (10610)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_matrix_output':
+# of def-use pairs: 38 (10648)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_matrix_setall':
+# of def-use pairs: 175 (10823)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'bmp_encode':
+# of def-use pairs: 1049 (11872)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'bmp_putint16':
+# of def-use pairs: 71 (11943)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'bmp_putint32':
+# of def-use pairs: 58 (12001)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'bmp_info_create':
+# of def-use pairs: 7 (12008)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'bmp_info_destroy':
+# of def-use pairs: 6 (12014)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'bmp_isgrayscalepal':
+# of def-use pairs: 25 (12039)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'bmp_numcmpts':
+# of def-use pairs: 37 (12076)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'bmp_decode':
+# of def-use pairs: 2153 (14229)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'bmp_getint16':
+# of def-use pairs: 71 (14300)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'bmp_validate':
+# of def-use pairs: 31 (14331)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jp2_encode':
+# of def-use pairs: 401 (14732)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jp2_decode':
+# of def-use pairs: 744 (15476)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jp2_dec_destroy':
+# of def-use pairs: 34 (15510)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jp2_validate':
+# of def-use pairs: 48 (15558)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_dec_process_soc':
+# of def-use pairs: 0 (15558)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_dec_process_sot':
+# of def-use pairs: 371 (15929)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_dec_process_sod':
+# of def-use pairs: 1506 (17435)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_dec_process_eoc':
+# of def-use pairs: 26 (17461)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_dec_process_siz':
+# of def-use pairs: 312 (17773)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_dec_process_cod':
+# of def-use pairs: 227 (18000)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_dec_process_coc':
+# of def-use pairs: 156 (18156)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_dec_process_rgn':
+# of def-use pairs: 38 (18194)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_dec_process_qcd':
+# of def-use pairs: 528 (18722)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_dec_process_qcc':
+# of def-use pairs: 458 (19180)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_dec_process_poc':
+# of def-use pairs: 51 (19231)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_dec_process_ppm':
+# of def-use pairs: 28 (19259)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_dec_process_ppt':
+# of def-use pairs: 31 (19290)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_dec_process_crg':
+# of def-use pairs: 0 (19290)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_dec_process_com':
+# of def-use pairs: 0 (19290)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_dec_process_unk':
+# of def-use pairs: 2 (19292)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_ppxstab_insert':
+# of def-use pairs: 160 (19452)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_dec_cp_setfrompoc':
+# of def-use pairs: 36 (19488)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_dec_cp_create':
+# of def-use pairs: 76 (19564)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_dec_tiledecode':
+# of def-use pairs: 598 (20162)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_dec_tilefini':
+# of def-use pairs: 282 (20444)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_ppmstabtostreams':
+# of def-use pairs: 319 (20763)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_decode':
+# of def-use pairs: 161 (20924)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_dec_destroy':
+# of def-use pairs: 68 (20992)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_seglist_insert':
+# of def-use pairs: 13 (21005)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_seglist_remove':
+# of def-use pairs: 17 (21022)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_seg_alloc':
+# of def-use pairs: 12 (21034)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_seg_destroy':
+# of def-use pairs: 5 (21039)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_streamlist_create':
+# of def-use pairs: 33 (21072)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_streamlist_insert':
+# of def-use pairs: 96 (21168)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_streamlist_remove':
+# of def-use pairs: 120 (21288)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_streamlist_destroy':
+# of def-use pairs: 25 (21313)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_streamlist_get':
+# of def-use pairs: 8 (21321)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_streamlist_numstreams':
+# of def-use pairs: 2 (21323)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_ppxstab_create':
+# of def-use pairs: 6 (21329)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_ppxstab_destroy':
+# of def-use pairs: 32 (21361)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_ppxstabent_destroy':
+# of def-use pairs: 5 (21366)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_ppxstab_grow':
+# of def-use pairs: 19 (21385)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_pptstabwrite':
+# of def-use pairs: 29 (21414)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_ppxstabent_create':
+# of def-use pairs: 6 (21420)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_dec_decodepkts':
+# of def-use pairs: 811 (22231)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_dec_lookahead':
+# of def-use pairs: 29 (22260)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_dec_pi_create':
+# of def-use pairs: 346 (22606)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_mqdec_create':
+# of def-use pairs: 195 (22801)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_mqdec_init':
+# of def-use pairs: 113 (22914)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_mqdec_setctxs':
+# of def-use pairs: 200 (23114)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_mqdec_destroy':
+# of def-use pairs: 6 (23120)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_mqdec_setinput':
+# of def-use pairs: 0 (23120)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_mqdec_setctx':
+# of def-use pairs: 12 (23132)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_mqdec_getbit_func':
+# of def-use pairs: 27 (23159)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_mqdec_mpsexchrenormd':
+# of def-use pairs: 118 (23277)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_mqdec_lpsexchrenormd':
+# of def-use pairs: 120 (23397)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_mqdec_dump':
+# of def-use pairs: 26 (23423)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_cstate_create':
+# of def-use pairs: 6 (23429)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_cstate_destroy':
+# of def-use pairs: 1 (23430)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_getms':
+# of def-use pairs: 156 (23586)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_getuint16':
+# of def-use pairs: 73 (23659)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_ms_dump':
+# of def-use pairs: 34 (23693)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_sot_getparms':
+# of def-use pairs: 83 (23776)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_sot_putparms':
+# of def-use pairs: 84 (23860)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_sot_dumpparms':
+# of def-use pairs: 14 (23874)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_siz_destroyparms':
+# of def-use pairs: 6 (23880)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_siz_getparms':
+# of def-use pairs: 252 (24132)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_siz_putparms':
+# of def-use pairs: 228 (24360)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_siz_dumpparms':
+# of def-use pairs: 66 (24426)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_cod_destroyparms':
+# of def-use pairs: 0 (24426)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_cod_getparms':
+# of def-use pairs: 116 (24542)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_cod_putparms':
+# of def-use pairs: 128 (24670)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_cod_dumpparms':
+# of def-use pairs: 52 (24722)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_coc_destroyparms':
+# of def-use pairs: 0 (24722)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_coc_getparms':
+# of def-use pairs: 90 (24812)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_coc_putparms':
+# of def-use pairs: 95 (24907)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_coc_dumpparms':
+# of def-use pairs: 28 (24935)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_rgn_getparms':
+# of def-use pairs: 117 (25052)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_rgn_putparms':
+# of def-use pairs: 122 (25174)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_rgn_dumpparms':
+# of def-use pairs: 13 (25187)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_qcd_destroyparms':
+# of def-use pairs: 6 (25193)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_qcd_getparms':
+# of def-use pairs: 6 (25199)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_qcd_putparms':
+# of def-use pairs: 101 (25300)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_qcd_dumpparms':
+# of def-use pairs: 35 (25335)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_qcc_destroyparms':
+# of def-use pairs: 7 (25342)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_qcc_getparms':
+# of def-use pairs: 63 (25405)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_qcc_putparms':
+# of def-use pairs: 151 (25556)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_qcc_dumpparms':
+# of def-use pairs: 41 (25597)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_poc_destroyparms':
+# of def-use pairs: 6 (25603)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_poc_getparms':
+# of def-use pairs: 323 (25926)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_poc_putparms':
+# of def-use pairs: 298 (26224)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_poc_dumpparms':
+# of def-use pairs: 46 (26270)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_unk_getparms':
+# of def-use pairs: 23 (26293)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_unk_putparms':
+# of def-use pairs: 0 (26293)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_ppm_destroyparms':
+# of def-use pairs: 5 (26298)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_ppm_getparms':
+# of def-use pairs: 64 (26362)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_ppm_putparms':
+# of def-use pairs: 12 (26374)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_ppm_dumpparms':
+# of def-use pairs: 13 (26387)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_ppt_destroyparms':
+# of def-use pairs: 5 (26392)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_ppt_getparms':
+# of def-use pairs: 64 (26456)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_ppt_putparms':
+# of def-use pairs: 47 (26503)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_ppt_dumpparms':
+# of def-use pairs: 13 (26516)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_sop_getparms':
+# of def-use pairs: 5 (26521)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_sop_putparms':
+# of def-use pairs: 6 (26527)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_sop_dumpparms':
+# of def-use pairs: 3 (26530)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_crg_getparms':
+# of def-use pairs: 42 (26572)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_crg_putparms':
+# of def-use pairs: 31 (26603)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_crg_dumpparms':
+# of def-use pairs: 27 (26630)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_com_destroyparms':
+# of def-use pairs: 5 (26635)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_com_getparms':
+# of def-use pairs: 25 (26660)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_com_putparms':
+# of def-use pairs: 18 (26678)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_com_dumpparms':
+# of def-use pairs: 35 (26713)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_unk_destroyparms':
+# of def-use pairs: 5 (26718)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_unk_dumpparms':
+# of def-use pairs: 20 (26738)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_putuint16':
+# of def-use pairs: 70 (26808)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_qcx_getcompparms':
+# of def-use pairs: 144 (26952)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_cox_putcompparms':
+# of def-use pairs: 231 (27183)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_cox_getcompparms':
+# of def-use pairs: 233 (27416)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_putuint32':
+# of def-use pairs: 138 (27554)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_getuint32':
+# of def-use pairs: 149 (27703)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_ms_create':
+# of def-use pairs: 27 (27730)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_ms_destroy':
+# of def-use pairs: 9 (27739)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_putms':
+# of def-use pairs: 55 (27794)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_getuint8':
+# of def-use pairs: 35 (27829)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_putuint8':
+# of def-use pairs: 33 (27862)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_validate':
+# of def-use pairs: 31 (27893)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_getdata':
+# of def-use pairs: 2 (27895)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_putdata':
+# of def-use pairs: 2 (27897)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_rct':
+# of def-use pairs: 227 (28124)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_irct':
+# of def-use pairs: 223 (28347)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_ict':
+# of def-use pairs: 118 (28465)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_iict':
+# of def-use pairs: 106 (28571)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_mct_getsynweight':
+# of def-use pairs: 8 (28579)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_tagtree_create':
+# of def-use pairs: 216 (28795)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_tagtree_reset':
+# of def-use pairs: 21 (28816)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_tagtree_destroy':
+# of def-use pairs: 6 (28822)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_tagtree_copy':
+# of def-use pairs: 46 (28868)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_tagtree_setvalue':
+# of def-use pairs: 13 (28881)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_tagtree_getleaf':
+# of def-use pairs: 4 (28885)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_tagtree_encode':
+# of def-use pairs: 223 (29108)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_tagtree_decode':
+# of def-use pairs: 101 (29209)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_tagtree_dump':
+# of def-use pairs: 31 (29240)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'JPC_PASSTYPE':
+# of def-use pairs: 6 (29246)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'JPC_NOMINALGAIN':
+# of def-use pairs: 8 (29254)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'JPC_SEGTYPE':
+# of def-use pairs: 9 (29263)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'JPC_SEGPASSCNT':
+# of def-use pairs: 24 (29287)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'JPC_ISTERMINATED':
+# of def-use pairs: 33 (29320)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_initluts':
+# of def-use pairs: 298 (29618)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_getzcctxno':
+# of def-use pairs: 65 (29683)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_initmqctxs':
+# of def-use pairs: 0 (29683)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_getspb':
+# of def-use pairs: 50 (29733)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_getscctxno':
+# of def-use pairs: 65 (29798)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_getmagctxno':
+# of def-use pairs: 6 (29804)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_pow2i':
+# of def-use pairs: 23 (29827)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_getsignmsedec_func':
+# of def-use pairs: 20 (29847)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_initctxs':
+# of def-use pairs: 0 (29847)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_pi_next':
+# of def-use pairs: 1772 (31619)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_pchglist_numpchgs':
+# of def-use pairs: 2 (31621)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_pchglist_get':
+# of def-use pairs: 5 (31626)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_pi_destroy':
+# of def-use pairs: 105 (31731)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_pchglist_destroy':
+# of def-use pairs: 27 (31758)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_pi_create0':
+# of def-use pairs: 19 (31777)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_pchglist_create':
+# of def-use pairs: 6 (31783)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_pi_addpchg':
+# of def-use pairs: 133 (31916)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_pchglist_insert':
+# of def-use pairs: 129 (32045)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_pchglist_remove':
+# of def-use pairs: 120 (32165)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_pchg_copy':
+# of def-use pairs: 7 (32172)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_pchglist_copy':
+# of def-use pairs: 198 (32370)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_pchg_destroy':
+# of def-use pairs: 1 (32371)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_pi_init':
+# of def-use pairs: 67 (32438)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_dec_decodecblks':
+# of def-use pairs: 3957 (36395)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_tsfb_wavelet':
+# of def-use pairs: 100 (36495)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_tsfbnode_destroy':
+# of def-use pairs: 33 (36528)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_tsfb_destroy':
+# of def-use pairs: 5 (36533)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_tsfb_analyze':
+# of def-use pairs: 4 (36537)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_tsfbnode_analyze':
+# of def-use pairs: 110 (36647)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'qmfb2d_getbands':
+# of def-use pairs: 134 (36781)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_tsfb_synthesize':
+# of def-use pairs: 4 (36785)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_tsfbnode_synthesize':
+# of def-use pairs: 109 (36894)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_tsfb_getbands':
+# of def-use pairs: 26 (36920)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_tsfbnode_getbandstree':
+# of def-use pairs: 354 (37274)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_cod_gettsfb':
+# of def-use pairs: 12 (37286)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_floorlog2':
+# of def-use pairs: 14 (37300)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_firstone':
+# of def-use pairs: 14 (37314)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_encode':
+# of def-use pairs: 2731 (40045)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_enc_destroy':
+# of def-use pairs: 35 (40080)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_abstorelstepsize':
+# of def-use pairs: 29 (40109)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_enc_tile_create':
+# of def-use pairs: 1433 (41542)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_enc_dump':
+# of def-use pairs: 190 (41732)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'rateallocate':
+# of def-use pairs: 965 (42697)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_enc_tile_destroy':
+# of def-use pairs: 78 (42775)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'rlvl_destroy':
+# of def-use pairs: 67 (42842)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'prc_destroy':
+# of def-use pairs: 70 (42912)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'dump_layeringinfo':
+# of def-use pairs: 165 (43077)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_enc_create':
+# of def-use pairs: 23 (43100)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_enc_cp_destroy':
+# of def-use pairs: 15 (43115)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'ratestrtosize':
+# of def-use pairs: 17 (43132)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_enc_encodetiledata':
+# of def-use pairs: 7 (43139)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'dump_passes':
+# of def-use pairs: 46 (43185)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'quantize':
+# of def-use pairs: 49 (43234)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'calcrdslopes':
+# of def-use pairs: 115 (43349)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_bitstream_sopen':
+# of def-use pairs: 27 (43376)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_bitstream_close':
+# of def-use pairs: 34 (43410)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_bitstream_inalign':
+# of def-use pairs: 284 (43694)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_bitstream_outalign':
+# of def-use pairs: 83 (43777)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_bitstream_putbits':
+# of def-use pairs: 101 (43878)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_bitstream_fillbuf':
+# of def-use pairs: 84 (43962)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_bitstream_align':
+# of def-use pairs: 13 (43975)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_bitstream_getbit_func':
+# of def-use pairs: 19 (43994)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_bitstream_putbit_func':
+# of def-use pairs: 80 (44074)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_bitstream_getbits':
+# of def-use pairs: 39 (44113)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_bitstream_needalign':
+# of def-use pairs: 23 (44136)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_bitstream_pending':
+# of def-use pairs: 9 (44145)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpg_decode':
+# of def-use pairs: 233 (44378)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpg_start_output':
+# of def-use pairs: 0 (44378)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpg_put_pixel_rows':
+# of def-use pairs: 83 (44461)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpg_finish_output':
+# of def-use pairs: 0 (44461)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpg_encode':
+# of def-use pairs: 385 (44846)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpg_validate':
+# of def-use pairs: 33 (44879)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'mif_decode':
+# of def-use pairs: 872 (45751)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'mif_encode':
+# of def-use pairs: 581 (46332)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'mif_validate':
+# of def-use pairs: 47 (46379)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'pgx_decode':
+# of def-use pairs: 448 (46827)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'pgx_getc':
+# of def-use pairs: 82 (46909)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'pgx_validate':
+# of def-use pairs: 36 (46945)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'pgx_encode':
+# of def-use pairs: 165 (47110)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'pnm_encode':
+# of def-use pairs: 560 (47670)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'pnm_type':
+# of def-use pairs: 5 (47675)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'pnm_fmt':
+# of def-use pairs: 5 (47680)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'pnm_maxvaltodepth':
+# of def-use pairs: 13 (47693)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'pnm_decode':
+# of def-use pairs: 745 (48438)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'pnm_getsintstr':
+# of def-use pairs: 56 (48494)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'pnm_getc':
+# of def-use pairs: 82 (48576)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'pnm_validate':
+# of def-use pairs: 37 (48613)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'ras_decode':
+# of def-use pairs: 657 (49270)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'ras_getint':
+# of def-use pairs: 165 (49435)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'ras_validate':
+# of def-use pairs: 47 (49482)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'ras_encode':
+# of def-use pairs: 517 (49999)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'ras_putint':
+# of def-use pairs: 150 (50149)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_icccurv_destroy':
+# of def-use pairs: 6 (50155)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_icccurv_copy':
+# of def-use pairs: 0 (50155)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_icccurv_input':
+# of def-use pairs: 52 (50207)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_icccurv_output':
+# of def-use pairs: 286 (50493)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_icccurv_getsize':
+# of def-use pairs: 6 (50499)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_icccurv_dump':
+# of def-use pairs: 46 (50545)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_iccxyz_input':
+# of def-use pairs: 13 (50558)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_iccxyz_output':
+# of def-use pairs: 617 (51175)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_iccxyz_getsize':
+# of def-use pairs: 0 (51175)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_iccxyz_dump':
+# of def-use pairs: 13 (51188)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_icctxtdesc_destroy':
+# of def-use pairs: 10 (51198)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_icctxtdesc_copy':
+# of def-use pairs: 0 (51198)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_icctxtdesc_input':
+# of def-use pairs: 121 (51319)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_icctxtdesc_output':
+# of def-use pairs: 946 (52265)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_icctxtdesc_getsize':
+# of def-use pairs: 10 (52275)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_icctxtdesc_dump':
+# of def-use pairs: 13 (52288)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_icctxt_destroy':
+# of def-use pairs: 5 (52293)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_icctxt_copy':
+# of def-use pairs: 8 (52301)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_icctxt_input':
+# of def-use pairs: 24 (52325)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_icctxt_output':
+# of def-use pairs: 35 (52360)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_icctxt_getsize':
+# of def-use pairs: 6 (52366)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_icctxt_dump':
+# of def-use pairs: 3 (52369)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_icclut8_destroy':
+# of def-use pairs: 22 (52391)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_icclut8_copy':
+# of def-use pairs: 0 (52391)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_icclut8_input':
+# of def-use pairs: 548 (52939)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_icclut8_output':
+# of def-use pairs: 577 (53516)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_icclut8_getsize':
+# of def-use pairs: 37 (53553)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_icclut8_dump':
+# of def-use pairs: 49 (53602)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_icclut16_destroy':
+# of def-use pairs: 30 (53632)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_icclut16_copy':
+# of def-use pairs: 0 (53632)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_icclut16_input':
+# of def-use pairs: 450 (54082)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_icclut16_output':
+# of def-use pairs: 779 (54861)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_icclut16_getsize':
+# of def-use pairs: 38 (54899)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_icclut16_dump':
+# of def-use pairs: 49 (54948)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_iccputsint':
+# of def-use pairs: 152 (55100)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_iccgetsint32':
+# of def-use pairs: 176 (55276)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_iccgetuint16':
+# of def-use pairs: 79 (55355)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_iccgetuint32':
+# of def-use pairs: 170 (55525)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_iccprof_copy':
+# of def-use pairs: 98 (55623)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_iccattrtab_destroy':
+# of def-use pairs: 60 (55683)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_iccattrtab_add':
+# of def-use pairs: 72 (55755)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_iccprof_destroy':
+# of def-use pairs: 10 (55765)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_iccprof_dump':
+# of def-use pairs: 2 (55767)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_iccattrtab_dump':
+# of def-use pairs: 252 (56019)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_iccattrval_dump':
+# of def-use pairs: 214 (56233)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_iccprof_load':
+# of def-use pairs: 532 (56765)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_icctagtabent_cmp':
+# of def-use pairs: 12 (56777)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_iccprof_setattr':
+# of def-use pairs: 107 (56884)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_iccattrval_clone':
+# of def-use pairs: 3 (56887)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_iccattrval_destroy':
+# of def-use pairs: 12 (56899)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_iccattrval_create':
+# of def-use pairs: 29 (56928)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_iccprof_save':
+# of def-use pairs: 18543 (75471)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_iccprof_getattr':
+# of def-use pairs: 38 (75509)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_iccprof_gethdr':
+# of def-use pairs: 2 (75511)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_iccprof_sethdr':
+# of def-use pairs: 2 (75513)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_iccattrval_allowmodify':
+# of def-use pairs: 34 (75547)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_iccprof_createfrombuf':
+# of def-use pairs: 10 (75557)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_iccprof_createfromclrspc':
+# of def-use pairs: 16 (75573)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_tvparser_create':
+# of def-use pairs: 17 (75590)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_tvparser_destroy':
+# of def-use pairs: 5 (75595)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_tvparser_next':
+# of def-use pairs: 107 (75702)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_tvparser_gettag':
+# of def-use pairs: 2 (75704)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_tvparser_getval':
+# of def-use pairs: 2 (75706)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_taginfos_lookup':
+# of def-use pairs: 19 (75725)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jas_taginfo_nonull':
+# of def-use pairs: 2 (75727)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jp2_jp_getdata':
+# of def-use pairs: 4 (75731)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jp2_jp_putdata':
+# of def-use pairs: 5 (75736)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jp2_ftyp_getdata':
+# of def-use pairs: 30 (75766)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jp2_ftyp_putdata':
+# of def-use pairs: 28 (75794)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jp2_ihdr_getdata':
+# of def-use pairs: 153 (75947)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jp2_ihdr_putdata':
+# of def-use pairs: 159 (76106)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jp2_bpcc_destroy':
+# of def-use pairs: 5 (76111)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jp2_bpcc_getdata':
+# of def-use pairs: 74 (76185)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jp2_bpcc_putdata':
+# of def-use pairs: 58 (76243)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jp2_colr_destroy':
+# of def-use pairs: 5 (76248)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jp2_colr_getdata':
+# of def-use pairs: 134 (76382)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jp2_colr_putdata':
+# of def-use pairs: 124 (76506)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jp2_colr_dumpdata':
+# of def-use pairs: 26 (76532)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jp2_pclr_destroy':
+# of def-use pairs: 11 (76543)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jp2_pclr_getdata':
+# of def-use pairs: 254 (76797)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jp2_pclr_putdata':
+# of def-use pairs: 0 (76797)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jp2_pclr_dumpdata':
+# of def-use pairs: 54 (76851)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jp2_cmap_destroy':
+# of def-use pairs: 6 (76857)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jp2_cmap_getdata':
+# of def-use pairs: 124 (76981)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jp2_cmap_putdata':
+# of def-use pairs: 0 (76981)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jp2_cmap_dumpdata':
+# of def-use pairs: 33 (77014)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jp2_cdef_destroy':
+# of def-use pairs: 6 (77020)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jp2_cdef_getdata':
+# of def-use pairs: 49 (77069)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jp2_cdef_putdata':
+# of def-use pairs: 39 (77108)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jp2_cdef_dumpdata':
+# of def-use pairs: 27 (77135)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jp2_putuint16':
+# of def-use pairs: 70 (77205)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jp2_getuint16':
+# of def-use pairs: 73 (77278)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jp2_putuint32':
+# of def-use pairs: 138 (77416)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jp2_getuint32':
+# of def-use pairs: 149 (77565)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jp2_box_create':
+# of def-use pairs: 35 (77600)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jp2_boxinfolookup':
+# of def-use pairs: 17 (77617)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jp2_box_destroy':
+# of def-use pairs: 7 (77624)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jp2_box_get':
+# of def-use pairs: 98 (77722)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jp2_box_dump':
+# of def-use pairs: 34 (77756)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jp2_box_put':
+# of def-use pairs: 66 (77822)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jp2_cdef_lookup':
+# of def-use pairs: 24 (77846)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_enc_enccblks':
+# of def-use pairs: 257 (78103)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_enc_enccblk':
+# of def-use pairs: 5455 (83558)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'getthebyte':
+# of def-use pairs: 14 (83572)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_ft_getnumchans':
+# of def-use pairs: 0 (83572)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_ft_getanalfilters':
+# of def-use pairs: 0 (83572)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_ft_getsynfilters':
+# of def-use pairs: 86 (83658)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_ft_analyze':
+# of def-use pairs: 532 (84190)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_ft_synthesize':
+# of def-use pairs: 542 (84732)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_qmfb1d_join':
+# of def-use pairs: 303 (85035)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_qmfb1d_split':
+# of def-use pairs: 259 (85294)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_ns_getnumchans':
+# of def-use pairs: 0 (85294)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_ns_getanalfilters':
+# of def-use pairs: 0 (85294)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_ns_getsynfilters':
+# of def-use pairs: 118 (85412)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_ns_analyze':
+# of def-use pairs: 533 (85945)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_ns_synthesize':
+# of def-use pairs: 539 (86484)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_qmfb1d_make':
+# of def-use pairs: 10 (86494)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_qmfb1d_destroy':
+# of def-use pairs: 1 (86495)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_qmfb1d_copy':
+# of def-use pairs: 9 (86504)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_qmfb1d_getbands':
+# of def-use pairs: 41 (86545)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_qmfb1d_getnumchans':
+# of def-use pairs: 4 (86549)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_qmfb1d_getanalfilters':
+# of def-use pairs: 5 (86554)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_qmfb1d_getsynfilters':
+# of def-use pairs: 5 (86559)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_qmfb1d_analyze':
+# of def-use pairs: 4 (86563)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_qmfb1d_synthesize':
+# of def-use pairs: 4 (86567)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_mqenc_create':
+# of def-use pairs: 194 (86761)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_mqenc_init':
+# of def-use pairs: 1 (86762)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_mqenc_setctxs':
+# of def-use pairs: 200 (86962)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_mqenc_destroy':
+# of def-use pairs: 6 (86968)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_mqenc_getstate':
+# of def-use pairs: 12 (86980)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_mqenc_putbit_func':
+# of def-use pairs: 322 (87302)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_mqenc_codemps2':
+# of def-use pairs: 311 (87613)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_mqenc_codelps':
+# of def-use pairs: 314 (87927)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_mqenc_flush':
+# of def-use pairs: 991 (88918)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_mqenc_dump':
+# of def-use pairs: 18 (88936)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_enc_encpkts':
+# of def-use pairs: 32 (88968)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_init_t2state':
+# of def-use pairs: 181 (89149)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_enc_encpkt':
+# of def-use pairs: 1004 (90153)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_save_t2state':
+# of def-use pairs: 138 (90291)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_restore_t2state':
+# of def-use pairs: 138 (90429)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_enc_pi_create':
+# of def-use pairs: 343 (90772)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_atoaf':
+# of def-use pairs: 60 (90832)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_seq_upsample':
+# of def-use pairs: 68 (90900)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_seq_norm':
+# of def-use pairs: 112 (91012)
+Printing analysis 'Def-Use analysis refining with the infeasible path detection' for function 'jpc_seq_conv':
+# of def-use pairs: 91 (91103)

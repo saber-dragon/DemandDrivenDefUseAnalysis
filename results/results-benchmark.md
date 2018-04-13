@@ -20,18 +20,11 @@
 
 ## Benchmark Program : JPEG 2000
 
-> Encoder 
+> Jasper 
 
 |  algorithm       | def-use pairs | reduction |
 | ------------- |:-------------:| -----:|
-| tradit      | 165298 | - |
-| corr-P-WP      | -      |   - |
-| corr-P-WOP | -      |    - |
+| tradit      | 91138 | - |
+| corr-P-WP      | 91026      |   0.12% |
+| corr-P-WOP | 91103      |    0.04% |
 
-> Decoder 
-
-|  algorithm       | def-use pairs | reduction |
-| ------------- |:-------------:| -----:|
-| tradit      | 165298 | - |
-| corr-P-WP      | -      |   - |
-| corr-P-WOP | -      |    - |
